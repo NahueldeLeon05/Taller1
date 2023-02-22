@@ -3,10 +3,9 @@
 #include <stdio.h>
 typedef enum {FALSE, TRUE} boolean;
 
-//Carga un valor booleano por teclado
-void cargarBoolean(boolean &b);
-
-//Muestra un valor booleano por pantalla
-void desplegarBoolean(boolean b);
+//Carga un boolean
+void CargarBoolean(boolean &b);
+//muestra el boolean cargado
+void MostrarBoolean(boolean b);
 
 #endif // BOOLEAN_H_INCLUDED
