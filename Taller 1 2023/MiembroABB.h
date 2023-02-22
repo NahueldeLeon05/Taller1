@@ -4,13 +4,13 @@
 #include "Fecha.h"
 
 typedef struct {
-	stringd nombre;
+	String nombre;
 	Fecha fNac;
 	String nombreProgenitor;
 } MiembroABB;
 
 //Crea nuevo miembro
-miembroArbol crearMiembroNuevo(String nom, String padre, Fecha nacimiento);
+MiembroABB crearMiembroNuevo(String nom, String padre, Fecha nacimiento);
 
 //Despliega por pantalla el miembro del ABB
 void MostrarMiembroABB(MiembroABB m);
