@@ -4,6 +4,32 @@
 const int MAX = 80;
 typedef char * String;
 
+void strcrear(String &s);
+
+void strdestruir(String &s);
+
+int strlar(String s);
+
+void strcop(String from, String &to);
+
+void scan(String &s);
+
+void strcon(String &s1, String s2);
+
+void strswp(String &s1, String &s2);
+
+void print(String s1);
+
+boolean strmen(String s1, String s2);
+
+boolean streq(String s1, String s2, boolean ignoreCase);
+
+// Precondición: El archivo viene abierto para escritura.
+void GuardarString(String s, FILE * f);
+
+// Precondición: El archivo viene abierto para lectura.
+void LeerString(String &s, FILE * f);
+
 //Verifica que nombre sea alfabético
 boolean nombreAlfabetico(String nom);
 
