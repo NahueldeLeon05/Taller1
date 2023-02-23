@@ -161,7 +161,7 @@ boolean EsFlecha(String flecha) {
 void PasarMayus(String &nombre) {
     int i = 0;
     while(nombre[i] != '\0'){
-        char c = nombre[i];
+        int c = nombre[i];
         int num = c >= 97 && c <= 122 ? c - 32 : c;
         nombre[i] = (char) c;
 
