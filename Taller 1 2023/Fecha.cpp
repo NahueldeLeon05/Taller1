@@ -125,3 +125,12 @@ void LeerFecha(Fecha &F, FILE * f){
     fread(&F, sizeof(Fecha), 1, f);
 }
 
+// Devolver la fecha por defecto (0/0/0).
+Fecha FechaDefecto() {
+    Fecha r;
+    r.anio = 0;
+    r.mes = 0;
+    r.dia = 0;
+
+    return r;
+}

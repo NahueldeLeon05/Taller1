@@ -60,4 +60,7 @@ Fecha transformarFecha(String input);
 //Valida fecha
 boolean validarFecha(Fecha f);
 
+// Devolver la fecha por defecto (0/0/0).
+Fecha FechaDefecto();
+
 #endif // FECHA_H_INCLUDED
