@@ -73,7 +73,7 @@ int ObtenerAnioFecha(Fecha f){
 }
 
 // Validar el formato de la fecha ingresada.
-boolean FechaEsValida(Fecha f){
+boolean ValidarFecha(Fecha f){
     int max;
     if (f.mes == 1 || f.mes == 3 || f.mes == 5 || f.mes == 7 || f.mes == 8 || f.mes == 10 || f.mes == 12)
         max = 31;

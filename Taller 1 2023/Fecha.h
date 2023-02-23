@@ -30,9 +30,6 @@ int ObtenerMesFecha(Fecha f);
 // Obtener el año de la fecha ingresada.
 int ObtenerAnioFecha(Fecha f);
 
-// Validar el formato de la fecha ingresada.
-boolean FechaEsValida(Fecha f);
-
 // Comparar dos fechas devolviendo TRUE si la
 // primera es mayor estricto que la segunda.
 // De lo contrario devuelve FALSE.
@@ -57,8 +54,8 @@ boolean ValidarFormato(String fecha);
 //Trasforma string a fecha
 Fecha transformarFecha(String input);
 
-//Valida fecha
-boolean validarFecha(Fecha f);
+// Validar el formato de la fecha ingresada.
+boolean ValidarFecha(Fecha f);
 
 // Devolver la fecha por defecto (0/0/0).
 Fecha FechaDefecto();
