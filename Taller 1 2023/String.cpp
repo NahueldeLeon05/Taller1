@@ -168,3 +168,16 @@ void PasarMayus(String &nombre) {
         i++;
     }
 }
+
+boolean NombreAlfabetico(String nom) {
+    boolean alph = TRUE;
+
+    int i = 0;
+    while(nombre[i] != '\0' && alph == TRUE){
+        int c = nombre[i];
+        alph = (c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? TRUE : FALSE;
+        i++;
+    }
+
+    return alph;
+}

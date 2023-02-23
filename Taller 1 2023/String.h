@@ -29,7 +29,7 @@ void GuardarString(String s, FILE * f);
 void LeerString(String &s, FILE * f);
 
 //Verifica que nombre sea alfabético
-boolean nombreAlfabetico(String nom);
+boolean NombreAlfabetico(String nom);
 
 //Pasa a mayusculas el String
 void PasarMayus(String &nombre);
