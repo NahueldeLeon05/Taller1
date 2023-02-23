@@ -40,4 +40,12 @@ boolean EsFlecha(String flecha);
 //Libera el espacio de memoria usado por le string
 void LiberarString(String &s);
 
+void PrimerPalabra(String &input, String &palabra);
+
+void Recortar(String &input);
+
+void Substr(String &input, int from);
+
+boolean StringVacio(String input);
+
 #endif // STRING_H_INCLUDED

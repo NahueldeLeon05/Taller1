@@ -46,9 +46,12 @@
 
 1677103558 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\listadinastia.cpp
 
-1677103558 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\listastring.cpp
+1677191963 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\listastring.cpp
+	"ListaString.h"
 
-1677183381 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\main.cpp
+1677188082 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\main.cpp
+	"ListaString.h"
+	"Boolean.h"
 	"Fecha.h"
 
 1677103558 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\miembroabb.cpp
@@ -58,7 +61,7 @@
 	"String.h"
 	"Fecha.h"
 
-1677115118 c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\string.h
+1677190522 c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\string.h
 	"Boolean.h"
 
 1677111541 c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\boolean.h
@@ -81,7 +84,10 @@
 	"boolean.h"
 	"String.h"
 
-1677115330 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\string.cpp
+1677191949 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\string.cpp
 	"String.h"
 	<stdio.h>
+
+1677185116 c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\listastring.h
+	"String.h"
 

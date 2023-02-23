@@ -1,8 +1,18 @@
+#include "ListaString.h"
+#include "Boolean.h"
 #include "Fecha.h"
+
+/*void ProcesarComando(String cmd) {
+    if (streq(cmd, "inicio", FALSE) == TRUE) {
+        printf("Bien");
+    } else {
+        printf("Comando incorrecto");
+    }
+}*/
 
 int main()
 {
-    String s;
+    /*String s;
     while(true) {
         printf("Ingresa una fecha: \r\n");
         scan(s);
@@ -16,7 +26,24 @@ int main()
         printf(ValidarFecha(f) ? "Fecha es valida" : "Fecha no es valida");
         printf("\r\n");
 
+        printf("=============================\r\n");
+
         LiberarString(s);
+    }*/
+    String input;
+    scan(input);
+    ListaString lista = CmdEnLista(input);
+    while (lista != NULL) {
+        print(lista->info);
+        if (EsFlecha(lista->info)) {
+            printf(" - Es flecha");
+        }
+        printf("\r\n");
+        lista = lista->sig;
     }
+
+    /*String cmd;
+    AgarrarParam(lista, 0, cmd);
+    ProcesarComando(cmd);*/
     return 0;
 }

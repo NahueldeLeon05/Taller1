@@ -12,6 +12,8 @@ typedef snode* ListaString;
 //Guarda lo ingresado por el usuario en lista de string
 ListaString CmdEnLista(String s);
 
+void AgregarAListaString(ListaString &root, String s);
+
 //Agarra un parametro de la lista de string
 void AgarrarParam(ListaString ls, int pos, String& str);
 
@@ -22,6 +24,6 @@ boolean ValidarComando(String s);
 int contarElementosDeLista(ListaString ls);
 
 //Libera el espacio de memoria ocupado por la lista
-void liberarListaString(ListaString &ls); Módulo: ListaString
+void liberarListaString(ListaString &ls);
 
 #endif // LISTASTRING_H_INCLUDED

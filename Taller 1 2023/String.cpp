@@ -181,3 +181,57 @@ boolean NombreAlfabetico(String nom) {
 
     return alph;
 }
+
+void PrimerPalabra(String &input, String &palabra) {
+    Recortar(input);
+
+    String aux = new char[strlar(input) + 1];
+    int i = 0;
+    while (input[i] != '\0' && input[i] != ' ') {
+        aux[i] = input[i];
+        i++;
+    }
+    aux[i] = '\0';
+
+    strcrear(palabra);
+    strcop(aux, palabra);
+
+    Substr(input, i);
+    LiberarString(aux);
+}
+
+void Recortar(String &input) {
+    String aux = new char[strlar(input) + 1];
+    int i = 0, j = 0;
+    while (input[i] != '\0') {
+        if (input[i] != ' ' || j > 0) {
+            aux[j] = input[i];
+            j++;
+        }
+        i++;
+    }
+    aux[j] = '\0';
+
+    LiberarString(input);
+    strcrear(input);
+    strcop(aux, input);
+    LiberarString(aux);
+}
+
+void Substr(String &input, int from) {
+    String aux = new char[strlar(input) + 1];
+    int j = 0;
+    while (input[from] != '\0') {
+        aux[j] = input[from];
+        from++;
+        j++;
+    }
+    aux[j] = '\0';
+
+    strcop(aux, input);
+    LiberarString(aux);
+}
+
+boolean StringVacio(String input) {
+    return strlar(input) == 0 && input[0] == '\0' ? TRUE : FALSE;
+}
