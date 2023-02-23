@@ -6,7 +6,7 @@ void strcrear(String &s) {
     s[0] = '\0';
 }
 
-void strdestruir(String &s) {
+void LiberarString(String &s) {
     delete[] s;
     s = NULL;
 }

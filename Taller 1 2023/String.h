@@ -6,8 +6,6 @@ typedef char * String;
 
 void strcrear(String &s);
 
-void strdestruir(String &s);
-
 int strlar(String s);
 
 void strcop(String from, String &to);
