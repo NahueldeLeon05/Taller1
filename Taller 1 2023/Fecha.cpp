@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cstdlib>
 
 #include "Fecha.h"
 #include "boolean.h"
@@ -70,6 +71,33 @@ int ObtenerMesFecha(Fecha f) {
 // Obtener el año de la fecha ingresada.
 int ObtenerAnioFecha(Fecha f){
     return f.anio;
+}
+
+Fecha TransformarFecha(String fecha) {
+    Fecha f;
+    int pos = 0, idx = 0, j = 0;
+    String aux = new String[5];
+    while (fecha[idx] != '\0' && pos < 3) {
+        if (fecha[idx] == '/') {
+            int n = atoi(aux);
+            if (pos == 0) {
+                f.dia = n;
+            } else if (pos == 1) {
+                f.mes = n;
+            } else {
+                f.anio = n;
+            }
+            LiberarString(aux);
+            pos++;
+
+            j = 0;
+        } else {
+            aux[j] = fecha[idx];
+            j++;
+        }
+
+        idx++;
+    }
 }
 
 // Validar el formato de la fecha ingresada.

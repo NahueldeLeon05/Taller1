@@ -52,7 +52,7 @@ void LeerFecha(Fecha &F, FILE* f);
 boolean ValidarFormato(String fecha);
 
 //Trasforma string a fecha
-Fecha transformarFecha(String input);
+Fecha TransformarFecha(String input);
 
 // Validar el formato de la fecha ingresada.
 boolean ValidarFecha(Fecha f);

@@ -40,6 +40,6 @@ void PasarMayus(String &nombre);
 boolean esFlecha(String flecha);
 
 //Libera el espacio de memoria usado por le string
-void liberarString(String s);
+void LiberarString(String s);
 
 #endif // STRING_H_INCLUDED
