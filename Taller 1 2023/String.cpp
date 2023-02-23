@@ -153,3 +153,7 @@ void LeerString (String &s, FILE * f){
     strcop(aux, s);
     strdestruir(aux);
 }
+
+boolean EsFlecha(String flecha) {
+    return streq(flecha, "->", FALSE);
+}

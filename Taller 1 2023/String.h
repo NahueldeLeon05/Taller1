@@ -35,7 +35,7 @@ boolean nombreAlfabetico(String nom);
 void PasarMayus(String &nombre);
 
 //Verifica que el parametro sea "->"
-boolean esFlecha(String flecha);
+boolean EsFlecha(String flecha);
 
 //Libera el espacio de memoria usado por le string
 void LiberarString(String s);
