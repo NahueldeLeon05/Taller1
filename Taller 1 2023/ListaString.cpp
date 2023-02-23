@@ -11,6 +11,8 @@ ListaString CmdEnLista(String s) {
         PrimerPalabra(s, curr);
     }
 
+    LiberarString(curr);
+
     return root;
 }
 
