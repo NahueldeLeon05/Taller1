@@ -3,6 +3,7 @@
 
 #include "Fecha.h"
 #include "boolean.h"
+#include "String.h"
 
 // Cargar la informacion de la fecha por teclado.
 void CargarFecha(Fecha &f, Fecha minima){
@@ -21,7 +22,7 @@ void CargarFecha(Fecha &f, Fecha minima){
         printf(">> ");
         scanf("%d", &f.anio);
 
-        if (FechaEsValida(f) == TRUE) {
+        if (ValidarFecha(f) == TRUE) {
             if (FechaMayorIgual(f, minima) == TRUE) {
                 valida = TRUE;
             } else {
@@ -76,7 +77,7 @@ int ObtenerAnioFecha(Fecha f){
 Fecha TransformarFecha(String fecha) {
     Fecha f;
     int pos = 0, idx = 0, j = 0;
-    String aux = new String[5];
+    String aux = new char[5];
     while (fecha[idx] != '\0' && pos < 3) {
         if (fecha[idx] == '/') {
             int n = atoi(aux);
@@ -98,6 +99,8 @@ Fecha TransformarFecha(String fecha) {
 
         idx++;
     }
+
+    return f;
 }
 
 // Validar el formato de la fecha ingresada.

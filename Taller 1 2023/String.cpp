@@ -19,7 +19,7 @@ int strlar(String s) {
 
 void strcop(String from, String &to) {
     int i = 0;
-    strdestruir(to);
+    LiberarString(to);
     to = new char [strlar(from) + 1];
     while (from[i] != '\0') {
         to[i] = from[i];
@@ -46,7 +46,7 @@ void scan(String &s) {
 
     strcrear(s);
     strcop(aux, s);
-    strdestruir(aux);
+    LiberarString(aux);
 }
 
 void strcon(String &s1, String s2) {
@@ -65,7 +65,7 @@ void strcon(String &s1, String s2) {
     aux[i + j] = '\0';
 
     strcop(aux, s1);
-    strdestruir(aux);
+    LiberarString(aux);
 }
 
 void strswp(String &s1, String &s2) {
@@ -76,7 +76,7 @@ void strswp(String &s1, String &s2) {
     strcop(s2, s1);
     strcop(aux, s2);
 
-    strdestruir(aux);
+    LiberarString(aux);
 }
 
 void print(String s1) {
@@ -151,11 +151,11 @@ void LeerString (String &s, FILE * f){
         fread(&aux[i], sizeof(char), 1, f);
     }
     strcop(aux, s);
-    strdestruir(aux);
+    LiberarString(aux);
 }
 
 boolean EsFlecha(String flecha) {
-    return streq(flecha, "->", FALSE);
+    return strlar(flecha) == 2 && flecha[0] == '-' && flecha[1] == '>' ? TRUE : FALSE;
 }
 
 void PasarMayus(String &nombre) {
@@ -163,7 +163,7 @@ void PasarMayus(String &nombre) {
     while(nombre[i] != '\0'){
         int c = nombre[i];
         int num = c >= 97 && c <= 122 ? c - 32 : c;
-        nombre[i] = (char) c;
+        nombre[i] = (char) num;
 
         i++;
     }
@@ -173,8 +173,8 @@ boolean NombreAlfabetico(String nom) {
     boolean alph = TRUE;
 
     int i = 0;
-    while(nombre[i] != '\0' && alph == TRUE){
-        int c = nombre[i];
+    while(nom[i] != '\0' && alph == TRUE){
+        int c = nom[i];
         alph = (c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? TRUE : FALSE;
         i++;
     }
