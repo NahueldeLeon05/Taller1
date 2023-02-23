@@ -85,12 +85,11 @@ Fecha TransformarFecha(String fecha) {
                 f.dia = n;
             } else if (pos == 1) {
                 f.mes = n;
-            } else {
-                f.anio = n;
             }
             LiberarString(aux);
-            pos++;
+            aux = new char[5];
 
+            pos++;
             j = 0;
         } else {
             aux[j] = fecha[idx];
@@ -99,6 +98,9 @@ Fecha TransformarFecha(String fecha) {
 
         idx++;
     }
+
+    f.anio = atoi(aux);
+    LiberarString(aux);
 
     return f;
 }
@@ -174,7 +176,7 @@ boolean ValidarFormato(String fecha) {
             int c = fecha[aux];
             r = c >= 48 && c <= 57 ? TRUE : FALSE;
         } else {
-            if (aux != 2 || aux != 5) {
+            if (aux != 2 && aux != 5) {
                 r = FALSE;
             }
         }
