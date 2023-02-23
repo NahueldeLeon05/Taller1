@@ -162,3 +162,26 @@ Fecha FechaDefecto() {
 
     return r;
 }
+
+boolean ValidarFormato(String fecha) {
+    boolean r = TRUE;
+    int aux = 0;
+    while (fecha[aux] != '\0' && r == TRUE) {
+        if (fecha[aux] != '/') {
+            int c = fecha[aux];
+            r = c >= 48 && c <= 57 ? TRUE : FALSE;
+        } else {
+            if (aux != 2 || aux != 5) {
+                r = FALSE;
+            }
+        }
+
+        aux++;
+    }
+
+    if (aux != 10) {
+        r = FALSE;
+    }
+
+    return r;
+}
