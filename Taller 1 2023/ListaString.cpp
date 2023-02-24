@@ -16,7 +16,7 @@ ListaString CmdEnLista(String s) {
     return root;
 }
 
-void AgregarAListaString(ListaString &root, String s) {
+void AgregarAListaString(ListaString &root, String s) { //Agrega palabra a ListaString
     ListaString node = new snode;
     strcrear(node->info);
     strcop(s, node->info);
@@ -30,5 +30,23 @@ void AgregarAListaString(ListaString &root, String s) {
             aux = aux->sig;
         }
         aux->sig = node;
+    }
+}
+
+void GuardarListaString(ListaString L, FILE * f){
+    while(L != NULL){
+        GuardarString(L->info, f);
+        L = L->sig;
+    }
+}
+
+void LeerListaString(ListaString &root, FILE * f){
+    String buffer;
+    root = NULL;
+    LeerString(buffer, f);
+
+    while (!feof(f)) {
+        AgregarAListaString(root, buffer);
+        LeerString(buffer, f);
     }
 }

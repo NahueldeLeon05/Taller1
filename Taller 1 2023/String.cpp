@@ -129,31 +129,6 @@ boolean streq(String s1, String s2, boolean ignoreCase){
     return iguales;
 }
 
-// Precondición: El archivo viene abierto para escritura.
-void GuardarString (String s, FILE * f){
-    int i=0;
-    while(s[i] != '\0'){
-        fwrite(&s[i], sizeof(char), 1, f);
-        i++;
-    }
-    fwrite(&s[i], sizeof(char), 1, f);
-}
-
-// Precondición: El archivo viene abierto para lectura, y el string debe venir creado.
-void LeerString (String &s, FILE * f){
-    strcrear(s);
-
-    String aux = new char[MAX];
-    int i=0;
-    fread(&aux[i], sizeof(char), 1, f);
-    while(aux[i]!='\0'){
-        i++;
-        fread(&aux[i], sizeof(char), 1, f);
-    }
-    strcop(aux, s);
-    LiberarString(aux);
-}
-
 boolean EsFlecha(String flecha) {
     return strlar(flecha) == 2 && flecha[0] == '-' && flecha[1] == '>' ? TRUE : FALSE;
 }
@@ -181,7 +156,7 @@ boolean NombreAlfabetico(String nom) {
 
     return alph;
 }
-
+//revisar solo espacios
 void PrimerPalabra(String &input, String &palabra) {
     Recortar(input);
 
@@ -200,7 +175,7 @@ void PrimerPalabra(String &input, String &palabra) {
     LiberarString(aux);
 }
 
-void Recortar(String &input) {
+void Recortar(String &input) { //Elimina los espacios que esten delante de la primer palabra.
     String aux = new char[strlar(input) + 1];
     int i = 0, j = 0;
     while (input[i] != '\0') {
@@ -211,14 +186,11 @@ void Recortar(String &input) {
         i++;
     }
     aux[j] = '\0';
-
-    LiberarString(input);
-    strcrear(input);
     strcop(aux, input);
     LiberarString(aux);
 }
 
-void Substr(String &input, int from) {
+void Substr(String &input, int from) { //Devuelve el string desde donde termina la primer palabra.
     String aux = new char[strlar(input) + 1];
     int j = 0;
     while (input[from] != '\0') {
@@ -235,3 +207,32 @@ void Substr(String &input, int from) {
 boolean StringVacio(String input) {
     return strlar(input) == 0 && input[0] == '\0' ? TRUE : FALSE;
 }
+
+void GuardarString(String s, FILE *f) {
+    int i = 0;
+    while (s[i] != '\0') {
+        fwrite(&s[i], sizeof(char), 1, f);
+        i++;
+    }
+    // escribo el '\0'
+    fwrite(&s[i], sizeof(char), 1, f);
+
+}
+
+void LeerString(String &s, FILE *f) {
+    int i = 0;
+    String aux;
+
+    aux = new char[MAX];
+    fread(&aux[i], sizeof(char), 1, f);
+
+    while (!feof(f) && (aux[i] != '\0')) {
+        i++;
+        fread(&aux[i], sizeof(char), 1, f);
+    }
+
+    strcop(aux, s);
+    delete[] aux;
+}
+
+

@@ -26,4 +26,12 @@ int contarElementosDeLista(ListaString ls);
 //Libera el espacio de memoria ocupado por la lista
 void liberarListaString(ListaString &ls);
 
+//Guarda lista en archivo
+//PRECONDICION: Archivo abierto en modo escritura
+void GuardarListaString(ListaString L, FILE * f);
+
+//Levanta lista desde archivo
+//PRECONDICION: Archivo abierto en modo lectura
+void LeerListaString(ListaString &root, FILE * f);
+
 #endif // LISTASTRING_H_INCLUDED

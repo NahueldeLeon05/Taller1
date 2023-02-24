@@ -12,6 +12,26 @@
 
 int main()
 {
+    String input;
+    scan(input);
+    ListaString lista = CmdEnLista(input);
+
+    FILE * f;
+    f = fopen ("comandos.txt","wb"); // Abre el archivo para escritura
+    GuardarListaString(lista,f);
+    fclose(f);
+
+    ListaString lista1;
+    f = fopen ("comandos.txt","rb"); // Abre el archivo para lectura
+    LeerListaString(lista1,f);
+    fclose(f);
+     while (lista1 != NULL) {
+        print(lista1->info);
+        printf("\r\n");
+        lista1 = lista1->sig;
+    }
+
+
     /*String s;
     while(true) {
         printf("Ingresa una fecha: \r\n");
@@ -30,8 +50,19 @@ int main()
 
         LiberarString(s);
     }*/
-    String input;
+   /* String input;
     scan(input);
+    FILE * f;
+    f = fopen ("comandos.txt","wb"); // Abre el archivo para lectura
+    GuardarString(input,f);
+    fclose(f);
+    LiberarString(input);
+    strcrear(input);
+    f = fopen ("comandos.txt","rb"); // Abre el archivo para lectura
+    LeerString(input,f);
+    fclose(f);
+    print(input);
+
     ListaString lista = CmdEnLista(input);
     while (lista != NULL) {
         print(lista->info);
@@ -42,7 +73,7 @@ int main()
         lista = lista->sig;
     }
 
-    /*String cmd;
+    String cmd;
     AgarrarParam(lista, 0, cmd);
     ProcesarComando(cmd);*/
     return 0;
