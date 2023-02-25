@@ -17,9 +17,6 @@ void AgregarAListaString(ListaString &root, String s);
 //Agarra un parametro de la lista de string
 void AgarrarParam(ListaString ls, int pos, String& str);
 
-//Valida que sea un parámetro valido
-boolean ValidarComando(String s);
-
 //Cuenta elemetos de la lista de strings
 int contarElementosDeLista(ListaString ls);
 
