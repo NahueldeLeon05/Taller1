@@ -57,6 +57,7 @@ void LiberarListaString(ListaString &root) {
             LiberarListaString(root->sig);
         }
         LiberarString(root->info);
+        delete root;
         root = NULL;
     }
 }
