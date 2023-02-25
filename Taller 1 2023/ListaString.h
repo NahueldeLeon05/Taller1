@@ -24,7 +24,7 @@ boolean ValidarComando(String s);
 int contarElementosDeLista(ListaString ls);
 
 //Libera el espacio de memoria ocupado por la lista
-void liberarListaString(ListaString &ls);
+void LiberarListaString(ListaString &ls);
 
 //Guarda lista en archivo
 //PRECONDICION: Archivo abierto en modo escritura

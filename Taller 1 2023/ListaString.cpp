@@ -50,3 +50,13 @@ void LeerListaString(ListaString &root, FILE * f){
         LeerString(buffer, f);
     }
 }
+
+void LiberarListaString(ListaString &root) {
+    if (root != NULL) {
+        if (root->sig != NULL) {
+            LiberarListaString(root->sig);
+        }
+        LiberarString(root->info);
+        root = NULL;
+    }
+}
