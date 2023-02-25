@@ -75,3 +75,14 @@ int IndiceEnLista(ListaString root, String s) {
 
     return found == TRUE ? i : -1;
 }
+
+void ImprimirLista(ListaString r) {
+    int j = 0;
+    while (r != NULL) {
+        printf("%d> ", j);
+        print(r->info);
+        printf("\r\n");
+        r = r->sig;
+        j++;
+    }
+}
