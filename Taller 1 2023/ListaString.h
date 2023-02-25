@@ -33,4 +33,6 @@ void LeerListaString(ListaString &root, FILE * f);
 
 int IndiceEnLista(ListaString root, String s);
 
+void ImprimirLista(ListaString r);
+
 #endif // LISTASTRING_H_INCLUDED
