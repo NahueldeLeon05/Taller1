@@ -2,22 +2,6 @@
 #include "Boolean.h"
 #include "Fecha.h"
 
-int ProcesarComando(ListaString comandos) {
-    String cmd;
-    int id = -1;
-    while (id == -1) {
-        printf("Ingrese comando: ");
-        scan(cmd);
-        id = IndiceEnLista(comandos, cmd);
-        if (id == -1) {
-            printf("El comando no existe.\r\n");
-        }
-
-        LiberarString(cmd);
-    }
-
-    return id;
-}
 
 int main()
 {
@@ -40,9 +24,32 @@ int main()
         lista1 = lista1->sig;
     }*/
 
-    int i = ProcesarComando(comandos);
-    switch(i) {
+    ListaString params;
+    int id = -1;
+    while (id == -1) {
+        String input;
+        printf("Ingrese comando: ");
+        scan(input);
+
+        params = CmdEnLista(input);
+
+        String cmd;
+        strcrear(cmd);
+        AgarrarParam(params, 0, cmd);
+
+        id = IndiceEnLista(comandos, cmd);
+        if (id == -1) {
+            printf("El comando no existe.\r\n");
+            LiberarString(cmd);
+            LiberarListaString(params);
+        }
+    }
+
+    switch(id) {
         case 0:
+            String nom;
+            AgarrarParam(params, 1, nom);
+            print(nom);
             break;
         case 1:
             break;

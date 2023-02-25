@@ -77,6 +77,21 @@ int IndiceEnLista(ListaString root, String s) {
     return found == TRUE ? i : -1;
 }
 
+// Guarda en un String el valor de la lista.
+// PRECONDICION: pos <= ContarElementosDeLista.
+void AgarrarParam(ListaString ls, int pos, String &str) {
+    int j = 0;
+    while (ls != NULL && j != pos) {
+        ls = ls->sig;
+        j++;
+    }
+
+    if (j == pos) {
+        strcrear(str);
+        strcop(ls->info, str);
+    }
+}
+
 void ImprimirLista(ListaString r) {
     int j = 0;
     while (r != NULL) {
