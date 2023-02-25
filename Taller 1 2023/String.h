@@ -2,7 +2,7 @@
 #define STRING_H_INCLUDED
 #include <stdio.h>
 #include "Boolean.h"
-const int MAX = 80;
+const int MAX = 200;
 typedef char * String;
 
 void strcrear(String &s);

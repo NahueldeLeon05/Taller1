@@ -231,6 +231,7 @@ void LeerString(String &s, FILE *f) {
         fread(&aux[i], sizeof(char), 1, f);
     }
 
+    strcrear(s);
     strcop(aux, s);
     delete[] aux;
 }
