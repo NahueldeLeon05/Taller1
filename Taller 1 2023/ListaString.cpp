@@ -60,3 +60,18 @@ void LiberarListaString(ListaString &root) {
         root = NULL;
     }
 }
+
+int IndiceEnLista(ListaString root, String s) {
+    int i = 0;
+    boolean found = FALSE;
+    while (root != NULL && found == FALSE) {
+        if (streq(s, root->info, TRUE)) {
+            found = TRUE;
+        } else {
+            root = root->sig;
+            i++;
+        }
+    }
+
+    return found == TRUE ? i : -1;
+}

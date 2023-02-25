@@ -34,4 +34,6 @@ void GuardarListaString(ListaString L, FILE * f);
 //PRECONDICION: Archivo abierto en modo lectura
 void LeerListaString(ListaString &root, FILE * f);
 
+int IndiceEnLista(ListaString root, String s);
+
 #endif // LISTASTRING_H_INCLUDED

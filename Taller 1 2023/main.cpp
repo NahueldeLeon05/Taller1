@@ -2,35 +2,70 @@
 #include "Boolean.h"
 #include "Fecha.h"
 
-/*void ProcesarComando(String cmd) {
-    if (streq(cmd, "inicio", FALSE) == TRUE) {
-        printf("Bien");
-    } else {
-        printf("Comando incorrecto");
+int ProcesarComando(ListaString comandos) {
+    String cmd;
+    int id = -1;
+    while (id == -1) {
+        printf("Ingrese comando: ");
+        scan(cmd);
+        id = IndiceEnLista(comandos, cmd);
+        if (id == -1) {
+            printf("El comando no existe.\r\n");
+        }
+
+        LiberarString(cmd);
     }
-}*/
+
+    return id;
+}
 
 int main()
 {
-    String input;
+    FILE * f;
+    /*String input;
     scan(input);
     ListaString lista = CmdEnLista(input);
 
-    FILE * f;
     f = fopen ("comandos.txt","wb"); // Abre el archivo para escritura
     GuardarListaString(lista,f);
-    fclose(f);
+    fclose(f);*/
 
-    ListaString lista1;
+    ListaString comandos;
     f = fopen ("comandos.txt","rb"); // Abre el archivo para lectura
-    LeerListaString(lista1,f);
+    LeerListaString(comandos,f);
     fclose(f);
-     while (lista1 != NULL) {
+    /*while (lista1 != NULL) {
         print(lista1->info);
         printf("\r\n");
         lista1 = lista1->sig;
-    }
+    }*/
 
+    int i = ProcesarComando(comandos);
+    switch(i) {
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            break;
+        case 10:
+            printf("Salir.");
+            break;
+    }
 
     /*String s;
     while(true) {
