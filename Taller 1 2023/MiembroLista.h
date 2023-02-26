@@ -20,7 +20,35 @@ MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
 //Selectora: obtiene el nombre del miembro
 void ObtenerNombreMiembroLista(MiembroLista mL, String &nom);
 
+//Selectora obtiene la fecha de nacimiento.
+void ObtenerFechaNacMiembroLista(MiembroLista mL, String &fechaNac);
 
+//Selectora obtiene el nombre del progenitor
+void ObtenerProgenitorMiembroLista(MiembroLista mL, String &progenitor);
+
+//Selectora obtiene si es monarca actual
+boolean ObtenerMonarcaActual(MiembroLista mL);
+
+//Selectora obtiene si fue monarca
+boolean ObtenerFueMonarca(MiembroLista mL);
+
+//Selectora obtiene si es aspirante
+boolean ObtenerAspirante(MiembroLista mL);
+
+//Selectora obtiene si abdico
+boolean ObtenerAbdico(MiembroLista mL);
+
+//Selectora obtiene si fallecio
+boolean ObtenerFallecio(MiembroLista mL);
+
+//Selectora obtener fecha de ascencion
+Fecha ObtenerFechaAscencion(MiembroLista mL);
+
+//Selectora obtener fecha de abdicacion
+Fecha ObtenerFechaAbdicacion(MiembroLista mL);
+
+//Selectora obtener fecha de Fallecimiento
+Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 
 //Devuelve si el miembro de la lista esta vivo o no
 boolean Vivo(MiembroLista m);

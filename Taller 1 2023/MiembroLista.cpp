@@ -21,6 +21,61 @@ MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
     return mL;
 }
 
+//Selectora: obtiene el nombre del miembro
+void ObtenerNombreMiembroLista(MiembroLista mL, String &nom){
+    ObtenerNombreMiembroABB(mL.m, nom);
+}
+
+//Selectora obtiene la fecha de nacimiento.
+void ObtenerFechaNacMiembroLista(MiembroLista mL, String &fechaNac){
+    ObtenerFechaNacimientoMiembroABB(mL.m, fechaNac);
+}
+
+//Selectora obtiene el nombre del progenitor
+void ObtenerProgenitorMiembroLista(MiembroLista mL, String &progenitor){
+    ObtenerNombreProgenitorMiembroABB(mL.m, progenitor);
+}
+
+//Selectora obtiene si es monarca actual
+boolean ObtenerMonarcaActual(MiembroLista mL){
+    return mL.monarcaActual;
+}
+
+//Selectora obtiene si fue monarca
+boolean ObtenerFueMonarca(MiembroLista mL){
+    return mL.fueMonarca;
+}
+
+//Selectora obtiene si es aspirante
+boolean ObtenerAspirante(MiembroLista mL){
+    return mL.aspirante;
+}
+
+//Selectora obtiene si abdico
+boolean ObtenerAbdico(MiembroLista mL){
+    return mL.abdico;
+}
+
+//Selectora obtiene si fallecio
+Boolean ObtenerFallecio(MiembroLista mL){
+    return mL.fallecio;
+}
+
+//Selectora obtener fecha de ascencion
+Fecha ObtenerFechaAscencion(MiembroLista mL){
+    return mL.ascension;
+}
+
+//Selectora obtener fecha de abdicacion
+Fecha ObtenerFechaAbdicacion(MiembroLista mL){
+    return mL.abdicacion;
+}
+
+//Selectora obtener fecha de Fallecimiento
+Fecha ObtenerFechaFallecimiento(MiembroLista mL){
+    return mL.fallecimiento;
+}
+
 //Devuelve si el miembro de la lista esta vivo o no
 boolean Vivo(MiembroLista m){
 }
