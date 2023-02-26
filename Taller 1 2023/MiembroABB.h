@@ -1,5 +1,6 @@
 #ifndef MIEMBROABB_H_INCLUDED
 #define MIEMBROABB_H_INCLUDED
+
 #include "String.h"
 #include "Fecha.h"
 
@@ -10,7 +11,7 @@ typedef struct {
 } MiembroABB;
 
 //Crea nuevo miembro
-MiembroABB crearMiembroNuevo(String nom, String padre, Fecha nacimiento);
+MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento);
 
 //Despliega por pantalla el miembro del ABB
 void MostrarMiembroABB(MiembroABB m);
