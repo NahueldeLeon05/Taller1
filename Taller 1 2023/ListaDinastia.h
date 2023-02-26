@@ -7,7 +7,7 @@ typedef struct nodoH {
 	nodoH *sig;
 } nodoMiembro;
 
-typedef nodoMiembro* ListaFamilia;
+typedef nodoMiembro* ListaDinastia;
 
 //Inicializa lista de la dinastia
 void inicializarLista(ListaDinastia &ls);
