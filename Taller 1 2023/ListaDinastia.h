@@ -1,5 +1,6 @@
 #ifndef LISTADINASTIA_H_INCLUDED
 #define LISTADINASTIA_H_INCLUDED
+
 #include "MiembroLista.h"
 
 typedef struct nodoH {
@@ -10,19 +11,19 @@ typedef struct nodoH {
 typedef nodoMiembro* ListaDinastia;
 
 //Inicializa lista de la dinastia
-void inicializarLista(ListaDinastia &ls);
+void InicializarLista(ListaDinastia &ls);
 
 //Agrega miembro a la lista de dinastia
-void agregarMiembroALista(ListaDinastia &ls, miembroLista ml);
+void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml);
 
 //Verifica que la lista tenga elementos
-boolean listaTieneElementos(ListaDinastia lf);
+boolean ListaTieneElementos(ListaDinastia lf);
 
 //Busca si existe un nombre en la lista
 boolean BuscarNombreEnLista(ListaDinastia l, String nom);
 
 //Obtiene miembro de la lista mediante el nombre
-miembroLista ObtenerMiembro(ListaDinastia l, String nom);
+MiembroLista ObtenerMiembro(ListaDinastia l, String nom);
 
 //Cargar fallecimiento de un miembro de la lista
 void CargarFallecimiento(ListaDinastia &l, String nom, Fecha f);

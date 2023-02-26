@@ -16,4 +16,10 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento);
 //Despliega por pantalla el miembro del ABB
 void MostrarMiembroABB(MiembroABB m);
 
+void ObtenerNombreMiembroABB(MiembroABB m, String &nom);
+
+Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m);
+
+void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom);
+
 #endif // MIEMBROABB_H_INCLUDED

@@ -9,3 +9,26 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento) {
 
     return m;
 }
+
+
+void MostrarMiembroABB(MiembroABB m) {
+    print(m.nombre);
+    printf(" hijo/a de ");
+    print(m.nombreProgenitor);
+    printf(" nació el ");
+    MostrarFecha(m.fNac);
+}
+
+void ObtenerNombreMiembroABB(MiembroABB m, String &nom) {
+    strcrear(nom);
+    strcop(m.nombre, nom);
+}
+
+Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m) {
+    return m.fNac;
+}
+
+void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom) {
+    strcrear(nom);
+    strcop(m.nombreProgenitor, nom);
+}
