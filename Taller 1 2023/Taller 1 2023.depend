@@ -111,19 +111,19 @@
 	"String.h"
 	"boolean.h"
 
-1677274478 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\string.h
+1677342433 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\string.h
 	<stdio.h>
 	"Boolean.h"
 
 1677253124 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listadinastia.cpp
 
-1677276322 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.cpp
+1677345526 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.cpp
 	"ListaString.h"
 
-1677276056 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.h
+1677345526 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.h
 	"String.h"
 
-1677276606 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\main.cpp
+1677345526 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\main.cpp
 	"ListaString.h"
 	"Boolean.h"
 	"Fecha.h"
