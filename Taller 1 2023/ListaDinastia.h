@@ -29,7 +29,7 @@ MiembroLista ObtenerMiembro(ListaDinastia l, String nom);
 void CargarFallecimiento(ListaDinastia &l, String nom, Fecha f);
 
 //Pone en true el atributo "EsRey" de un miembro de la lista mediante el nombre
-void CargarRey(ListaDinastia& l, String nom boolean b);
+void CargarRey(ListaDinastia& l, String nom, boolean b);
 
 //Carga la fecha de ascensión de un miembro de la lista mediante el nombre
 void CargarFecha(ListaDinastia &l, String nom, Fecha f);

@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
 1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.cpp
 
-1677109839 source:c:\users\usuario\documents\github\taller1\taller 1 2023\boolean.cpp
+1677114567 source:c:\users\usuario\documents\github\taller1\taller 1 2023\boolean.cpp
 	"boolean.h"
 	<stdio.h>
 
@@ -21,22 +21,25 @@
 	"String.h"
 	"Fecha.h"
 
-1677110786 c:\users\usuario\documents\github\taller1\taller 1 2023\string.h
+1677447663 c:\users\usuario\documents\github\taller1\taller 1 2023\string.h
+	<stdio.h>
 	"Boolean.h"
 
 1677109839 c:\users\usuario\documents\github\taller1\taller 1 2023\boolean.h
 	<stdio.h>
 
-1677108995 c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.h
+1677114568 c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.h
 	"String.h"
 	"boolean.h"
 
 1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
 
-1677108877 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
+1677269380 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
 	<stdio.h>
+	<cstdlib>
 	"Fecha.h"
 	"boolean.h"
+	"String.h"
 
 1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.cpp
 

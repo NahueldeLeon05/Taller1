@@ -41,7 +41,7 @@ boolean BuscarNombreEnLista(ListaDinastia ls, String nom) {
     return found;
 }
 
-MiembroLista ObtenerMiembro(ListaDinastia l, String nom) {
+MiembroLista ObtenerMiembro(ListaDinastia ls, String nom) {
     boolean found = FALSE;
     while (ls != NULL && found == FALSE) {
         MiembroLista inf = ls->info;
@@ -56,7 +56,7 @@ MiembroLista ObtenerMiembro(ListaDinastia l, String nom) {
 }
 
 void CargarFallecimiento(ListaDinastia &l, String nom, Fecha f) {
-    MiembroLista miembro = l.info;
+    MiembroLista miembro = l->info;
     miembro.fallecimiento = f;
     miembro.fallecio = TRUE;
 }

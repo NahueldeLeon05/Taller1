@@ -12,28 +12,33 @@ typedef struct {
                     Fecha ascension;
                     Fecha abdicacion;
                     Fecha fallecimiento;
-				}miembroLista;
+                }MiembroLista;
 
 //Crea miembro de Lista
-miembroLista crearMiembroLista(miembroABB m, boolean monarcaActual, boolean aspirante);
+MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante);
+
+//Selectora: obtiene el nombre del miembro
+void ObtenerNombreMiembroLista(MiembroLista mL, String &nom);
+
+
 
 //Devuelve si el miembro de la lista esta vivo o no
-boolean Vivo(miembroLista m);
+boolean Vivo(MiembroLista m);
 
 //Devuelve si el miembro de la lista es rey o no
-boolean EsRey(miembroLista m);
+boolean EsRey(MiembroLista m);
 
 //Devuelve si el miembro de la lista esta muerto o no
-boolean Muerto(miembroLista m);
+boolean Muerto(MiembroLista m);
 
 //Devuelve si el miembro de la lista abdicó o no
-boolean Abdico(miembroLista m);
+boolean Abdico(MiembroLista m);
 
 //Devuelve si el miembro de la lista es aspirante o no
-boolean esAspirante(miembroLista m);
+boolean esAspirante(MiembroLista m);
 
 //Devuelve si el miembro de la lista no es o fue monarca
-boolean noEsOFueMonarca(miembroLista m);
+boolean noEsOFueMonarca(MiembroLista m);
 
 //Devuelve si el miembro de la lista es o no primogenito
 boolean Primogenito(MiembroLista m);

@@ -1,11 +1,11 @@
 #include "ListaString.h"
 #include "Boolean.h"
 #include "Fecha.h"
-
+#include "MiembroLista.h"
 
 int main()
 {
-    FILE * f;
+      //FILE * f;
     /*String input;
     scan(input);
     ListaString lista = CmdEnLista(input);
@@ -14,7 +14,7 @@ int main()
     GuardarListaString(lista,f);
     fclose(f);*/
 
-    ListaString comandos;
+   /* ListaString comandos;
     f = fopen ("comandos.txt","rb"); // Abre el archivo para lectura
     LeerListaString(comandos,f);
     fclose(f);
@@ -24,7 +24,7 @@ int main()
         lista1 = lista1->sig;
     }*/
 
-    ListaString params;
+   /* ListaString params;
     int id = -1;
     while (id == -1) {
         String input;
@@ -123,5 +123,17 @@ int main()
     String cmd;
     AgarrarParam(lista, 0, cmd);
     ProcesarComando(cmd);*/
+
+    String nombre, padre;
+    printf("Ingrese nombre: ");
+    scan(nombre);
+    printf("Ingrese nombre del padre: ");
+    scan(padre);
+    Fecha f;
+    CargarFecha(f, 17, 12, 2001);
+    MiembroABB m = CrearMiembroNuevo(nombre, padre, f);
+    MiembroLista mL = crearMiembroLista(m, FALSE, TRUE);
+    MostrarMiembroLista(mL);
+
     return 0;
 }
