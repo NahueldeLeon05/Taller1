@@ -102,3 +102,13 @@ void ImprimirLista(ListaString r) {
         j++;
     }
 }
+
+int ContarElementosDeLista(ListaString root) {
+    int c = 0;
+    while (root != NULL) {
+        root = root->sig;
+        c++;
+    }
+
+    return c;
+}

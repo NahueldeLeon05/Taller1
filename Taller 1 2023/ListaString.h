@@ -18,7 +18,7 @@ void AgregarAListaString(ListaString &root, String s);
 void AgarrarParam(ListaString ls, int pos, String& str);
 
 //Cuenta elemetos de la lista de strings
-int contarElementosDeLista(ListaString ls);
+int ContarElementosDeLista(ListaString root);
 
 //Libera el espacio de memoria ocupado por la lista
 void LiberarListaString(ListaString &ls);

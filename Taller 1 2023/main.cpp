@@ -45,11 +45,17 @@ int main()
         }
     }
 
+    for (int i = 0; i < ContarElementosDeLista(params); i++) {
+        String p;
+        AgarrarParam(params, i, p);
+        printf("%d> ", i);
+        print(p);
+        printf("\r\n");
+        LiberarString(p);
+    }
+
     switch(id) {
         case 0:
-            String nom;
-            AgarrarParam(params, 1, nom);
-            print(nom);
             break;
         case 1:
             break;
@@ -70,7 +76,6 @@ int main()
         case 9:
             break;
         case 10:
-            printf("Salir.");
             break;
     }
 
