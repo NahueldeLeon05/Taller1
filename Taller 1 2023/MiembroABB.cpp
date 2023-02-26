@@ -18,3 +18,17 @@ void MostrarMiembroABB(MiembroABB m) {
     printf(" nació el ");
     MostrarFecha(m.fNac);
 }
+
+void ObtenerNombreMiembroABB(MiembroABB m, String &nom) {
+    strcrear(nom);
+    strcop(m.nombre, nom);
+}
+
+Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m) {
+    return m.fNac;
+}
+
+void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom) {
+    strcrear(nom);
+    strcop(m.nombreProgenitor, nom);
+}
