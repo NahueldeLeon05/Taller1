@@ -22,4 +22,10 @@ Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m);
 
 void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom);
 
+void GuardarMiembroABB(FILE* f, MiembroABB m);
+
+void LevantarMiembroABB(FILE* f, MiembroABB &m);
+
+void LiberarMiembroABB(MiembroABB &m);
+
 #endif // MIEMBROABB_H_INCLUDED

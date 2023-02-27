@@ -11,7 +11,6 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento) {
     return m;
 }
 
-
 void MostrarMiembroABB(MiembroABB m) {
     print(m.nombre);
     printf(" hijo/a de ");
@@ -32,4 +31,21 @@ Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m) {
 void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom) {
     strcrear(nom);
     strcop(m.nombreProgenitor, nom);
+}
+
+void GuardarMiembroABB(FILE* f, MiembroABB m) {
+    GuardarString(m.nombre, f);
+    GuardarFecha(m.fNac, f);
+    GuardarString(m.nombreProgenitor, f);
+}
+
+void LevantarMiembroABB(FILE* f, MiembroABB &m) {
+    LeerString(m.nombre, f);
+    LeerFecha(m.fNac, f);
+    LeerString(m.nombreProgenitor, f);
+}
+
+void LiberarMiembroABB(MiembroABB &m) {
+    LiberarString(m.nombre);
+    LiberarString(m.nombreProgenitor);
 }
