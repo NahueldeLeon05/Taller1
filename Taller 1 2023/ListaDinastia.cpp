@@ -27,36 +27,43 @@ boolean ListaTieneElementos(ListaDinastia lf) {
     return lf == NULL ? TRUE : FALSE;
 }
 
-boolean BuscarNombreEnLista(ListaDinastia ls, String nom) {
+MiembroLista* ObtenerMiembro(ListaDinastia ls, String nom) {
     boolean found = FALSE;
     while (ls != NULL && found == FALSE) {
         MiembroLista inf = ls->info;
-        if (streq((ls->info).nombre, ml.m.nombreProgenitor)) {
+
+        String aux;
+        ObtenerNombreMiembroLista(inf, aux);
+
+        if (streq(nom, aux)) {
             found = TRUE;
         }
 
         ls = ls->sig;
     }
 
-    return found;
+    return found == TRUE ? &ls->info : NULL;
 }
 
-MiembroLista ObtenerMiembro(ListaDinastia ls, String nom) {
-    boolean found = FALSE;
-    while (ls != NULL && found == FALSE) {
-        MiembroLista inf = ls->info;
-        if (streq((ls->info).nombre, ml.m.nombreProgenitor)) {
-            found = TRUE;
-        }
-
+void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
+    while (ls != NULL) {
+        GuardarMiembroLista(f, ls->info);
         ls = ls->sig;
     }
-
-    return ls->info;
 }
 
-void CargarFallecimiento(ListaDinastia &l, String nom, Fecha f) {
-    MiembroLista miembro = l->info;
-    miembro.fallecimiento = f;
-    miembro.fallecio = TRUE;
+void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
+    ListaDinastia aux = ls;
+    while (aux != NULL) {
+        CargarMiembroLista(f, aux->info);
+        aux = aux->sig;
+    }
+}
+
+void LiberarListaDinastia(ListaDinastia &ls) {
+    if (ls != NULL) {
+        LiberarListaDinastia(ls->sig);
+        LiberarMiembroLista(ls->info);
+        delete ls;
+    }
 }
