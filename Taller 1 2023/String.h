@@ -49,4 +49,6 @@ void Substr(String &input, int from);
 
 boolean StringVacio(String input);
 
+boolean ValidarFormato(String fecha);
+
 #endif // STRING_H_INCLUDED

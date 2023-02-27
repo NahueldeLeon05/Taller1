@@ -5,53 +5,14 @@
 #include "boolean.h"
 #include "String.h"
 
-// Cargar la informacion de la fecha por teclado.
-void CargarFecha(Fecha &f, Fecha minima){
-    boolean valida = FALSE;
-
-    while (valida == FALSE) {
-        printf("Día:\r\n");
-        printf(">> ");
-        scanf("%d", &f.dia);
-
-        printf("Mes:\r\n");
-        printf(">> ");
-        scanf("%d", &f.mes);
-
-        printf("Año:\r\n");
-        printf(">> ");
-        scanf("%d", &f.anio);
-
-        if (ValidarFecha(f) == TRUE) {
-            if (FechaMayorIgual(f, minima) == TRUE) {
-                valida = TRUE;
-            } else {
-                printf("\r\n");
-                printf("[E]: La fecha debe ser mayor a ");
-                MostrarFecha(minima);
-                printf("\r\n");
-                printf("\r\n");
-            }
-        } else {
-            printf("\r\n");
-            printf("[E]: La fecha ingresada no es válida\r\n");
-            printf("\r\n");
-        }
-    }
-}
-
 // Cargar la informacion de la fecha con los datos ingresados.
-void CargarFecha(Fecha &f, int anio, int mes, int dia) {
+Fecha CargarFecha(int anio, int mes, int dia) {
+    Fecha f;
     f.anio = anio;
     f.mes = mes;
     f.dia = dia;
-}
 
-// Devolver la fecha minima aceptada por el programa.
-Fecha CargarFechaMinima() {
-    Fecha min;
-    CargarFecha(min, 1970, 1, 1);
-    return min;
+    return f;
 }
 
 // Mostrar en pantalla la fecha ingresada.
@@ -164,29 +125,6 @@ Fecha FechaDefecto() {
     r.anio = 0;
     r.mes = 0;
     r.dia = 0;
-
-    return r;
-}
-
-boolean ValidarFormato(String fecha) {
-    boolean r = TRUE;
-    int aux = 0;
-    while (fecha[aux] != '\0' && r == TRUE) {
-        if (fecha[aux] != '/') {
-            int c = fecha[aux];
-            r = c >= 48 && c <= 57 ? TRUE : FALSE;
-        } else {
-            if (aux != 2 && aux != 5) {
-                r = FALSE;
-            }
-        }
-
-        aux++;
-    }
-
-    if (aux != 10) {
-        r = FALSE;
-    }
 
     return r;
 }

@@ -9,14 +9,8 @@ typedef struct {
     int anio;
 } Fecha;
 
-// Cargar la informacion de la fecha por teclado.
-void CargarFecha(Fecha &f, Fecha minima);
-
 // Cargar la informacion de la fecha con los datos ingresados.
-void CargarFecha(Fecha &f, int anio, int mes, int dia);
-
-// Devolver la fecha minima aceptada por el programa.
-Fecha CargarFechaMinima();
+Fecha CargarFecha(int anio, int mes, int dia);
 
 // Mostrar en pantalla la fecha ingresada.
 void MostrarFecha(Fecha f);
@@ -47,9 +41,6 @@ void GuardarFecha(Fecha F, FILE* f);
 // Cargar la información de la fecha desde un archivo.
 // Precondicion: EL archivo debe venir abierto para lectura.
 void LeerFecha(Fecha &F, FILE* f);
-
-//Valida formato de fecha
-boolean ValidarFormato(String fecha);
 
 //Trasforma string a fecha
 Fecha TransformarFecha(String input);
