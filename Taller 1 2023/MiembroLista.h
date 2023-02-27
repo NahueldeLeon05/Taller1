@@ -80,4 +80,10 @@ void MostrarMiembroLista(MiembroLista ml);
 //Muestra fecha de inicio y fin del reinado del miembro
 void mostrarInicioFin(MiembroLista mL);
 
+void GuardarMiembroLista(FILE* f, MiembroLista ml);
+
+void CargarMiembroLista(FILE* f, MiembroLista &ml);
+
+void LiberarMiembroLista(MiembroLista &ml);
+
 #endif // MIEMBROLISTA_H_INCLUDED
