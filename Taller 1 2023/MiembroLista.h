@@ -3,28 +3,48 @@
 #include "MiembroABB.h"
 
 typedef struct {
-                    MiembroABB m;
-                    boolean monarcaActual;
-                    boolean fueMonarca;
-                    boolean aspirante;
-                    boolean abdico;
-                    boolean fallecio;
-                    Fecha ascension;
-                    Fecha abdicacion;
-                    Fecha fallecimiento;
-                }MiembroLista;
+    MiembroABB m;
+    boolean monarcaActual;
+    boolean fueMonarca;
+    boolean aspirante;
+    boolean abdico;
+    boolean fallecio;
+    Fecha ascension;
+    Fecha abdicacion;
+    Fecha fallecimiento;
+}   MiembroLista;
 
 //Crea miembro de Lista
-MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante);
+MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante);
 
-//Selectora: obtiene el nombre del miembro
-void ObtenerNombreMiembroLista(MiembroLista mL, String &nom);
+//Despliega el miembro de la lista
+void MostrarMiembroLista(MiembroLista ml);
 
-//Selectora obtiene la fecha de nacimiento.
-void ObtenerFechaNacMiembroLista(MiembroLista mL, String &fechaNac);
+//Devuelve si el miembro de la lista es rey o no
+boolean EsRey(MiembroLista m);
 
-//Selectora obtiene el nombre del progenitor
-void ObtenerProgenitorMiembroLista(MiembroLista mL, String &progenitor);
+//Devuelve si el miembro de la lista esta muerto o no
+boolean Muerto(MiembroLista m);
+
+//Devuelve si el miembro de la lista abdicó o no
+boolean Abdico(MiembroLista m);
+
+//Devuelve si el miembro de la lista es aspirante o no
+boolean EsAspirante(MiembroLista m);
+
+//Devuelve si el miembro de la lista no es o fue monarca
+boolean NoEsOFueMonarca(MiembroLista m);
+
+//Devuelve si el miembro de la lista es o no primogenito
+boolean Primogenito(MiembroLista m);
+
+//Devuelve si la fecha ascensión es 0/0/0
+boolean fechaVacia(MiembroLista m, Fecha f);
+
+//Muestra fecha de inicio y fin del reinado del miembro
+void MostrarInicioFin(MiembroLista mL);
+
+MiembroABB ObtenerMiembroABB(MiembroLista ml);
 
 //Selectora obtiene si es monarca actual
 boolean ObtenerMonarcaActual(MiembroLista mL);
@@ -32,14 +52,14 @@ boolean ObtenerMonarcaActual(MiembroLista mL);
 //Selectora obtiene si fue monarca
 boolean ObtenerFueMonarca(MiembroLista mL);
 
-//Selectora obtiene si es aspirante
-boolean ObtenerAspirante(MiembroLista mL);
-
 //Selectora obtiene si abdico
 boolean ObtenerAbdico(MiembroLista mL);
 
 //Selectora obtiene si fallecio
 boolean ObtenerFallecio(MiembroLista mL);
+
+//Selectora obtiene si es aspirante
+boolean ObtenerAspirante(MiembroLista mL);
 
 //Selectora obtener fecha de ascencion
 Fecha ObtenerFechaAscencion(MiembroLista mL);
@@ -52,33 +72,6 @@ Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 
 //Devuelve si el miembro de la lista esta vivo o no
 boolean Vivo(MiembroLista m);
-
-//Devuelve si el miembro de la lista es rey o no
-boolean EsRey(MiembroLista m);
-
-//Devuelve si el miembro de la lista esta muerto o no
-boolean Muerto(MiembroLista m);
-
-//Devuelve si el miembro de la lista abdicó o no
-boolean Abdico(MiembroLista m);
-
-//Devuelve si el miembro de la lista es aspirante o no
-boolean esAspirante(MiembroLista m);
-
-//Devuelve si el miembro de la lista no es o fue monarca
-boolean noEsOFueMonarca(MiembroLista m);
-
-//Devuelve si el miembro de la lista es o no primogenito
-boolean Primogenito(MiembroLista m);
-
-//Devuelve si la fecha ascensión es 0/0/0
-boolean fechaVacia(MiembroLista m, Fecha f);
-
-//Despliega el miembro de la lista
-void MostrarMiembroLista(MiembroLista ml);
-
-//Muestra fecha de inicio y fin del reinado del miembro
-void mostrarInicioFin(MiembroLista mL);
 
 void GuardarMiembroLista(FILE* f, MiembroLista ml);
 

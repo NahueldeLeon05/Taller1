@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 //Crea miembro de Lista
-MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante){
+MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante){
     MiembroLista mL;
     String nom, nomProg;
     Fecha f = ObtenerFechaNacimientoMiembroABB(m);
@@ -20,6 +20,7 @@ MiembroLista crearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
     mL.fallecimiento = FechaDefecto();
     return mL;
 }
+
 //Despliega el miembro de la lista
 void MostrarMiembroLista(MiembroLista ml){
     MostrarMiembroABB(ml.m);
@@ -40,24 +41,30 @@ void MostrarMiembroLista(MiembroLista ml){
     printf("Fecha de Fallecimiento: ");
     MostrarFecha(mL.fallecimiento);
 }
+
 boolean EsRey(MiembroLista m){
     return m.monarcaActual;
 }
+
 //Devuelve si el miembro de la lista esta muerto o no
 boolean Muerto(MiembroLista m){
     return m.fallecio;
 }
+
 //Devuelve si el miembro de la lista abdic� o no
 boolean Abdico(MiembroLista m){
     return m.abdico;
 }
+
 //Devuelve si el miembro de la lista es aspirante o no
-boolean esAspirante(MiembroLista m){
+boolean EsAspirante(MiembroLista m){
     return m.aspirante;
 }
-boolean noFueMonarca(MiembroLista m){
+
+boolean NoFueMonarca(MiembroLista m){
     return m.fueMonarca;
 }
+
 //Devuelve si el miembro de la lista es o no primogenito
 boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR
     bool es = false;
@@ -70,33 +77,36 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR
     }
     return es;
 }
+
 //Devuelve si la fecha ascensi�n es 0/0/0
 boolean fechaVacia(MiembroLista m){
     return m.ascension.dia == 0 && m.ascension.mes == 0 && m.ascension.anio == 0 ? TRUE : FALSE;
 }
+
 //Muestra fecha de inicio y fin del reinado del miembro
-void mostrarInicioFin(MiembroLista mL){
+void MostrarInicioFin(MiembroLista mL){
+    MiembroABB miembroAbb = ml.m;
+
+    String nombre;
+    ObtenerNombreMiembroABB(miembroAbb, nom);
+
+    print(nombre);
+    printf(" desde el ");
+    MostrarFecha(mL.ascension);
+
     if (mL.fallecio){
-        print("/r/n%i",mL.m.nombre" desde el , %i" mL.ascension " hasta el , %i" mL.abdico "(fallecio)");
-    }else{
-        print("/r/n%i",mL.m.nombre" desde el , %i" mL.ascension " hasta la actualidad");
+        printf(" hasta el ");
+        MostrarFecha(mL.fallecimiento);
+        printf(" falleció.\r\n");
+    } else {
+        printf(" hasta la actualidad.\r\n");
     }
-    //  EJEMPLO 1 - JORGE desde el 14/12/1895 hasta el 06/02/1952 (falleci�)
+    // EJEMPLO 1 - JORGE desde el 14/12/1895 hasta el 06/02/1952 (falleci�)
     // EJEMPLO 2 - ISABEL desde el 06/02/1952 hasta la actualidad
 }
-//Selectora: obtiene el nombre del miembro
-void ObtenerNombreMiembroLista(MiembroLista mL, String &nom){
-    ObtenerNombreMiembroABB(mL.m, nom);
-}
 
-//Selectora obtiene la fecha de nacimiento.
-void ObtenerFechaNacMiembroLista(MiembroLista mL, String &fechaNac){
-    ObtenerFechaNacimientoMiembroABB(mL.m, fechaNac);
-}
-
-//Selectora obtiene el nombre del progenitor
-void ObtenerProgenitorMiembroLista(MiembroLista mL, String &progenitor){
-    ObtenerNombreProgenitorMiembroABB(mL.m, progenitor);
+MiembroABB ObtenerMiembroABB(MiembroLista ml) {
+    return ml.m;
 }
 
 //Selectora obtiene si es monarca actual
@@ -115,8 +125,13 @@ boolean ObtenerAbdico(MiembroLista mL){
 }
 
 //Selectora obtiene si fallecio
-Boolean ObtenerFallecio(MiembroLista mL){
+boolean ObtenerFallecio(MiembroLista mL){
     return mL.fallecio;
+}
+
+//Selectora obtiene si es aspirante
+boolean ObtenerAspirante(MiembroLista mL) {
+    return mL.aspirante;
 }
 
 //Selectora obtener fecha de ascencion
