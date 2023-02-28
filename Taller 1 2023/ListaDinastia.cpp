@@ -35,7 +35,7 @@ MiembroLista* ObtenerMiembro(ListaDinastia ls, String nom) {
         String aux;
         ObtenerNombreMiembroLista(inf, aux);
 
-        if (streq(nom, aux)) {
+        if (streq(nom, aux, TRUE)) {
             found = TRUE;
         }
 

@@ -1,7 +1,7 @@
 #include "ListaString.h"
 
 ListaString CmdEnLista(String s) {
-    ListaString root = nullptr;
+    ListaString root = NULL;
 
     String curr;
     PrimerPalabra(s, curr);
@@ -20,13 +20,13 @@ void AgregarAListaString(ListaString &root, String s) { //Agrega palabra a Lista
     ListaString node = new snode;
     strcrear(node->info);
     strcop(s, node->info);
-    node->sig = nullptr;
+    node->sig = NULL;
 
-    if (root == nullptr) {
+    if (root == NULL) {
         root = node;
     } else {
         ListaString aux = root;
-        while (aux->sig != nullptr) {
+        while (aux->sig != NULL) {
             aux = aux->sig;
         }
         aux->sig = node;

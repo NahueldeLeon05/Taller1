@@ -129,8 +129,7 @@ int main()
     scan(nombre);
     printf("Ingrese nombre del padre: ");
     scan(padre);
-    Fecha f;
-    CargarFecha(f, 17, 12, 2001);
+    Fecha f = CargarFecha(17, 12, 2001);
     MiembroABB m = CrearMiembroNuevo(nombre, padre, f);
     MiembroLista mL = crearMiembroLista(m, FALSE, TRUE);
     MostrarMiembroLista(mL);
