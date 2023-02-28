@@ -66,7 +66,7 @@ boolean NoFueMonarca(MiembroLista m){
 }
 
 //Devuelve si el miembro de la lista es o no primogenito
-boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR
+boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR este es de ListaDinastia
     boolean es = FALSE;
     String nombre, nombre2;
     strcrear(nombre);
@@ -85,7 +85,14 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR
 
 //Devuelve si la fecha ascensi�n es 0/0/0
 boolean fechaVacia(MiembroLista m){
-    return m.ascension.dia == 0 && m.ascension.mes == 0 && m.ascension.anio == 0 ? TRUE : FALSE;
+    boolean t;
+    int dia = ObtenerDiaFecha(m.ascension), mes = ObtenerMesFecha(m.ascension), anio = ObtenerAnioFecha(m.ascension);
+    if(m.ascension.dia == 0 && m.ascension.mes == 0 && m.ascension.anio == 0)
+        t = TRUE;
+    else
+        t = FALSE;
+
+    return t;
 }
 
 //Muestra fecha de inicio y fin del reinado del miembro
@@ -103,7 +110,12 @@ void MostrarInicioFin(MiembroLista mL){
         printf(" hasta el ");
         MostrarFecha(mL.fallecimiento);
         printf(" falleció.\r\n");
-    } else {
+    } else
+           if(mL.abdico){
+                printf(" hasta el ");
+                MostrarFecha(mL.abdicacion);
+                printf(" abdico.\r\n");
+           }else {
         printf(" hasta la actualidad.\r\n");
     }
     // EJEMPLO 1 - JORGE desde el 14/12/1895 hasta el 06/02/1952 (falleci�)

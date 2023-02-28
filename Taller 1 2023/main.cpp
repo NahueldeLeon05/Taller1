@@ -142,7 +142,15 @@ int main()
     MostrarMiembroLista(mL);*/
     //finaliza prueba mostrar, crear, guardar y leer de miembroLista
 
-    Fecha f = CargarFecha(17, 12, 2001);
-    MostrarFecha(f);
+    String nombre, padre;
+    printf("Ingrese nombre: ");
+    scan(nombre);
+    printf("Ingrese nombre del padre: ");
+    scan(padre);
+    Fecha j = CargarFecha(17, 12, 2001);
+    MiembroABB m = CrearMiembroNuevo(nombre, padre, j);
+    MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
+    MostrarInicioFin(mL);
+    MostrarBoolean(fechaVacia(mL));
     return 0;
 }

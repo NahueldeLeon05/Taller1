@@ -8,7 +8,7 @@
 1677542251 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.cpp
 	"ListaString.h"
 
-1677545838 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
+1677546505 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
 	"ListaString.h"
 	"Boolean.h"
 	"Fecha.h"
@@ -32,12 +32,12 @@
 	"String.h"
 	"boolean.h"
 
-1677545461 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
+1677546712 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
 	"MiembroLista.h"
 	"ListaDinastia.h"
 	<stdio.h>
 
-1677541965 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
+1677545887 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
 	<stdio.h>
 	<cstdlib>
 	"Fecha.h"
@@ -153,7 +153,7 @@
 1677545838 c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.h
 	"MiembroLista.h"
 
-1677545171 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
+1677546526 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
 	"MiembroABB.h"
 
 1677447663 c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.h

@@ -39,7 +39,7 @@ boolean NoEsOFueMonarca(MiembroLista m);
 boolean Primogenito(MiembroLista m);
 
 //Devuelve si la fecha ascensión es 0/0/0
-boolean fechaVacia(MiembroLista m, Fecha f);
+boolean fechaVacia(MiembroLista m);
 
 //Muestra fecha de inicio y fin del reinado del miembro
 void MostrarInicioFin(MiembroLista mL);
