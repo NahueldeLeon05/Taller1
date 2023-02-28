@@ -28,10 +28,10 @@ void MostrarElementosLista(ListaDinastia ls);
 //Despliega por pantalla a los monarcas pasados y al actual de la lista
 void MostrarMonarcasLista(ListaDinastia a);
 
-//Guarda lista en archivo
+//Guarda lista en archivo. Precondicion: Archivo debe venir abierto para escritura.
 void GuardarListaDinastia(FILE* file, ListaDinastia ls);
 
-//Levanta la lista desde archivo
+//Levanta la lista desde archivo. Precondicion: Archivo debe venir abierto para escritura.
 void CargarListaDinastia(FILE* file, ListaDinastia &lf);
 
 //Libera el espacio de memoria utilizado por la lista

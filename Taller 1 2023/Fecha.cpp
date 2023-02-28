@@ -6,11 +6,11 @@
 #include "String.h"
 
 // Cargar la informacion de la fecha con los datos ingresados.
-Fecha CargarFecha(int anio, int mes, int dia) {
+Fecha CargarFecha(int dia, int mes, int anio) {
     Fecha f;
-    f.anio = anio;
-    f.mes = mes;
     f.dia = dia;
+    f.mes = mes;
+    f.anio = anio;
 
     return f;
 }

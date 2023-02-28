@@ -22,8 +22,10 @@ Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m);
 
 void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom);
 
+//Precondicion: Archivo debe venir abierto para escritura.
 void GuardarMiembroABB(FILE* f, MiembroABB m);
 
+//Precondicion: Archivo debe venir abierto para lectura.
 void LevantarMiembroABB(FILE* f, MiembroABB &m);
 
 void LiberarMiembroABB(MiembroABB &m);

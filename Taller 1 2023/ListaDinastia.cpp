@@ -53,17 +53,17 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
 }
 
 void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
-   /* ListaDinastia aux = ls;
+    ListaDinastia aux = ls;
     while (aux != NULL) {
         CargarMiembroLista(f, aux->info);
         aux = aux->sig;
-    }*/
+    }
 }
 
 void LiberarListaDinastia(ListaDinastia &ls) {
-  /*  if (ls != NULL) {
+    if (ls != NULL) {
         LiberarListaDinastia(ls->sig);
         LiberarMiembroLista(ls->info);
         delete ls;
-    }*/
+    }
 }
