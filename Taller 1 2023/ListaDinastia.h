@@ -16,6 +16,12 @@ void InicializarLista(ListaDinastia &ls);
 //Agrega miembro a la lista de dinastia
 void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml);
 
+ListaDinastia ObtenerNodoPadre(ListaDinastia ls, String nombre);
+
+ListaDinastia UltimoHijo(ListaDinastia padre);
+
+boolean FechaMayorATodas(ListaDinastia root, Fecha f);
+
 //Verifica que la lista tenga elementos
 boolean ListaTieneElementos(ListaDinastia lf);
 
