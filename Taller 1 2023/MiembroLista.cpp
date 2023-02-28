@@ -80,6 +80,8 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR este es de List
             Primogenito(m, ls->sig);
         }
     }
+    LiberarString(nombre);
+    LiberarString(nombre2);
     return es;
 }
 
@@ -87,7 +89,7 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR este es de List
 boolean fechaVacia(MiembroLista m){
     boolean t;
     int dia = ObtenerDiaFecha(m.ascension), mes = ObtenerMesFecha(m.ascension), anio = ObtenerAnioFecha(m.ascension);
-    if(m.ascension.dia == 0 && m.ascension.mes == 0 && m.ascension.anio == 0)
+    if(dia == 0 && mes == 0 && anio == 0)
         t = TRUE;
     else
         t = FALSE;
