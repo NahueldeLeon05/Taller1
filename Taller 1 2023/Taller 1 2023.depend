@@ -5,19 +5,19 @@
 	"boolean.h"
 	<stdio.h>
 
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.cpp
+1677542251 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.cpp
+	"ListaString.h"
 
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
-	<iostream>
-	<stdio.h>
-	<ListaString.h>
-	<ABBFamilia.h>
-	<ListaDinastia.h>
+1677543257 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
+	"ListaString.h"
+	"Boolean.h"
+	"Fecha.h"
+	"MiembroLista.h"
 
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
+1677544114 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
-1677447663 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
+1677542879 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
 	"String.h"
 	"Fecha.h"
 
@@ -32,7 +32,10 @@
 	"String.h"
 	"boolean.h"
 
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
+1677543946 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
+	"MiembroLista.h"
+	"ListaDinastia.h"
+	<stdio.h>
 
 1677541965 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
 	<stdio.h>
@@ -41,10 +44,12 @@
 	"boolean.h"
 	"String.h"
 
-1677542172 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.cpp
+1677543874 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.cpp
 	"ListaDinastia.h"
 
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\string.cpp
+1677541965 source:c:\users\usuario\documents\github\taller1\taller 1 2023\string.cpp
+	"String.h"
+	<stdio.h>
 
 1677103558 source:c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\abbfamilia.cpp
 
@@ -148,6 +153,9 @@
 1677541965 c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.h
 	"MiembroLista.h"
 
-1677541154 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
+1677543095 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
 	"MiembroABB.h"
+
+1677447663 c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.h
+	"String.h"
 

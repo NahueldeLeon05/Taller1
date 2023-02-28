@@ -33,7 +33,7 @@ MiembroLista* ObtenerMiembro(ListaDinastia ls, String nom) {
         MiembroLista inf = ls->info;
 
         String aux;
-        ObtenerNombreMiembroLista(inf, aux);
+        ObtenerNombreMiembroABB(ObtenerMiembroABB(inf), aux);
 
         if (streq(nom, aux, TRUE)== TRUE) {
             found = TRUE;
@@ -53,17 +53,17 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
 }
 
 void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
-    ListaDinastia aux = ls;
+   /* ListaDinastia aux = ls;
     while (aux != NULL) {
         CargarMiembroLista(f, aux->info);
         aux = aux->sig;
-    }
+    }*/
 }
 
 void LiberarListaDinastia(ListaDinastia &ls) {
-    if (ls != NULL) {
+  /*  if (ls != NULL) {
         LiberarListaDinastia(ls->sig);
         LiberarMiembroLista(ls->info);
         delete ls;
-    }
+    }*/
 }

@@ -131,7 +131,7 @@ int main()
     scan(padre);
     Fecha f = CargarFecha(17, 12, 2001);
     MiembroABB m = CrearMiembroNuevo(nombre, padre, f);
-    MiembroLista mL = crearMiembroLista(m, FALSE, TRUE);
+    MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
     MostrarMiembroLista(mL);
 
     return 0;

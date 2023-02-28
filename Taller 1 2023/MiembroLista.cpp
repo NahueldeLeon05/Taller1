@@ -15,15 +15,15 @@ MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
     mL.fueMonarca = FALSE;
     mL.abdico = FALSE;
     mL.fallecio = FALSE;
-    mL.ascencion = FechaDefecto();
+    mL.ascension = FechaDefecto();
     mL.abdicacion = FechaDefecto();
     mL.fallecimiento = FechaDefecto();
     return mL;
 }
 
 //Despliega el miembro de la lista
-void MostrarMiembroLista(MiembroLista ml){
-    MostrarMiembroABB(ml.m);
+void MostrarMiembroLista(MiembroLista mL){
+    MostrarMiembroABB(mL.m);
     printf("\nMonarca actual: ");
     MostrarBoolean(mL.monarcaActual);
     printf("\nFue monarca: ");
@@ -34,11 +34,11 @@ void MostrarMiembroLista(MiembroLista ml){
     MostrarBoolean(mL.abdico);
     printf("\nFallecio: ");
     MostrarBoolean(mL.fallecio);
-    printf("Fecha de ascencion: ");
-    MostrarFecha(mL.ascencion);
-    printf("Fecha de abdicacion: ");
+    printf("\nFecha de ascencion: ");
+    MostrarFecha(mL.ascension);
+    printf("\nFecha de abdicacion: ");
     MostrarFecha(mL.abdicacion);
-    printf("Fecha de Fallecimiento: ");
+    printf("\nFecha de Fallecimiento: ");
     MostrarFecha(mL.fallecimiento);
 }
 
@@ -67,12 +67,17 @@ boolean NoFueMonarca(MiembroLista m){
 
 //Devuelve si el miembro de la lista es o no primogenito
 boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR
-    bool es = false;
+    boolean es = FALSE;
+    String nombre, nombre2;
+    strcrear(nombre);
+    strcrear(nombre2);
+    ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nombre);
+    ObtenerNombreMiembroABB(ObtenerMiembroABB(m), nombre2);
     while (ls ->sig != NULL){
-        if (streq(ls->info.m.nombre, m.nombre)){
-            es = true;
+        if (streq(nombre, nombre2, TRUE)){
+            es = TRUE;
         }else{
-            Primogenito(m, ls->sig)
+            Primogenito(m, ls->sig);
         }
     }
     return es;
@@ -85,10 +90,10 @@ boolean fechaVacia(MiembroLista m){
 
 //Muestra fecha de inicio y fin del reinado del miembro
 void MostrarInicioFin(MiembroLista mL){
-    MiembroABB miembroAbb = ml.m;
+    MiembroABB miembroAbb = mL.m;
 
     String nombre;
-    ObtenerNombreMiembroABB(miembroAbb, nom);
+    ObtenerNombreMiembroABB(miembroAbb, nombre);
 
     print(nombre);
     printf(" desde el ");

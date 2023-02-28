@@ -15,7 +15,7 @@ void MostrarMiembroABB(MiembroABB m) {
     print(m.nombre);
     printf(" hijo/a de ");
     print(m.nombreProgenitor);
-    printf(" nació el ");
+    printf(" nacio el ");
     MostrarFecha(m.fNac);
 }
 
