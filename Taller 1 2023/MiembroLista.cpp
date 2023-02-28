@@ -153,3 +153,31 @@ Fecha ObtenerFechaAbdicacion(MiembroLista mL){
 Fecha ObtenerFechaFallecimiento(MiembroLista mL){
     return mL.fallecimiento;
 }
+
+void GuardarMiembroLista(FILE* f, MiembroLista ml){
+    GuardarMiembroABB(f, ml.m);
+    fwrite(&ml.monarcaActual, sizeof(int), 1, f);
+    fwrite(&ml.fueMonarca, sizeof(int), 1, f);
+    fwrite(&ml.aspirante, sizeof(int), 1, f);
+    fwrite(&ml.abdico, sizeof(int), 1, f);
+    fwrite(&ml.fallecio, sizeof(int), 1, f);
+    GuardarFecha(ml.ascension, f);
+    GuardarFecha(ml.abdicacion, f);
+    GuardarFecha(ml.fallecimiento, f);
+}
+
+void CargarMiembroLista(FILE* f, MiembroLista &ml){
+    LevantarMiembroABB(f, ml.m);
+    fread(&ml.monarcaActual, sizeof(int), 1, f);
+    fread(&ml.fueMonarca, sizeof(int), 1, f);
+    fread(&ml.aspirante, sizeof(int), 1, f);
+    fread(&ml.abdico, sizeof(int), 1, f);
+    fread(&ml.fallecio, sizeof(int), 1, f);
+    LeerFecha(ml.ascension, f);
+    LeerFecha(ml.abdicacion, f);
+    LeerFecha(ml.fallecimiento, f);
+}
+
+void LiberarMiembroLista(MiembroLista &ml){
+    LiberarMiembroABB(ml.m);
+}

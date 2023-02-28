@@ -73,8 +73,10 @@ Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 //Devuelve si el miembro de la lista esta vivo o no
 boolean Vivo(MiembroLista m);
 
+//Precondicion: el archivo debe venir abierto para escritura.
 void GuardarMiembroLista(FILE* f, MiembroLista ml);
 
+//Precondicion: el archivo debe venir abierto para lectura.
 void CargarMiembroLista(FILE* f, MiembroLista &ml);
 
 void LiberarMiembroLista(MiembroLista &ml);

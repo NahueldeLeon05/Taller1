@@ -123,16 +123,23 @@ int main()
     String cmd;
     AgarrarParam(lista, 0, cmd);
     ProcesarComando(cmd);*/
-
+    //inicia prueba mostrar, crear, guardar y leer de miembroLista
+    FILE* f;
     String nombre, padre;
     printf("Ingrese nombre: ");
     scan(nombre);
     printf("Ingrese nombre del padre: ");
     scan(padre);
-    Fecha f = CargarFecha(17, 12, 2001);
-    MiembroABB m = CrearMiembroNuevo(nombre, padre, f);
+    Fecha j = CargarFecha(17, 12, 2001);
+    MiembroABB m = CrearMiembroNuevo(nombre, padre, j);
     MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
+    f = fopen ("prueba.txt","wb");
+    GuardarMiembroLista(f, mL);
+    fclose(f);
+    f = fopen ("prueba.txt","rb");
+    CargarMiembroLista(f, mL);
+    fclose(f);
     MostrarMiembroLista(mL);
-
+    //finaliza prueba mostrar, crear, guardar y leer de miembroLista
     return 0;
 }
