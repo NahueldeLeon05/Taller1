@@ -120,11 +120,11 @@ void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
     }
 
 
-    ListaDinastia aux = ls;
+    /*ListaDinastia aux = ls;
     while (aux != NULL) {
         CargarMiembroLista(f, aux->info);
         aux = aux->sig;
-    }
+    }*/
 }
 
 void LiberarListaDinastia(ListaDinastia &ls) {

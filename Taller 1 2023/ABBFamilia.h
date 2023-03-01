@@ -16,25 +16,27 @@ void InicializarArbolFamilia(ArbolFamilia &arbol);
 boolean ArbolTieneElementos(ArbolFamilia af);
 
 //Crea miembro nuevo
-miembroArbol CrearMiembroNuevo(String nom, String padre, Fecha nacimiento);
+MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento);
 
 //Agrega elemento Miembro al ABB
-void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, miembroArbol m);
+void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m);
 
 //Verifica si ese nombre existe en el ABB
 boolean ExisteEnArbol(ArbolFamilia arbol, String nombre);
 
 //Verifica que una fecha sea mayor a todas las existentes en el ABB
-boolean FechaEsMayorATodas (ArbolFamilia arbol, fecha f);
+boolean FechaEsMayorATodas (ArbolFamilia arbol, Fecha f);
 
 //Devuelve el ABB de familia
 void MostrarABB(ArbolFamilia a);
 
+//Precondicion: El archivo debe venir abierto para escritura
 //Guarda ABB en archivo
-void GuardarABB(ArbolFamilia abb, String nomArch);
+void GuardarABB(ArbolFamilia abb, FILE *f);
 
+//Precondicion: El archivo debe venir abierto para lectura
 //Levanta ABB desde archivo
-void LeerFamiliaABB(String nomArch, ArbolFamilia &abb);
+void LeerFamiliaABB(FILE *f, ArbolFamilia &abb);
 
 //Libera el espacio de memoria ocupado por el ABB
 void LiberarABBFamilia(ArbolFamilia &abb);
