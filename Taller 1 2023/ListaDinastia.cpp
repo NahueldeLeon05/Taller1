@@ -110,6 +110,16 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
 }
 
 void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
+    MiembroLista buffer;
+    ls = NULL;
+    CargarMiembroLista(f, buffer);
+
+    while(!feof(f)){
+        AgregarMiembroALista(ls, buffer);
+        CargarMiembroLista(f, buffer);
+    }
+
+
     ListaDinastia aux = ls;
     while (aux != NULL) {
         CargarMiembroLista(f, aux->info);
