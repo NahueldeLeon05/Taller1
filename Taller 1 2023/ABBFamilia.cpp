@@ -21,8 +21,6 @@ void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m){
         arbol->hDer = NULL;
         arbol->info = m;
    } else {
-        LiberarString(nom1);
-        ObtenerNombreMiembroABB(arbol->info, nom1);
         if (strmen(nom1, nom2) == TRUE){
             AgregarMiembroAlArbolFamilia(arbol->hIzq, m);
        }else {
