@@ -1,5 +1,4 @@
 #include "MiembroLista.h"
-#include "ListaDinastia.h"
 #include <stdio.h>
 
 //Crea miembro de Lista
@@ -65,27 +64,8 @@ boolean NoFueMonarca(MiembroLista m){
     return m.fueMonarca;
 }
 
-//Devuelve si el miembro de la lista es o no primogenito
-boolean Primogenito(MiembroLista m, ListaDinastia ls){ //REVISAR este es de ListaDinastia
-    boolean es = FALSE;
-    String nombre, nombre2;
-    strcrear(nombre);
-    strcrear(nombre2);
-    ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nombre);
-    ObtenerNombreMiembroABB(ObtenerMiembroABB(m), nombre2);
-    while (ls ->sig != NULL){
-        if (streq(nombre, nombre2, TRUE)){
-            es = TRUE;
-        }else{
-            Primogenito(m, ls->sig);
-        }
-    }
-    LiberarString(nombre);
-    LiberarString(nombre2);
-    return es;
-}
-
 //Devuelve si la fecha ascensi�n es 0/0/0
+// llevar a fecha.cpp
 boolean fechaVacia(MiembroLista m){
     boolean t;
     int dia = ObtenerDiaFecha(m.ascension), mes = ObtenerMesFecha(m.ascension), anio = ObtenerAnioFecha(m.ascension);

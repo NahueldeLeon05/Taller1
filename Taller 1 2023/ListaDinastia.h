@@ -43,4 +43,6 @@ void CargarListaDinastia(FILE* file, ListaDinastia &lf);
 //Libera el espacio de memoria utilizado por la lista
 void LiberarListaDinastia(ListaDinastia &lf);
 
+boolean Primogenito(MiembroLista m, ListaDinastia ls);
+
 #endif // LISTAFAMILIA_H_INCLUDED

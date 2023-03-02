@@ -44,23 +44,33 @@ ListaDinastia ObtenerNodoPadre(ListaDinastia ls, String nombre) {
     return ls;
 }
 
-ListaDinastia UltimoHijo(ListaDinastia padre) {
-    boolean found = FALSE;
+ListaDinastia UltimoHijo(ListaDinastia ls) {
+    boolean diferente = FALSE;
 
     String nomPadre;
-    ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(padre->info), nomPadre);
+    ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ls->info), nomPadre);
 
-    while (padre != NULL && found == FALSE) {
-        String aux;
-        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(padre->info), aux);
+    String aux;
+    ls = ls->sig;
+    while (ls != NULL && diferente == FALSE) {
+        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ls->info), aux);
+
         if (streq(aux, nomPadre, TRUE) == TRUE) {
-            found = TRUE;
+            ls = ls->sig;
         } else {
-            padre = padre->sig;
+            diferente = TRUE;
         }
+
+        LiberarString(aux);
     }
 
-    return padre;
+    LiberarString(nomPadre);
+
+    if (ls != NULL) {
+        ls = UltimoHijo(ls);
+    }
+
+    return ls;
 }
 
 boolean FechaMayorATodas(ListaDinastia ls, Fecha f) {
@@ -133,4 +143,42 @@ void LiberarListaDinastia(ListaDinastia &ls) {
         LiberarMiembroLista(ls->info);
         delete ls;
     }
+}
+
+//Devuelve si el miembro de la lista es o no primogenito
+boolean Primogenito(MiembroLista m, ListaDinastia ls) { //REVISAR este es de ListaDinastia
+    boolean es = FALSE;
+    String nombre, nombre2;
+    strcrear(nombre);
+    strcrear(nombre2);
+    ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nombre);
+    ObtenerNombreMiembroABB(ObtenerMiembroABB(m), nombre2);
+    if (streq(nombre, nombre2, TRUE)){
+        es = TRUE;
+    }else{
+        Primogenito(m, ls->sig);
+    }
+    LiberarString(nombre);
+    LiberarString(nombre2);
+    return es;
+}
+
+
+ListaDinastia Primogenito2(ListaDinastia padre) {
+    boolean found = FALSE;
+
+    String nomPadre;
+    ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(padre->info), nomPadre);
+
+    while (padre != NULL && found == FALSE) {
+        String aux;
+        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(padre->info), aux);
+        if (streq(aux, nomPadre, TRUE) == TRUE) {
+            found = TRUE;
+        } else {
+            padre = padre->sig;
+        }
+    }
+
+    return padre;
 }
