@@ -36,7 +36,7 @@ void GuardarABB(ArbolFamilia abb, FILE *f);
 
 //Precondicion: El archivo debe venir abierto para lectura
 //Levanta ABB desde archivo
-void LeerFamiliaABB(FILE *f, ArbolFamilia &abb);
+void LeerFamiliaABB(String nomArch, ArbolFamilia &abb);
 
 //Libera el espacio de memoria ocupado por el ABB
 void LiberarABBFamilia(ArbolFamilia &abb);

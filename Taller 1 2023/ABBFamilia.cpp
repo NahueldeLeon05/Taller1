@@ -13,22 +13,22 @@ boolean ArbolTieneElementos(ArbolFamilia af){
 //Agrega elemento Miembro al ABB
 void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m){
     String nom1, nom2;
-    ObtenerNombreMiembroABB(arbol->info, nom1);
-    ObtenerNombreMiembroABB(m, nom2);
     if (arbol == NULL) {
         arbol = new nodoFamilia;
         arbol->hIzq = NULL;
         arbol->hDer = NULL;
         arbol->info = m;
    } else {
+        ObtenerNombreMiembroABB(arbol->info, nom1);
+        ObtenerNombreMiembroABB(m, nom2);
         if (strmen(nom1, nom2) == TRUE){
             AgregarMiembroAlArbolFamilia(arbol->hIzq, m);
        }else {
            AgregarMiembroAlArbolFamilia(arbol->hDer, m);
        }
+       LiberarString(nom1);
+       LiberarString(nom2);
     }
-    LiberarString(nom1);
-    LiberarString(nom2);
 }
 
 //Verifica si ese nombre existe en el ABB
@@ -50,25 +50,28 @@ void MostrarABB(ArbolFamilia a){
     }
 }
 
-//Guarda ABB en archivo
+//Guarda ABB en archivo Hacer auxiliar tendria que haber otra que abra el archivo y llame a esta
 void GuardarABB(ArbolFamilia abb, FILE* f){
     if (abb != NULL) {
+        GuardarMiembroABB(f, abb->info);
         GuardarABB(abb->hIzq, f);
         GuardarABB(abb->hDer, f);
-        GuardarMiembroABB(f, abb->info);
     }
 }
 
 //Levanta ABB desde archivo
-void LeerFamiliaABB(FILE* f, ArbolFamilia &abb){
+void LeerFamiliaABB(String nomArch, ArbolFamilia &abb){
     MiembroABB buffer;
-    abb = NULL;
+    InicializarArbolFamilia(abb);
+    FILE *f;
+    f = fopen("nomArch", "rb");
     LevantarMiembroABB(f, buffer);
 
     while (!feof(f)) {
         AgregarMiembroAlArbolFamilia(abb, buffer);
         LevantarMiembroABB(f, buffer);
     }
+    fclose(f);
 }
 
 //Libera el espacio de memoria ocupado por el ABB
@@ -77,6 +80,7 @@ void LiberarABBFamilia(ArbolFamilia &abb){
         LiberarABBFamilia(abb->hIzq);
         LiberarABBFamilia(abb -> hDer);
         LiberarMiembroABB(abb -> info);
+        delete abb;
         abb = NULL;
     }
 }

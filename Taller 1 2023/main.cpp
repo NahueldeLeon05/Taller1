@@ -156,14 +156,12 @@ int main()
     /*MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
     MostrarInicioFin(mL);*/
     //MostrarBoolean(strmen(nombre, padre));*/
-   AgregarMiembroAlArbolFamilia(abb, m);
+    AgregarMiembroAlArbolFamilia(abb, m);
     MostrarABB(abb);
     f = fopen ("prueba.txt","wb");
     GuardarABB(abb, f);
     fclose(f);
-    f = fopen ("prueba.txt","rb");
-    LeerFamiliaABB(f, abb);
-    fclose(f);
+    LeerFamiliaABB("prueba.txt", abb);
     MostrarABB(abb);
     return 0;
 }
