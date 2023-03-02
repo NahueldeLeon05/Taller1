@@ -2,6 +2,7 @@
 #include "Boolean.h"
 #include "Fecha.h"
 #include "MiembroLista.h"
+#include "ABBFamilia.h"
 
 int main()
 {
@@ -142,6 +143,7 @@ int main()
     MostrarMiembroLista(mL);*/
     //finaliza prueba mostrar, crear, guardar y leer de miembroLista
 
+    FILE* f;
     String nombre, padre;
     printf("Ingrese nombre: ");
     scan(nombre);
@@ -149,8 +151,19 @@ int main()
     scan(padre);
     Fecha j = CargarFecha(17, 12, 2001);
     MiembroABB m = CrearMiembroNuevo(nombre, padre, j);
-    MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
-    MostrarInicioFin(mL);
-    MostrarBoolean(fechaVacia(mL));
+    ArbolFamilia abb;
+    InicializarArbolFamilia(abb);
+    /*MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
+    MostrarInicioFin(mL);*/
+    //MostrarBoolean(strmen(nombre, padre));*/
+   AgregarMiembroAlArbolFamilia(abb, m);
+    MostrarABB(abb);
+    f = fopen ("prueba.txt","wb");
+    GuardarABB(abb, f);
+    fclose(f);
+    f = fopen ("prueba.txt","rb");
+    LeerFamiliaABB(f, abb);
+    fclose(f);
+    MostrarABB(abb);
     return 0;
 }

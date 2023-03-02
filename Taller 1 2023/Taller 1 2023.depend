@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1677108104 source:c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.cpp
+1677717876 source:c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.cpp
+	"ABBFamilia.h"
 
 1677114567 source:c:\users\usuario\documents\github\taller1\taller 1 2023\boolean.cpp
 	"boolean.h"
@@ -8,11 +9,12 @@
 1677542251 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.cpp
 	"ListaString.h"
 
-1677546505 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
+1677717876 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
 	"ListaString.h"
 	"Boolean.h"
 	"Fecha.h"
 	"MiembroLista.h"
+	"ABBFamilia.h"
 
 1677544114 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
@@ -158,4 +160,7 @@
 
 1677447663 c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.h
 	"String.h"
+
+1677712987 c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.h
+	"MiembroABB.h"
 
