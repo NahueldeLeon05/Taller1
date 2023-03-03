@@ -7,49 +7,52 @@ void InicializarArbolFamilia(ArbolFamilia &arbol){
 
 //Verifica que el ABB tenga elementos
 boolean ArbolTieneElementos(ArbolFamilia af){
-    if(af == NULL)
-        return FALSE;
-    else
-        return TRUE;
+    return af == NULL ? FALSE : TRUE;
 }
 
 //Agrega elemento Miembro al ABB
 void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m){
-    String nom1, nom2;
     if (arbol == NULL) {
         arbol = new nodoFamilia;
         arbol->hIzq = NULL;
         arbol->hDer = NULL;
         arbol->info = m;
    } else {
+        String nom1, nom2;
         ObtenerNombreMiembroABB(arbol->info, nom1);
         ObtenerNombreMiembroABB(m, nom2);
+
         if (strmen(nom1, nom2) == TRUE){
             AgregarMiembroAlArbolFamilia(arbol->hIzq, m);
-       }else {
-           AgregarMiembroAlArbolFamilia(arbol->hDer, m);
-       }
-       LiberarString(nom1);
-       LiberarString(nom2);
+        } else {
+            AgregarMiembroAlArbolFamilia(arbol->hDer, m);
+        }
+
+        LiberarString(nom1);
+        LiberarString(nom2);
     }
 }
 
 //Verifica si ese nombre existe en el ABB
 boolean ExisteEnArbol(ArbolFamilia arbol, String nombre){
-    String nom1;
-    if (arbol == NULL)
+    if (arbol == NULL) {
         return FALSE;
-    else{
+    } else {
+        String nom1;
         ObtenerNombreMiembroABB(arbol->info, nom1);
+
         if(streq(nom1, nombre, TRUE)){
+            LiberarString(nom1);
             return TRUE;
-        }else{//hasta aca anda
-             if(strmen(nom1, nombre))
-                 return ExisteEnArbol(arbol->hIzq, nombre);
-             else
-                 return ExisteEnArbol(arbol->hDer, nombre);
-       }
-        LiberarString(nom1);
+        } else {
+            if(strmen(nom1, nombre)) {
+                LiberarString(nom1);
+                return ExisteEnArbol(arbol->hIzq, nombre);
+            } else {
+                LiberarString(nom1);
+                return ExisteEnArbol(arbol->hDer, nombre);
+            }
+        }
     }
 }
 
@@ -67,8 +70,7 @@ void MostrarABB(ArbolFamilia a){
     }
 }
 
-//Guarda ABB en archivo Hacer auxiliar tendria que haber otra que abra el archivo y llame a esta
-void AuxGuardarABB(ArbolFamilia abb, FILE* f){
+void GuardarABB(FILE* f, ArbolFamilia abb){
     if (abb != NULL) {
         GuardarMiembroABB(f, abb->info);
         AuxGuardarABB(abb->hIzq, f);
@@ -76,26 +78,16 @@ void AuxGuardarABB(ArbolFamilia abb, FILE* f){
     }
 }
 
-void GuardarABB(String nomArch, ArbolFamilia abb){
-    FILE* f;
-    f = fopen (nomArch, "wb");
-    AuxGuardarABB(abb, f);
-    fclose(f);
-}
-
 //Levanta ABB desde archivo
-void LeerFamiliaABB(String nomArch, ArbolFamilia &abb){
+void LeerFamiliaABB(FILE *f, ArbolFamilia &abb){
     MiembroABB buffer;
     InicializarArbolFamilia(abb);
-    FILE *f;
-    f = fopen(nomArch, "rb");
     LevantarMiembroABB(f, buffer);
 
     while (!feof(f)) {
         AgregarMiembroAlArbolFamilia(abb, buffer);
         LevantarMiembroABB(f, buffer);
     }
-    fclose(f);
 }
 
 //Libera el espacio de memoria ocupado por el ABB
@@ -104,6 +96,7 @@ void LiberarABBFamilia(ArbolFamilia &abb){
         LiberarABBFamilia(abb->hIzq);
         LiberarABBFamilia(abb -> hDer);
         LiberarMiembroABB(abb -> info);
+
         delete abb;
         abb = NULL;
     }

@@ -30,10 +30,6 @@ boolean FechaEsMayorATodas (ArbolFamilia arbol, Fecha f);
 //Devuelve el ABB de familia
 void MostrarABB(ArbolFamilia a);
 
-//Precondicion: El archivo debe venir abierto para escritura
-//Guarda ABB en archivo
-void AuxGuardarABB(ArbolFamilia abb, FILE *f);
-
 void GuardarABB(String nomArch, ArbolFamilia abb);
 
 //Levanta ABB desde archivo
