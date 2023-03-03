@@ -24,7 +24,7 @@ void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m){
    } else {
         ObtenerNombreMiembroABB(arbol->info, nom1);
         ObtenerNombreMiembroABB(m, nom2);
-        if (strmen(nom1, nom2) == TRUE){
+        if (strmen(nom2, nom1) == TRUE){
             AgregarMiembroAlArbolFamilia(arbol->hIzq, m);
        }else {
            AgregarMiembroAlArbolFamilia(arbol->hDer, m);
@@ -43,7 +43,7 @@ boolean ExisteEnArbol(ArbolFamilia arbol, String nombre){
         ObtenerNombreMiembroABB(arbol->info, nom1);
         if(streq(nom1, nombre, TRUE)){
             return TRUE;
-        }else{//hasta aca anda
+        }else{
              if(strmen(nom1, nombre))
                  return ExisteEnArbol(arbol->hIzq, nombre);
              else
@@ -54,8 +54,30 @@ boolean ExisteEnArbol(ArbolFamilia arbol, String nombre){
 }
 
 //Verifica que una fecha sea mayor a todas las existentes en el ABB
-boolean FechaEsMayorATodas (ArbolFamilia arbol, Fecha f){
-
+boolean FechaEsMayorATodas (ArbolFamilia arbol, MiembroABB m){
+    boolean mayor = FALSE;
+    String nom1, nom2;
+    Fecha fA, fM;
+    fM = ObtenerFechaNacimientoMiembroABB(m);
+    ObtenerNombreMiembroABB(m, nom2);
+    if(arbol != NULL){
+        fA = ObtenerFechaNacimientoMiembroABB(arbol->info);
+        if(FechaMayorIgual(fM, fA)){
+            mayor = TRUE;
+        }else{
+            ObtenerNombreMiembroABB(arbol->info, nom1);
+            fA = ObtenerFechaNacimientoMiembroABB(arbol->info);
+            if(FechaMayorIgual(fM, fA)){
+                if(strmen(nom2, nom1) == TRUE)
+                    mayor = FechaEsMayorATodas(arbol->hIzq, m);
+                else
+                    mayor = FechaEsMayorATodas(arbol->hDer, m);
+            LiberarString(nom1);
+        }
+    }
+    LiberarString(nom2);
+    return mayor;
+    }
 }
 
 //Devuelve el ABB de familia
