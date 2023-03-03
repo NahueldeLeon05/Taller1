@@ -51,12 +51,19 @@ void MostrarABB(ArbolFamilia a){
 }
 
 //Guarda ABB en archivo Hacer auxiliar tendria que haber otra que abra el archivo y llame a esta
-void GuardarABB(ArbolFamilia abb, FILE* f){
+void AuxGuardarABB(ArbolFamilia abb, FILE* f){
     if (abb != NULL) {
         GuardarMiembroABB(f, abb->info);
-        GuardarABB(abb->hIzq, f);
-        GuardarABB(abb->hDer, f);
+        AuxGuardarABB(abb->hIzq, f);
+        AuxGuardarABB(abb->hDer, f);
     }
+}
+
+void GuardarABB(String nomArch, ArbolFamilia abb){
+    FILE* f;
+    f = fopen (nomArch, "wb");
+    AuxGuardarABB(abb, f);
+    fclose(f);
 }
 
 //Levanta ABB desde archivo
@@ -64,7 +71,7 @@ void LeerFamiliaABB(String nomArch, ArbolFamilia &abb){
     MiembroABB buffer;
     InicializarArbolFamilia(abb);
     FILE *f;
-    f = fopen("nomArch", "rb");
+    f = fopen(nomArch, "rb");
     LevantarMiembroABB(f, buffer);
 
     while (!feof(f)) {

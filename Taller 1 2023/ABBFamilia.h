@@ -32,9 +32,10 @@ void MostrarABB(ArbolFamilia a);
 
 //Precondicion: El archivo debe venir abierto para escritura
 //Guarda ABB en archivo
-void GuardarABB(ArbolFamilia abb, FILE *f);
+void AuxGuardarABB(ArbolFamilia abb, FILE *f);
 
-//Precondicion: El archivo debe venir abierto para lectura
+void GuardarABB(String nomArch, ArbolFamilia abb);
+
 //Levanta ABB desde archivo
 void LeerFamiliaABB(String nomArch, ArbolFamilia &abb);
 
