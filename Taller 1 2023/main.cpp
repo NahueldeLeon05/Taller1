@@ -150,22 +150,24 @@ int main()
     printf("Ingrese nombre del padre: ");
     scan(padre);
     printf("Ingrese nombre: ");
-    scan(nom);
-    printf("Ingrese nombre del padre: ");
+    //scan(nom);
+    //printf("Ingrese nombre del padre: ");
     scan(pad);
     Fecha j = CargarFecha(17, 12, 2001), k=CargarFecha(4, 12, 2002);
     MiembroABB m = CrearMiembroNuevo(nombre, padre, j);
-    MiembroABB l = CrearMiembroNuevo(nom, pad, k);
+    //MiembroABB l = CrearMiembroNuevo(nom, pad, k);
     ArbolFamilia abb;
     InicializarArbolFamilia(abb);
     /*MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
     MostrarInicioFin(mL);*/
     //MostrarBoolean(strmen(nombre, padre));*/
     AgregarMiembroAlArbolFamilia(abb, m);
-    AgregarMiembroAlArbolFamilia(abb, l);
+    //AgregarMiembroAlArbolFamilia(abb, l);
     //MostrarABB(abb);
-    GuardarABB("prueba.txt", abb);
-    LeerFamiliaABB("prueba.txt", abb);
-    MostrarABB(abb);
+    //GuardarABB("prueba.txt", abb);
+    //LeerFamiliaABB("prueba.txt", abb);
+    //MostrarABB(abb);
+    boolean b = ExisteEnArbol(abb, nom);
+    MostrarBoolean(b);
     return 0;
 }

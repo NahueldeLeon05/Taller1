@@ -7,7 +7,10 @@ void InicializarArbolFamilia(ArbolFamilia &arbol){
 
 //Verifica que el ABB tenga elementos
 boolean ArbolTieneElementos(ArbolFamilia af){
-
+    if(af == NULL)
+        return FALSE;
+    else
+        return TRUE;
 }
 
 //Agrega elemento Miembro al ABB
@@ -33,7 +36,21 @@ void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m){
 
 //Verifica si ese nombre existe en el ABB
 boolean ExisteEnArbol(ArbolFamilia arbol, String nombre){
-
+    String nom1;
+    if (arbol == NULL)
+        return FALSE;
+    else{
+        ObtenerNombreMiembroABB(arbol->info, nom1);
+        if(streq(nom1, nombre, TRUE)){
+            return TRUE;
+        }else{//hasta aca anda
+             if(strmen(nom1, nombre))
+                 return ExisteEnArbol(arbol->hIzq, nombre);
+             else
+                 return ExisteEnArbol(arbol->hDer, nombre);
+       }
+        LiberarString(nom1);
+    }
 }
 
 //Verifica que una fecha sea mayor a todas las existentes en el ABB
