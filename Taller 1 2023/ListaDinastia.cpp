@@ -178,7 +178,9 @@ ListaDinastia Primogenito2(ListaDinastia padre) {
         } else {
             padre = padre->sig;
         }
+        LiberarString(aux);
     }
 
+    LiberarString(nomPadre);
     return padre;
 }
