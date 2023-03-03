@@ -149,8 +149,6 @@ void LiberarListaDinastia(ListaDinastia &ls) {
 boolean Primogenito(MiembroLista m, ListaDinastia ls) { //REVISAR este es de ListaDinastia
     boolean es = FALSE;
     String nombre, nombre2;
-    strcrear(nombre);
-    strcrear(nombre2);
     ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nombre);
     ObtenerNombreMiembroABB(ObtenerMiembroABB(m), nombre2);
     if (streq(nombre, nombre2, TRUE)){
