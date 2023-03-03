@@ -25,7 +25,7 @@ void AgregarMiembroAlArbolFamilia(ArbolFamilia &arbol, MiembroABB m);
 boolean ExisteEnArbol(ArbolFamilia arbol, String nombre);
 
 //Verifica que una fecha sea mayor a todas las existentes en el ABB
-boolean FechaEsMayorATodas (ArbolFamilia arbol, Fecha f);
+boolean FechaEsMayorATodas (ArbolFamilia arbol, MiembroABB m);
 
 //Devuelve el ABB de familia
 void MostrarABB(ArbolFamilia a);
