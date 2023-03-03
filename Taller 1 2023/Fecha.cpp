@@ -92,7 +92,7 @@ boolean ValidarFecha(Fecha f){
 // Comparar dos fechas devolviendo TRUE si la
 // primera es mayor estricto que la segunda.
 // De lo contrario devuelve FALSE.
-boolean FechaMasReciente(Fecha f1, Fecha f2){
+boolean FechaMayor(Fecha f1, Fecha f2){
     int f1Num = ObtenerAnioFecha(f1) * 10000 + ObtenerMesFecha(f1) * 100 + ObtenerDiaFecha(f1);
     int f2Num = ObtenerAnioFecha(f2) * 10000 + ObtenerMesFecha(f2) * 100 + ObtenerDiaFecha(f2);
     return f1Num > f2Num ? TRUE : FALSE;

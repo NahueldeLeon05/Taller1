@@ -27,7 +27,7 @@ int ObtenerAnioFecha(Fecha f);
 // Comparar dos fechas devolviendo TRUE si la
 // primera es mayor estricto que la segunda.
 // De lo contrario devuelve FALSE.
-boolean FechaMasReciente(Fecha f1, Fecha f2);
+boolean FechaMayor(Fecha f1, Fecha f2);
 
 // Comparar dos fechas devolviendo TRUE si la
 // primera es mayor o igual que la segunda.

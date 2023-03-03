@@ -77,10 +77,10 @@ boolean FechaMayorATodas(ListaDinastia ls, Fecha f) {
     boolean b = TRUE;
     while (ls != NULL && b == TRUE) {
         MiembroABB mabb = ObtenerMiembroABB(ls->info);
-        if (FechaMayorIgual(ObtenerFechaAbdicacion(ls->info), f) == TRUE ||
-            FechaMayorIgual(ObtenerFechaAscencion(ls->info), f) == TRUE ||
-            FechaMayorIgual(ObtenerFechaFallecimiento(ls->info), f) == TRUE ||
-            FechaMayorIgual(ObtenerFechaNacimientoMiembroABB(mabb), f) == TRUE){
+        if (FechaMayor(ObtenerFechaAbdicacion(mabb), f) == TRUE ||
+            FechaMayor(ObtenerFechaAscencion(mabb), f) == TRUE ||
+            FechaMayor(ObtenerFechaFallecimiento(mabb), f) == TRUE ||
+            FechaMayor(ObtenerFechaNacimientoMiembroABB(mabb), f) == TRUE){
             b = FALSE;
         } else {
             ls = ls->sig;
