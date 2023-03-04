@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <cstdlib>
-
 #include "Fecha.h"
-#include "boolean.h"
-#include "String.h"
 
 // Cargar la informacion de la fecha con los datos ingresados.
 Fecha CargarFecha(int dia, int mes, int anio) {

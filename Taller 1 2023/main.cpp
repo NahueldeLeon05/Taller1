@@ -1,7 +1,4 @@
-#include "ListaString.h"
-#include "Boolean.h"
-#include "Fecha.h"
-#include "MiembroLista.h"
+#include "ListaDinastia.h"
 #include "ABBFamilia.h"
 
 int main()

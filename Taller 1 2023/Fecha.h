@@ -1,5 +1,9 @@
 #ifndef FECHA_H_INCLUDED
 #define FECHA_H_INCLUDED
+
+#include <stdio.h>
+#include <cstdlib>
+
 #include "String.h"
 #include "boolean.h"
 

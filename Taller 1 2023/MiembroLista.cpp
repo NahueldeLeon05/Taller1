@@ -1,5 +1,4 @@
 #include "MiembroLista.h"
-#include <stdio.h>
 
 //Crea miembro de Lista
 MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante){

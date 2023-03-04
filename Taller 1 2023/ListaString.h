@@ -1,5 +1,6 @@
 #ifndef LISTASTRING_H_INCLUDED
 #define LISTASTRING_H_INCLUDED
+
 #include "String.h"
 
 typedef struct _snode {

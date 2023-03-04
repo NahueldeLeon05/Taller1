@@ -1,5 +1,4 @@
 #include "boolean.h"
-#include <stdio.h>
 
 //Carga un boolean
 void CargarBoolean(boolean &b){

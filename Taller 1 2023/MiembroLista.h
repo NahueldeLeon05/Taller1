@@ -1,5 +1,8 @@
 #ifndef MIEMBROLISTA_H_INCLUDED
 #define MIEMBROLISTA_H_INCLUDED
+
+#include <stdio.h>
+
 #include "MiembroABB.h"
 
 typedef struct {

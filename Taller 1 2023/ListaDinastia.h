@@ -1,6 +1,7 @@
 #ifndef LISTADINASTIA_H_INCLUDED
 #define LISTADINASTIA_H_INCLUDED
 
+#include "ListaString.h"
 #include "MiembroLista.h"
 
 typedef struct nodoH {
