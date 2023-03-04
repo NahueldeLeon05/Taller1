@@ -136,6 +136,10 @@ Fecha ObtenerFechaAscencion(MiembroLista mL){
     return mL.ascension;
 }
 
+void CargarFechaAscension(MiembroLista &mL, Fecha f) {
+    mL.ascension = f;
+}
+
 //Selectora obtener fecha de abdicacion
 Fecha ObtenerFechaAbdicacion(MiembroLista mL){
     return mL.abdicacion;
