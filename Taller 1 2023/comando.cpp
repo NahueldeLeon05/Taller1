@@ -65,6 +65,7 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
 
         case 1:
             Nacimiento(arbol, dinastia, comando);
+            break;
 
         case 4:
             Miembros(arbol, comando);
@@ -121,6 +122,86 @@ void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando) {
     LiberarString(nombre);
 
     printf("[I]: Dinastia iniciada correctamente.\r\n");
+}
+
+void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
+    if (dinastia == NULL || arbol == NULL) {
+        printf("[E]: La familia no fue iniciada.\r\n");
+        return;
+    }
+
+    if (comando.cantidadParametros != 4) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    String fechaStr;
+    AgarrarParam(comando.parametros, 0, fechaStr);
+
+    if (ValidarFormato(fechaStr) == FALSE) {
+        printf("[E]: Formato de fecha incorrecto.\r\n");
+        return;
+    }
+
+    Fecha fecha = TransformarFecha(fechaStr);
+    if (ValidarFecha(fecha) == FALSE) {
+        printf("[E]: Fecha incorrecta.\r\n");
+        return;
+    }
+
+    String progenitor;
+    AgarrarParam(comando.parametros, 1, progenitor);
+    if (NombreAlfabetico(progenitor) == FALSE) {
+        printf("[E]: El nombre del progenitor no es alfabetico.\r\n");
+        return;
+    }
+    PasarMayus(progenitor);
+
+    String flecha;
+    AgarrarParam(comando.parametros, 2, flecha);
+    if (EsFlecha(flecha) == FALSE) {
+        printf("[E]: Entre los dos nombre debe de escribir '->'.\r\n");
+        return;
+    }
+
+    String nombre;
+    AgarrarParam(comando.parametros, 3, nombre);
+    if (NombreAlfabetico(nombre) == FALSE) {
+        printf("[E]: El nombre no es alfabetico.\r\n");
+        return;
+    }
+    PasarMayus(nombre);
+
+    if (ExisteEnArbol(arbol, nombre) == TRUE) {
+        printf("[E]: Ya existe un miembro con este nombre.\r\n");
+        return;
+    }
+
+    if (ExisteEnArbol(arbol, progenitor) == FALSE) {
+        printf("[E]: No existe el nombre del progenitor.\r\n");
+        return;
+    }
+
+    if (FechaMayorATodas(dinastia, fecha) == FALSE) {
+        printf("[E]: La fecha ingresada debe ser mayor a todas las anteriores.\r\n");
+        return;
+    }
+
+    MiembroABB mAbb = CrearMiembroNuevo(nombre, progenitor, fecha);
+    AgregarMiembroAlArbolFamilia(arbol, mAbb);
+
+    MiembroLista mList = CrearMiembroLista(mAbb, TRUE, FALSE);
+    if (TodosAbdicaronOFallecieron(dinastia) == FALSE) {
+        CargarFechaAscension(mList, fecha);
+    }
+
+    AgregarMiembroALista(dinastia, mList);
+
+    LiberarString(fechaStr);
+    LiberarString(progenitor);
+    LiberarString(nombre);
+
+    printf("[I]: Nacimiento registrado correctamente.\r\n");
 }
 
 void Miembros(ArbolFamilia arbol , Comando comando) {
