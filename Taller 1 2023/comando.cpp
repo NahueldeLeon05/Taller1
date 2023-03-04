@@ -122,3 +122,12 @@ void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando) {
 
     printf("[I]: Dinastia iniciada correctamente.\r\n");
 }
+
+void Miembros(ArbolFamilia arbol , Comando comando) {
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    MostrarABB(arbol);
+}

@@ -17,10 +17,16 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento) {
 
 void MostrarMiembroABB(MiembroABB m) {
     print(m.nombre);
-    printf(" hijo/a de ");
-    print(m.nombreProgenitor);
+    if (m.nombreProgenitor == NULL) {
+        printf(" primer monarca");
+    } else {
+        printf(" hijo/a de ");
+        print(m.nombreProgenitor);
+    }
     printf(" nacio el ");
     MostrarFecha(m.fNac);
+
+    printf("\r\n");
 }
 
 void ObtenerNombreMiembroABB(MiembroABB m, String &nom) {

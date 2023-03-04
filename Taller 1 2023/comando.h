@@ -26,4 +26,7 @@ void LiberarComando(Comando &cmd);
 
 void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando);
 
+
+void Miembros(ArbolFamilia arbol , Comando comando);
+
 #endif // COMANDO_H_INCLUDED
