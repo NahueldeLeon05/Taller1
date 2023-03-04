@@ -197,7 +197,7 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     MiembroABB mAbb = CrearMiembroNuevo(nombre, progenitor, fecha);
     AgregarMiembroAlArbolFamilia(arbol, mAbb);
 
-    MiembroLista mList = CrearMiembroLista(mAbb, TRUE, FALSE);
+    MiembroLista mList = CrearMiembroLista(mAbb, FALSE, FALSE);
     if (TodosAbdicaronOFallecieron(dinastia) == FALSE) {
         CargarFechaAscension(mList, fecha);
     }
