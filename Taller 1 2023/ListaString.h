@@ -30,7 +30,7 @@ void GuardarListaString(ListaString L, FILE * f);
 
 //Levanta lista desde archivo
 //PRECONDICION: Archivo abierto en modo lectura
-void LeerListaString(ListaString &root, FILE * f);
+ListaString LeerListaString(FILE * f);
 
 int IndiceEnLista(ListaString root, String s);
 

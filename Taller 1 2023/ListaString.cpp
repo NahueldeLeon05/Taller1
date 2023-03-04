@@ -45,15 +45,17 @@ void GuardarListaString(ListaString L, FILE * f){
     }
 }
 
-void LeerListaString(ListaString &root, FILE * f){
+ListaString LeerListaString(FILE * f){
     String buffer;
-    root = NULL;
+    ListaString root = NULL;
     LeerString(buffer, f);
 
     while (!feof(f)) {
         AgregarAListaString(root, buffer);
         LeerString(buffer, f);
     }
+
+    return root;
 }
 
 void LiberarListaString(ListaString &root) {
