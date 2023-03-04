@@ -4,8 +4,12 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento) {
     MiembroABB m;
     strcrear(m.nombre);
     strcop(nom, m.nombre);
-    strcrear(m.nombreProgenitor);
-    strcop(padre, m.nombreProgenitor);
+    if (padre == NULL) {
+        m.nombreProgenitor = NULL;
+    } else {
+        strcrear(m.nombreProgenitor);
+        strcop(padre, m.nombreProgenitor);
+    }
     m.fNac = nacimiento;
 
     return m;
