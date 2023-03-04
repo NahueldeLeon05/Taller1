@@ -35,9 +35,6 @@ boolean Abdico(MiembroLista m);
 //Devuelve si el miembro de la lista es aspirante o no
 boolean EsAspirante(MiembroLista m);
 
-//Devuelve si el miembro de la lista no es o fue monarca
-boolean NoEsOFueMonarca(MiembroLista m);
-
 //Devuelve si el miembro de la lista es o no primogenito
 boolean Primogenito(MiembroLista m);
 
