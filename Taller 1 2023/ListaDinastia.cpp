@@ -48,7 +48,7 @@ ListaDinastia UltimoHijo(ListaDinastia ls) {
     boolean diferente = FALSE;
 
     String nomPadre;
-    ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ls->info), nomPadre);
+    ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nomPadre);
 
     String aux;
     ls = ls->sig;
