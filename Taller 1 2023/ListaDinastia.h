@@ -17,7 +17,7 @@ void InicializarLista(ListaDinastia &ls);
 //Agrega miembro a la lista de dinastia
 void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml);
 
-ListaDinastia ObtenerNodoPadre(ListaDinastia ls, String nombre);
+ListaDinastia ObtenerNodoListaDinastia(ListaDinastia ls, String nombre);
 
 ListaDinastia UltimoHijo(ListaDinastia padre);
 
@@ -25,9 +25,6 @@ boolean FechaMayorATodas(ListaDinastia root, Fecha f);
 
 //Verifica que la lista tenga elementos
 boolean ListaTieneElementos(ListaDinastia lf);
-
-//Obtiene miembro de la lista mediante el nombre
-MiembroLista* ObtenerMiembro(ListaDinastia l, String nom);
 
 //Despliega por pantalla los elementos de la lista
 void MostrarElementosLista(ListaDinastia ls);
@@ -47,5 +44,7 @@ void LiberarListaDinastia(ListaDinastia &lf);
 boolean Primogenito(MiembroLista m, ListaDinastia ls);
 
 boolean TodosAbdicaronOFallecieron(ListaDinastia ls);
+
+ListaDinastia SiguienteMonarca(ListaDinastia lista);
 
 #endif // LISTAFAMILIA_H_INCLUDED

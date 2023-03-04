@@ -67,6 +67,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
             Nacimiento(arbol, dinastia, comando);
             break;
 
+        case 2:
+            Fallecimiento(dinastia, comando);
+            break;
+
         case 4:
             Miembros(arbol, comando);
             break;
@@ -205,6 +209,63 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     LiberarString(nombre);
 
     printf("[I]: Nacimiento registrado correctamente.\r\n");
+}
+
+void Fallecimiento(ListaDinastia dinastia, Comando comando) {
+    if (dinastia == NULL) {
+        printf("[E]: La familia no fue iniciada.\r\n");
+        return;
+    }
+
+    if (comando.cantidadParametros != 2) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    String fechaStr;
+    AgarrarParam(comando.parametros, 0, fechaStr);
+
+    if (ValidarFormato(fechaStr) == FALSE) {
+        printf("[E]: Formato de fecha incorrecto.\r\n");
+        return;
+    }
+
+    Fecha fecha = TransformarFecha(fechaStr);
+    if (ValidarFecha(fecha) == FALSE) {
+        printf("[E]: Fecha incorrecta.\r\n");
+        return;
+    }
+
+    String nombre;
+    AgarrarParam(comando.parametros, 1, nombre);
+    if (NombreAlfabetico(nombre) == FALSE) {
+        printf("[E]: El nombre no es alfabetico.\r\n");
+        return;
+    }
+    PasarMayus(nombre);
+
+    ListaDinastia ls = ObtenerNodoListaDinastia(dinastia, nombre);
+    if (ls == NULL) {
+        printf("[E]: El nombre no existe en la lista.\r\n");
+        return;
+    }
+
+    if (ObtenerFallecio(ls->info) == FALSE) {
+        boolean esRey = EsRey(ls->info);
+        CargarFechaFallecimiento(ls->info, fecha);
+
+        if (esRey) {
+            ListaDinastia sigRey = SiguienteMonarca(ls);
+            if (sigRey != NULL) {
+                CargarFechaAscension(sigRey->info, fecha);
+            }
+        }
+    } else {
+        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
+        return;
+    }
+
+    printf("[I]: Fallecimiento registrado correctamente.\r\n");
 }
 
 void Miembros(ArbolFamilia arbol , Comando comando) {

@@ -28,7 +28,9 @@ void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando);
 
 void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando);
 
-void Miembros(ArbolFamilia arbol , Comando comando);
+void Fallecimiento(ListaDinastia dinastia, Comando comando);
+
+void Miembros(ArbolFamilia arbol, Comando comando);
 
 void Monarcas (ListaDinastia dinastia, Comando comando);
 

@@ -138,6 +138,7 @@ Fecha ObtenerFechaAscencion(MiembroLista mL){
 
 void CargarFechaAscension(MiembroLista &mL, Fecha f) {
     mL.ascension = f;
+    mL.monarcaActual = TRUE;
 }
 
 //Selectora obtener fecha de abdicacion
@@ -148,6 +149,16 @@ Fecha ObtenerFechaAbdicacion(MiembroLista mL){
 //Selectora obtener fecha de Fallecimiento
 Fecha ObtenerFechaFallecimiento(MiembroLista mL){
     return mL.fallecimiento;
+}
+
+void CargarFechaFallecimiento(MiembroLista &mL, Fecha f) {
+    mL.fallecimiento = f;
+    mL.fallecio = TRUE;
+
+    mL.fueMonarca = mL.monarcaActual;
+    mL.monarcaActual = FALSE;
+
+    mL.aspirante = FALSE;
 }
 
 void GuardarMiembroLista(FILE* f, MiembroLista ml){

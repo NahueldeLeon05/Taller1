@@ -16,7 +16,7 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
 
         String nombrePadre;
         ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ml), nombrePadre);
-        ListaDinastia padre = ObtenerNodoPadre(ls, nombrePadre);
+        ListaDinastia padre = ObtenerNodoListaDinastia(ls, nombrePadre);
 
         ListaDinastia ultimoHijo = UltimoHijo(padre);
         if (ultimoHijo == NULL) {
@@ -32,7 +32,7 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
 }
 
 // Precondicion: El nodo existe.
-ListaDinastia ObtenerNodoPadre(ListaDinastia ls, String nombre) {
+ListaDinastia ObtenerNodoListaDinastia(ListaDinastia ls, String nombre) {
     boolean found = FALSE;
     while (ls != NULL && found == FALSE) {
         String aux;
@@ -96,24 +96,6 @@ boolean FechaMayorATodas(ListaDinastia ls, Fecha f) {
 
 boolean ListaTieneElementos(ListaDinastia lf) {
     return lf == NULL ? TRUE : FALSE;
-}
-
-MiembroLista* ObtenerMiembro(ListaDinastia ls, String nom) {
-    boolean found = FALSE;
-    while (ls != NULL && found == FALSE) {
-        MiembroLista inf = ls->info;
-
-        String aux;
-        ObtenerNombreMiembroABB(ObtenerMiembroABB(inf), aux);
-
-        if (streq(nom, aux, TRUE)== TRUE) {
-            found = TRUE;
-        }
-
-        ls = ls->sig;
-    }
-
-    return found == TRUE ? &ls->info : NULL;
 }
 
 void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
@@ -214,4 +196,23 @@ boolean TodosAbdicaronOFallecieron(ListaDinastia ls) {
     }
 
     return found;
+}
+
+ListaDinastia SiguienteMonarca(ListaDinastia ls) {
+    if (ls == NULL || ls->sig == NULL) {
+        return NULL;
+    }
+
+    ls = ls->sig;
+    boolean found = FALSE;
+    while (ls != NULL && found == FALSE) {
+        MiembroLista mList = ls->info;
+        if (ObtenerFallecio(mList) == TRUE || ObtenerAbdico(mList) == TRUE) {
+            ls = ls->sig;
+        } else {
+            found = TRUE;
+        }
+    }
+
+    return found == TRUE ? ls : NULL;
 }

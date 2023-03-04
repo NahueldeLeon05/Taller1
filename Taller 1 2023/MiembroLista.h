@@ -72,6 +72,8 @@ Fecha ObtenerFechaAbdicacion(MiembroLista mL);
 //Selectora obtener fecha de Fallecimiento
 Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 
+void CargarFechaFallecimiento(MiembroLista &mL, Fecha f);
+
 //Devuelve si el miembro de la lista esta vivo o no
 boolean Vivo(MiembroLista m);
 
