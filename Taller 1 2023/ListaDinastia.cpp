@@ -55,8 +55,13 @@ ListaDinastia UltimoHijo(ListaDinastia ls) {
 
     String aux;
     ls = ls->sig;
-    while (ls != NULL && diferente == FALSE) {
-        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ls->info), aux);
+    if (ls == NULL) {
+        return NULL;
+    }
+
+    while (ls->sig != NULL && diferente == FALSE) {
+        MiembroLista sig = ls->sig->info;
+        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(sig), aux);
 
         if (streq(aux, nomPadre, TRUE) == TRUE) {
             ls = ls->sig;
@@ -70,7 +75,10 @@ ListaDinastia UltimoHijo(ListaDinastia ls) {
     LiberarString(nomPadre);
 
     if (ls != NULL) {
-        ls = UltimoHijo(ls);
+        ListaDinastia hijos = UltimoHijo(ls);
+        if (hijos != NULL) {
+            ls = hijos;
+        }
     }
 
     return ls;
