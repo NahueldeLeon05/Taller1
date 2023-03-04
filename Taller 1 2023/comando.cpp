@@ -74,9 +74,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
         case 4:
             Miembros(arbol, comando);
             break;
+
         case 5:
-        Monarcas(dinastia, comando);
-        break;
+            Monarcas(dinastia, comando);
+            break;
     }
 
     LiberarComando(comando);
