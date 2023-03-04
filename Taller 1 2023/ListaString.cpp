@@ -3,14 +3,19 @@
 ListaString CmdEnLista(String s) {
     ListaString root = NULL;
 
+    String aux;
+    strcrear(aux);
+    strcop(s, aux);
+
     String curr;
-    PrimerPalabra(s, curr);
+    PrimerPalabra(aux, curr);
 
     while (StringVacio(curr) == FALSE) {
         AgregarAListaString(root, curr);
-        PrimerPalabra(s, curr);
+        PrimerPalabra(aux, curr);
     }
 
+    LiberarString(aux);
     LiberarString(curr);
 
     return root;
