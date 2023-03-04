@@ -151,7 +151,7 @@ int main()
     //finaliza prueba mostrar, crear, guardar y leer de miembroLista
 
     //FILE* f;
-    String nombre, padre, nom, pad;
+   /* String nombre, padre, nom, pad;
     printf("Ingrese nombre: ");
     scan(nombre);
     printf("Ingrese nombre del padre: ");
@@ -168,7 +168,7 @@ int main()
     /*MiembroLista mL = CrearMiembroLista(m, FALSE, TRUE);
     MostrarInicioFin(mL);*/
     //MostrarBoolean(strmen(nombre, padre));*/
-    AgregarMiembroAlArbolFamilia(abb, m);
+    // AgregarMiembroAlArbolFamilia(abb, m);
     //AgregarMiembroAlArbolFamilia(abb, l);
     //MostrarABB(abb);
     //GuardarABB("prueba.txt", abb);

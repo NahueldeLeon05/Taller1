@@ -70,6 +70,9 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
         case 4:
             Miembros(arbol, comando);
             break;
+        case 5:
+        Monarcas(dinastia, comando);
+        break;
     }
 
     LiberarComando(comando);
@@ -211,4 +214,12 @@ void Miembros(ArbolFamilia arbol , Comando comando) {
     }
 
     MostrarABB(arbol);
+}
+
+void Monarcas(ListaDinastia ld , Comando comando) {
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+    MostrarMonarcasLista(ld);
 }

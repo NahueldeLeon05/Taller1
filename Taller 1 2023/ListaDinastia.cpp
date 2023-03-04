@@ -123,6 +123,14 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
     }
 }
 
+void MostrarElementosLista(ListaDinastia ls){
+    while (ls != NULL){
+        MostrarMiembroLista(ls->info);
+        ls = ls -> sig;
+    }
+}
+
+
 void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
     MiembroLista buffer;
     ls = NULL;
@@ -164,7 +172,16 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls) { //REVISAR este es de Lis
     LiberarString(nombre2);
     return es;
 }
-
+void MostrarMonarcasLista(ListaDinastia ls){
+    int cont = 1 ;
+    while (ls != NULL){
+        if (ObtenerFueMonarca(ls->info) == TRUE || ObtenerMonarcaActual(ls->info) == TRUE)
+        printf("%d-",cont);
+        MostrarInicioFin(ls->info);
+        cont++;
+        ls = ls -> sig;
+    }
+}
 
 ListaDinastia Primogenito2(ListaDinastia padre) {
     boolean found = FALSE;
