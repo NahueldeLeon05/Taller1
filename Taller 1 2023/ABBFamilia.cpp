@@ -45,7 +45,7 @@ boolean ExisteEnArbol(ArbolFamilia arbol, String nombre){
             LiberarString(nom1);
             return TRUE;
         } else {
-            if(strmen(nom1, nombre)) {
+            if(strmen(nombre, nom1)) {
                 LiberarString(nom1);
                 return ExisteEnArbol(arbol->hIzq, nombre);
             } else {
