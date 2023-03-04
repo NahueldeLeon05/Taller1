@@ -8,9 +8,36 @@ ListaString ObtenerComandosDisponibles() {
     return r;
 }
 
-void ObtenerComando(String &input) {
-    printf("Escriba el comando: ");
-    scan(input);
+Comando CrearComando() {
+    Comando cmd;
+    cmd.comandoID = -1;
+    cmd.parametros = NULL;
+    cmd.cantidadParametros = 0;
+
+    return cmd;
+}
+
+void CargarComando(ListaString comandosDisponibles, Comando &cmd) {
+    String input;
+    while (cmd.comandoID == -1) {
+        printf("Ingrese el comando: ");
+        scan(input);
+
+        cmd.comandoID = IndiceComando(comandosDisponibles, input);
+        if (cmd.comandoID == -1) {
+            printf("comando no existe\r\n");
+        }
+    }
+
+    ListaString parametros = CmdEnLista(input);
+    cmd.parametros = parametros->sig;
+
+    parametros->sig = NULL;
+    LiberarListaString(parametros);
+
+    cmd.cantidadParametros = ContarElementosDeLista(cmd.parametros);
+
+    LiberarString(input);
 }
 
 int IndiceComando(ListaString comandos, String input) {
@@ -28,46 +55,42 @@ int IndiceComando(ListaString comandos, String input) {
 }
 
 void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles) {
-    int comando = -1;
+    Comando comando = CrearComando();
+    CargarComando(comandosDisponibles, comando);
 
-    String input;
-    while (comando == -1) {
-        ObtenerComando(input);
-        comando = IndiceComando(comandosDisponibles, input);
-        if (comando == -1) {
-            printf("comando no existe\r\n");
-        }
-    }
-
-    ListaString params = CmdEnLista(input);
-    switch (comando) {
+    switch (comando.comandoID) {
         case 0:
-            Iniciar(arbol, dinastia, params);
+            Iniciar(arbol, dinastia, comando);
+            break;
+
+        case 1:
+            Nacimiento(arbol, dinastia, comando);
+
+        case 4:
+            Miembros(arbol, comando);
             break;
     }
 
-    LiberarString(input);
-    LiberarListaString(params);
+    LiberarComando(comando);
 }
 
-void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString params) {
-    if (dinastia != NULL) {
+void LiberarComando(Comando &cmd) {
+    LiberarListaString(cmd.parametros);
+}
+
+void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando) {
+    if (dinastia != NULL || arbol != NULL) {
         printf("[E]: La familia ya inicio.\r\n");
         return;
     }
 
-    if (arbol != NULL) {
-        printf("[E]: La familia ya inicio.\r\n");
-        return;
-    }
-
-    if (ContarElementosDeLista(params) != 3) {
+    if (comando.cantidadParametros != 2) {
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
         return;
     }
 
     String fechaStr;
-    AgarrarParam(params, 1, fechaStr);
+    AgarrarParam(comando.parametros, 0, fechaStr);
 
     if (ValidarFormato(fechaStr) == FALSE) {
         printf("[E]: Formato de fecha incorrecto.\r\n");
@@ -81,7 +104,7 @@ void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString params) {
     }
 
     String nombre;
-    AgarrarParam(params, 2, nombre);
+    AgarrarParam(comando.parametros, 1, nombre);
     if (NombreAlfabetico(nombre) == FALSE) {
         printf("[E]: El nombre no es alfabetico.\r\n");
         return;

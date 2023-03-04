@@ -6,14 +6,24 @@
 #include "ListaDinastia.h"
 #include "ABBFamilia.h"
 
+typedef struct {
+    int comandoID;
+    ListaString parametros;
+    int cantidadParametros;
+} Comando;
+
 ListaString ObtenerComandosDisponibles();
 
-void ObtenerComando(String &input);
+Comando CrearComando();
+
+void CargarComando(ListaString comandosDisponibles, Comando &cmd);
 
 int IndiceComando(ListaString comandos, String input);
 
 void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles);
 
-void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString params);
+void LiberarComando(Comando &cmd);
+
+void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando);
 
 #endif // COMANDO_H_INCLUDED
