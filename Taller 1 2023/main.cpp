@@ -1,8 +1,112 @@
 #include "ListaDinastia.h"
 #include "ABBFamilia.h"
 
+ListaString ObtenerComandosDisponibles() {
+    FILE * f = fopen("comandos.txt", "rb");
+    ListaString r = LeerListaString(f);
+    fclose(f);
+
+    return r;
+}
+
+void ObtenerComando(String &input) {
+    printf("Escriba el comando: ");
+    scan(input);
+}
+
+int IndiceComando(ListaString comandos, String input) {
+    ListaString params = CmdEnLista(input);
+
+    String cmd;
+    strcrear(cmd);
+    AgarrarParam(params, 0, cmd);
+
+    int idx = IndiceEnLista(comandos, cmd);
+    LiberarString(cmd);
+    LiberarListaString(params);
+
+    return idx;
+}
+
 int main()
 {
+    ListaDinastia dinastia;
+    InicializarLista(dinastia);
+
+    ArbolFamilia arbol;
+    InicializarArbolFamilia(arbol);
+
+    ListaString comandosDisponibles = ObtenerComandosDisponibles();
+
+    while (true) {
+        int comando = -1;
+        String input;
+
+        while (comando == -1) {
+            ObtenerComando(input);
+            comando = IndiceComando(comandosDisponibles, input);
+            if (comando == -1) {
+                printf("comando no existe\r\n");
+            }
+        }
+
+        ListaString params = CmdEnLista(input);
+        switch (comando) {
+            case 0:
+                if (dinastia != NULL) {
+                    printf("[E]: La familia ya inicio.\r\n");
+                    break;
+                }
+
+                if (arbol != NULL) {
+                    printf("[E]: La familia ya inicio.\r\n");
+                    break;
+                }
+
+                if (ContarElementosDeLista(params) != 3) {
+                    printf("[E]: Cantidad de parametros incorrecta.\r\n");
+                    break;
+                }
+
+                String fechaStr;
+                AgarrarParam(params, 1, fechaStr);
+
+                if (ValidarFormato(fechaStr) == FALSE) {
+                    printf("[E]: Formato de fecha incorrecto.\r\n");
+                    break;
+                }
+
+                Fecha fecha = TransformarFecha(fechaStr);
+                if (ValidarFecha(fecha) == FALSE) {
+                    printf("[E]: Fecha incorrecta.\r\n");
+                    break;
+                }
+
+                String nombre;
+                AgarrarParam(params, 2, nombre);
+                if (NombreAlfabetico(nombre) == FALSE) {
+                    printf("[E]: El nombre no es alfabetico.\r\n");
+                    break;
+                }
+
+                PasarMayus(nombre);
+                MiembroABB mAbb = CrearMiembroNuevo(nombre, NULL, fecha);
+                MiembroLista mList = CrearMiembroLista(mAbb, TRUE, FALSE);
+
+                AgregarMiembroALista(dinastia, mList);
+                AgregarMiembroAlArbolFamilia(arbol, mAbb);
+
+                LiberarString(fechaStr);
+                LiberarString(nombre);
+
+                printf("[I]: Dinastia iniciada correctamente.\r\n");
+                break;
+        }
+
+        LiberarString(input);
+        LiberarListaString(params);
+    }
+
       //FILE * f;
     /*String input;
     scan(input);
@@ -164,7 +268,7 @@ int main()
     //GuardarABB("prueba.txt", abb);
     //LeerFamiliaABB("prueba.txt", abb);
     //MostrarABB(abb);
-    boolean b = FechaEsMayorATodas(abb, l);
-    MostrarBoolean(b);
+    //boolean b = FechaEsMayorATodas(abb, l);
+    //MostrarBoolean(b);
     return 0;
 }
