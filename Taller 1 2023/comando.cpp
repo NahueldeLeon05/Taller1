@@ -1,5 +1,13 @@
 #include "comando.h"
 
+ListaString ObtenerComandosDisponibles() {
+    FILE * f = fopen("comandos.txt", "rb");
+    ListaString r = LeerListaString(f);
+    fclose(f);
+
+    return r;
+}
+
 void ObtenerComando(String &input) {
     printf("Escriba el comando: ");
     scan(input);

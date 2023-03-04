@@ -1,13 +1,5 @@
 #include "comando.h"
 
-ListaString ObtenerComandosDisponibles() {
-    FILE * f = fopen("comandos.txt", "rb");
-    ListaString r = LeerListaString(f);
-    fclose(f);
-
-    return r;
-}
-
 int main()
 {
     ListaDinastia dinastia;

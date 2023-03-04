@@ -1,9 +1,12 @@
 #ifndef COMANDO_H_INCLUDED
 #define COMANDO_H_INCLUDED
 
+#include "ListaString.h"
+
 #include "ListaDinastia.h"
 #include "ABBFamilia.h"
-#include "ListaString.h"
+
+ListaString ObtenerComandosDisponibles();
 
 void ObtenerComando(String &input);
 
