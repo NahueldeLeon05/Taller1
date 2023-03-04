@@ -3,16 +3,15 @@
 //Crea miembro de Lista
 MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante){
     MiembroLista mL;
-    String nom, nomProg;
-    Fecha f = ObtenerFechaNacimientoMiembroABB(m);
-    ObtenerNombreMiembroABB(m, nom);
-    ObtenerNombreProgenitorMiembroABB(m, nomProg);
-    mL.m = CrearMiembroNuevo(nom, nomProg, f);
+
+    mL.m = m;
+
     mL.monarcaActual = monarcaActual;
     mL.aspirante = aspirante;
     mL.fueMonarca = FALSE;
     mL.abdico = FALSE;
     mL.fallecio = FALSE;
+
     mL.ascension = FechaDefecto();
     mL.abdicacion = FechaDefecto();
     mL.fallecimiento = FechaDefecto();
