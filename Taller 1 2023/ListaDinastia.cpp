@@ -157,10 +157,11 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls) { //REVISAR este es de Lis
 void MostrarMonarcasLista(ListaDinastia ls){
     int cont = 1 ;
     while (ls != NULL){
-        if (ObtenerFueMonarca(ls->info) == TRUE || ObtenerMonarcaActual(ls->info) == TRUE)
-        printf("%d-",cont);
-        MostrarInicioFin(ls->info);
-        cont++;
+        if (ObtenerFueMonarca(ls->info) == TRUE || ObtenerMonarcaActual(ls->info) == TRUE) {
+            printf("%d-",cont);
+            MostrarInicioFin(ls->info);
+            cont++;
+        }
         ls = ls -> sig;
     }
 }

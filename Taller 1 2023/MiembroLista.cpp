@@ -88,7 +88,7 @@ void MostrarInicioFin(MiembroLista mL){
     if (mL.fallecio){
         printf(" hasta el ");
         MostrarFecha(mL.fallecimiento);
-        printf(" falleció.\r\n");
+        printf(" fallecio.\r\n");
     } else
            if(mL.abdico){
                 printf(" hasta el ");
