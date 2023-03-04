@@ -76,11 +76,12 @@ ListaDinastia UltimoHijo(ListaDinastia ls) {
 boolean FechaMayorATodas(ListaDinastia ls, Fecha f) {
     boolean b = TRUE;
     while (ls != NULL && b == TRUE) {
-        MiembroABB mabb = ObtenerMiembroABB(ls->info);
-        if (FechaMayor(ObtenerFechaAbdicacion(mabb), f) == TRUE ||
-            FechaMayor(ObtenerFechaAscencion(mabb), f) == TRUE ||
-            FechaMayor(ObtenerFechaFallecimiento(mabb), f) == TRUE ||
-            FechaMayor(ObtenerFechaNacimientoMiembroABB(mabb), f) == TRUE){
+        MiembroLista mList = ls->info;
+        MiembroABB mAbb = ObtenerMiembroABB(mList);
+        if (FechaMayor(ObtenerFechaAbdicacion(mList), f) == TRUE ||
+            FechaMayor(ObtenerFechaAscencion(mList), f) == TRUE ||
+            FechaMayor(ObtenerFechaFallecimiento(mList), f) == TRUE ||
+            FechaMayor(ObtenerFechaNacimientoMiembroABB(mAbb), f) == TRUE){
             b = FALSE;
         } else {
             ls = ls->sig;
