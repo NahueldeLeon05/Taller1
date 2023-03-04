@@ -13,6 +13,7 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
         ls = n;
     } else {
         boolean found = FALSE;
+
         String nombrePadre;
         ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ml), nombrePadre);
         ListaDinastia padre = ObtenerNodoPadre(ls, nombrePadre);
@@ -25,6 +26,8 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
             n->sig = ultimoHijo->sig;
             ultimoHijo->sig = n;
         }
+
+        LiberarString(nombrePadre);
     }
 }
 
