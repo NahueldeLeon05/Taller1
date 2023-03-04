@@ -11,8 +11,11 @@ MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
     mL.fueMonarca = FALSE;
     mL.abdico = FALSE;
     mL.fallecio = FALSE;
-
-    mL.ascension = FechaDefecto();
+    if(monarcaActual == TRUE){
+        mL.ascension = ObtenerFechaNacimientoMiembroABB(m);
+    }else{
+        mL.ascension = FechaDefecto();
+    }
     mL.abdicacion = FechaDefecto();
     mL.fallecimiento = FechaDefecto();
     return mL;
@@ -58,10 +61,6 @@ boolean EsAspirante(MiembroLista m){
     return m.aspirante;
 }
 
-boolean NoFueMonarca(MiembroLista m){
-    return m.fueMonarca;
-}
-
 //Devuelve si la fecha ascensi�n es 0/0/0
 // llevar a fecha.cpp
 boolean fechaVacia(MiembroLista m){
@@ -101,6 +100,7 @@ void MostrarInicioFin(MiembroLista mL){
     // EJEMPLO 1 - JORGE desde el 14/12/1895 hasta el 06/02/1952 (falleci�)
     // EJEMPLO 2 - ISABEL desde el 06/02/1952 hasta la actualidad
 }
+
 
 MiembroABB ObtenerMiembroABB(MiembroLista ml) {
     return ml.m;
