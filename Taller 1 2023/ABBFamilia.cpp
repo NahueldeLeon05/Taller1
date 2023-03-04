@@ -68,8 +68,8 @@ void MostrarABB(ArbolFamilia a){
 void GuardarABB(FILE* f, ArbolFamilia abb){
     if (abb != NULL) {
         GuardarMiembroABB(f, abb->info);
-        AuxGuardarABB(abb->hIzq, f);
-        AuxGuardarABB(abb->hDer, f);
+        GuardarABB(f, abb->hIzq);
+        GuardarABB(f, abb->hDer);
     }
 }
 

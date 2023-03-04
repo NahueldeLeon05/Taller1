@@ -29,10 +29,10 @@ boolean ExisteEnArbol(ArbolFamilia arbol, String nombre);
 //Devuelve el ABB de familia
 void MostrarABB(ArbolFamilia a);
 
-void GuardarABB(String nomArch, ArbolFamilia abb);
+void GuardarABB(FILE* f, ArbolFamilia abb);
 
 //Levanta ABB desde archivo
-void LeerFamiliaABB(String nomArch, ArbolFamilia &abb);
+void LeerFamiliaABB(FILE* f, ArbolFamilia &abb);
 
 //Libera el espacio de memoria ocupado por el ABB
 void LiberarABBFamilia(ArbolFamilia &abb);
