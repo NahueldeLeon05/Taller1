@@ -46,4 +46,6 @@ void LiberarListaDinastia(ListaDinastia &lf);
 
 boolean Primogenito(MiembroLista m, ListaDinastia ls);
 
+boolean TodosAbdicaronOFallecieron(ListaDinastia ls);
+
 #endif // LISTAFAMILIA_H_INCLUDED

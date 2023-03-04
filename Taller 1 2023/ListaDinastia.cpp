@@ -183,3 +183,15 @@ ListaDinastia Primogenito2(ListaDinastia padre) {
     LiberarString(nomPadre);
     return padre;
 }
+
+boolean TodosAbdicaronOFallecieron(ListaDinastia ls) {
+    boolean found = FALSE;
+    while (ls != NULL && found == FALSE) {
+        MiembroLista miembro = ls->info;
+        if (ObtenerAbdico(miembro) == FALSE || ObtenerFallecio(miembro) == FALSE) {
+            found = TRUE;
+        }
+    }
+
+    return found;
+}
