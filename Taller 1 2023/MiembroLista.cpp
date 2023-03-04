@@ -146,6 +146,14 @@ Fecha ObtenerFechaAbdicacion(MiembroLista mL){
     return mL.abdicacion;
 }
 
+void CargarFechaAbdicacion(MiembroLista &mL, Fecha f) {
+    mL.abdicacion = f;
+    mL.abdico = TRUE;
+
+    mL.fueMonarca = mL.monarcaActual;
+    mL.monarcaActual = FALSE;
+}
+
 //Selectora obtener fecha de Fallecimiento
 Fecha ObtenerFechaFallecimiento(MiembroLista mL){
     return mL.fallecimiento;

@@ -30,6 +30,8 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando);
 
 void Fallecimiento(ListaDinastia dinastia, Comando comando);
 
+void Abdicacion(ListaDinastia dinastia, Comando comando);
+
 void Miembros(ArbolFamilia arbol, Comando comando);
 
 void Monarcas (ListaDinastia dinastia, Comando comando);

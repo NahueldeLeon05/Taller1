@@ -71,6 +71,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
             Fallecimiento(dinastia, comando);
             break;
 
+        case 3:
+            Abdicacion(dinastia, comando);
+            break;
+
         case 4:
             Miembros(arbol, comando);
             break;
@@ -267,6 +271,64 @@ void Fallecimiento(ListaDinastia dinastia, Comando comando) {
     }
 
     printf("[I]: Fallecimiento registrado correctamente.\r\n");
+}
+
+void Abdicacion(ListaDinastia dinastia, Comando comando) {
+    if (dinastia == NULL) {
+        printf("[E]: La familia no fue iniciada.\r\n");
+        return;
+    }
+
+    if (comando.cantidadParametros != 2) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    String fechaStr;
+    AgarrarParam(comando.parametros, 0, fechaStr);
+    if (ValidarFormato(fechaStr) == FALSE) {
+        printf("[E]: Formato de fecha incorrecto.\r\n");
+        return;
+    }
+
+    Fecha fecha = TransformarFecha(fechaStr);
+    if (ValidarFecha(fecha) == FALSE) {
+        printf("[E]: Fecha incorrecta.\r\n");
+        return;
+    }
+
+    String nombre;
+    AgarrarParam(comando.parametros, 1, nombre);
+    if (NombreAlfabetico(nombre) == FALSE) {
+        printf("[E]: El nombre no es alfabetico.\r\n");
+        return;
+    }
+    PasarMayus(nombre);
+
+    ListaDinastia ls = ObtenerNodoListaDinastia(dinastia, nombre);
+    if (ls == NULL) {
+        printf("[E]: El nombre no existe en la lista.\r\n");
+        return;
+    }
+
+    if (EsRey(ls->info) == FALSE) {
+        printf("[E]: El miembro ingresado no es el actual monarca.\r\n");
+        return;
+    }
+
+    if (ObtenerFallecio(ls->info) == TRUE) {
+        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
+        return;
+    }
+
+    CargarFechaAbdicacion(ls->info, fecha);
+
+    ListaDinastia sigRey = SiguienteMonarca(ls);
+    if (sigRey != NULL) {
+        CargarFechaAscension(sigRey->info, fecha);
+    }
+
+    printf("[I]: Abdicacion registrada correctamente.\r\n");
 }
 
 void Miembros(ArbolFamilia arbol , Comando comando) {

@@ -69,6 +69,8 @@ void CargarFechaAscension(MiembroLista &mL, Fecha f);
 //Selectora obtener fecha de abdicacion
 Fecha ObtenerFechaAbdicacion(MiembroLista mL);
 
+void CargarFechaAbdicacion(MiembroLista &mL, Fecha f);
+
 //Selectora obtener fecha de Fallecimiento
 Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 
