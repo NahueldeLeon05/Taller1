@@ -86,6 +86,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
         case 8:
             Respaldar(dinastia, arbol, comando);
             break;
+
+        case 9:
+            Recuperar(dinastia, arbol, comando);
+            break;
     }
 
     LiberarComando(comando);
@@ -373,4 +377,23 @@ void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando){
     fclose(f);
 
     printf("[I]: Respaldo realizado correctamente.\r\n");
+}
+
+void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    FILE* f;
+    f = fopen("datosArbol.txt", "rb");
+    LeerFamiliaABB(f, abb);
+    fclose(f);
+
+    f = fopen("datosLista.txt", "rb");
+    CargarListaDinastia(f, ld);
+    fclose(f);
+
+    printf("[I]: Recuperacion realizada correctamente.\r\n");
+
 }
