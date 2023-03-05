@@ -385,6 +385,11 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
         return;
     }
 
+    if(ld != NULL || abb != NULL){
+        printf("La familia ya fue iniciada.\r\n");
+        return;
+    }
+
     FILE* f;
     f = fopen("datosArbol.txt", "rb");
     LeerFamiliaABB(f, abb);
