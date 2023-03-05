@@ -36,4 +36,6 @@ void Miembros(ArbolFamilia arbol, Comando comando);
 
 void Monarcas (ListaDinastia dinastia, Comando comando);
 
+void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando);
+
 #endif // COMANDO_H_INCLUDED

@@ -82,6 +82,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
         case 5:
             Monarcas(dinastia, comando);
             break;
+
+        case 8:
+            Respaldar(dinastia, arbol, comando);
+            break;
     }
 
     LiberarComando(comando);
@@ -346,4 +350,27 @@ void Monarcas(ListaDinastia ld , Comando comando) {
         return;
     }
     MostrarMonarcasLista(ld);
+}
+
+void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando){
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    if(ld == NULL || abb == NULL){
+        printf("La familia no fue iniciada.\r\n");
+        return;
+    }
+
+    FILE* f;
+    f = fopen("datosArbol.txt", "wb");
+    GuardarABB(f, abb);
+    fclose(f);
+
+    f = fopen("datosLista.txt", "wb");
+    GuardarListaDinastia(f, ld);
+    fclose(f);
+
+    printf("[I]: Respaldo realizado correctamente.\r\n");
 }
