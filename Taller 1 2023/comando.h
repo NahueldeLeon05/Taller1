@@ -40,4 +40,6 @@ void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando);
 
 void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando);
 
+void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando);
+
 #endif // COMANDO_H_INCLUDED

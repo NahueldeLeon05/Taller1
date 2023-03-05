@@ -90,6 +90,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
         case 9:
             Recuperar(dinastia, arbol, comando);
             break;
+
+        case 10:
+            Salir(dinastia, arbol, comando);
+            break;
     }
 
     LiberarComando(comando);
@@ -401,4 +405,10 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
 
     printf("[I]: Recuperacion realizada correctamente.\r\n");
 
+}
+
+void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
+    LiberarABBFamilia(abb);
+    LiberarListaDinastia(ld);
+    LiberarListaString(comando.parametros);
 }
