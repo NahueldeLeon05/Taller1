@@ -40,6 +40,7 @@ void MostrarMiembroLista(MiembroLista mL){
     MostrarFecha(mL.abdicacion);
     printf("\nFecha de Fallecimiento: ");
     MostrarFecha(mL.fallecimiento);
+    printf("\n");
 }
 
 boolean EsRey(MiembroLista m){
@@ -101,6 +102,51 @@ void MostrarInicioFin(MiembroLista mL){
     // EJEMPLO 2 - ISABEL desde el 06/02/1952 hasta la actualidad
 }
 
+void MostrarAspirante(MiembroLista ml){
+    String nomMiembro, nomPadre;
+    if(ml.aspirante == TRUE){
+        ObtenerNombreMiembroABB(ml.m, nomMiembro);
+        ObtenerNombreProgenitorMiembroABB(ml.m, nomPadre);
+        print(nomMiembro);
+        print(nomPadre);
+        LiberarString(nomMiembro);
+        LiberarString(nomPadre);
+    }
+}
+
+void MostrarMiembroListaHis(MiembroLista ml){
+    MostrarMiembroABB(ml.m);
+    if(ml.fueMonarca == TRUE){
+        printf("Fue monarca desde: ");
+        MostrarFecha(ml.ascension);
+        printf(" hasta");
+        if (ml.fallecio){
+            printf(" hasta el ");
+            MostrarFecha(ml.fallecimiento);
+            printf(" fallecio.\r\n");
+    } else
+           if(ml.abdico){
+                printf(" hasta el ");
+                MostrarFecha(ml.abdicacion);
+                printf(" abdico.\r\n");
+           }else {
+        printf(" hasta la actualidad.\r\n");
+        }
+    }else{
+        if(ml.aspirante == TRUE){
+            printf("Es aspirante al trono.");
+        }
+        if (ml.fallecio){
+            printf("Fallecio el ");
+            MostrarFecha(ml.fallecimiento);
+        } else
+           if(ml.abdico){
+                printf("Abdico el ");
+                MostrarFecha(ml.abdicacion);
+    }
+
+}
+}
 
 MiembroABB ObtenerMiembroABB(MiembroLista ml) {
     return ml.m;

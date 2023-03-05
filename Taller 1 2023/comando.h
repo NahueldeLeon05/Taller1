@@ -36,6 +36,10 @@ void Miembros(ArbolFamilia arbol, Comando comando);
 
 void Monarcas (ListaDinastia dinastia, Comando comando);
 
+void Aspirantes(ListaDinastia ld, Comando comando);
+
+void Historial(ListaDinastia ld, Comando comando);
+
 void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando);
 
 void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando);

@@ -29,6 +29,10 @@ boolean ListaTieneElementos(ListaDinastia lf);
 //Despliega por pantalla los elementos de la lista
 void MostrarElementosLista(ListaDinastia ls);
 
+void MostrarLineaDeSucesion(ListaDinastia ld);
+
+void MostrarMiembrosAspirantes(ListaDinastia ld);
+
 //Despliega por pantalla a los monarcas pasados y al actual de la lista
 void MostrarMonarcasLista(ListaDinastia a);
 

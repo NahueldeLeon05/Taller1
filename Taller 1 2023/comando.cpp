@@ -83,6 +83,14 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
             Monarcas(dinastia, comando);
             break;
 
+        case 6:
+            Aspirantes(dinastia, comando);
+            break;
+
+        case 7:
+            Historial(dinastia, comando);
+            break;
+
         case 8:
             Respaldar(dinastia, arbol, comando);
             break;
@@ -357,7 +365,31 @@ void Monarcas(ListaDinastia ld , Comando comando) {
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
         return;
     }
+
+    if(ld == NULL){
+        printf("La familia no fue iniciada.\r\n");
+        return;
+    }
+
     MostrarMonarcasLista(ld);
+}
+
+void Aspirantes(ListaDinastia ld, Comando comando){
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    MostrarMiembrosAspirantes(ld);
+}
+
+void Historial(ListaDinastia ld, Comando comando){
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    MostrarLineaDeSucesion(ld);
 }
 
 void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando){
@@ -394,11 +426,13 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
         return;
     }
 
+    InicializarArbolFamilia(abb);
     FILE* f;
     f = fopen("datosArbol.txt", "rb");
     LeerFamiliaABB(f, abb);
     fclose(f);
 
+    InicializarLista(ld);
     f = fopen("datosLista.txt", "rb");
     CargarListaDinastia(f, ld);
     fclose(f);
@@ -408,7 +442,13 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
 }
 
 void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
+    if (comando.cantidadParametros != 0) {
+        printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
     LiberarABBFamilia(abb);
     LiberarListaDinastia(ld);
-    LiberarListaString(comando.parametros);
+    LiberarComando(comando);
+    exit(0);
 }

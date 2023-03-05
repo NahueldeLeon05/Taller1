@@ -114,12 +114,36 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
 }
 
 void MostrarElementosLista(ListaDinastia ls){
+    int cont=1;
     while (ls != NULL){
         MostrarMiembroLista(ls->info);
         ls = ls -> sig;
     }
 }
 
+void MostrarMiembrosAspirantes(ListaDinastia ld){
+    int cont = 1 ;
+    while (ld != NULL){
+        if (ObtenerAspirante(ld->info) == TRUE) {
+            printf("%d-",cont);
+            MostrarAspirante(ld->info);
+            cont++;
+        }
+        ld = ld -> sig;
+    }
+}
+
+void MostrarLineaDeSucesion(ListaDinastia ld){
+    int cont = 1 ;
+    while (ld != NULL){
+        if (ObtenerAspirante(ld->info) == TRUE) {
+            printf("%d-",cont);
+            MostrarMiembroListaHis(ld->info);
+            cont++;
+        }
+        ld = ld -> sig;
+    }
+}
 
 void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
     MiembroLista buffer;
@@ -162,6 +186,7 @@ boolean Primogenito(MiembroLista m, ListaDinastia ls) { //REVISAR este es de Lis
     LiberarString(nombre2);
     return es;
 }
+
 void MostrarMonarcasLista(ListaDinastia ls){
     int cont = 1 ;
     while (ls != NULL){

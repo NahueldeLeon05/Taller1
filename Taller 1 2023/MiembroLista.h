@@ -44,6 +44,10 @@ boolean fechaVacia(MiembroLista m);
 //Muestra fecha de inicio y fin del reinado del miembro
 void MostrarInicioFin(MiembroLista mL);
 
+void MostrarAspirante(MiembroLista ml);
+
+void MostrarMiembroListaHis(MiembroLista ml);
+
 MiembroABB ObtenerMiembroABB(MiembroLista ml);
 
 //Selectora obtiene si es monarca actual
