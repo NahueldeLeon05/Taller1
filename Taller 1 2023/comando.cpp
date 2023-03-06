@@ -20,7 +20,6 @@ Comando CrearComando() {
 void CargarComando(ListaString comandosDisponibles, Comando &cmd) {
     String input;
     while (cmd.comandoID == -1) {
-        printf("Ingrese el comando: ");
         scan(input);
 
         cmd.comandoID = IndiceComando(comandosDisponibles, input);
@@ -145,7 +144,7 @@ void Iniciar(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando) {
 
     PasarMayus(nombre);
     MiembroABB mAbb = CrearMiembroNuevo(nombre, NULL, fecha);
-    MiembroLista mList = CrearMiembroLista(mAbb, TRUE, FALSE);
+    MiembroLista mList = CrearMiembroLista(mAbb, TRUE);
 
     AgregarMiembroALista(dinastia, mList);
     AgregarMiembroAlArbolFamilia(arbol, mAbb);
@@ -222,7 +221,7 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     MiembroABB mAbb = CrearMiembroNuevo(nombre, progenitor, fecha);
     AgregarMiembroAlArbolFamilia(arbol, mAbb);
 
-    MiembroLista mList = CrearMiembroLista(mAbb, FALSE, FALSE);
+    MiembroLista mList = CrearMiembroLista(mAbb, FALSE);
     if (TodosAbdicaronOFallecieron(dinastia) == FALSE) {
         CargarFechaAscension(mList, fecha);
     }
@@ -379,7 +378,6 @@ void Aspirantes(ListaDinastia ld, Comando comando){
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
         return;
     }
-
     MostrarMiembrosAspirantes(ld);
 }
 
