@@ -152,6 +152,9 @@ void CargarListaDinastia(FILE* f, ListaDinastia &ls) {
     CargarMiembroLista(f, buffer);
 
     while(!feof(f)){
+        if (ls == NULL) {
+            SetearNombreProgenitorNull(buffer.m);
+        }
         AgregarMiembroALista(ls, buffer);
         CargarMiembroLista(f, buffer);
     }
