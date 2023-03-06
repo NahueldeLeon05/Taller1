@@ -76,3 +76,8 @@ void LiberarMiembroABB(MiembroABB &m) {
     LiberarString(m.nombre);
     LiberarString(m.nombreProgenitor);
 }
+
+void SetearNombreProgenitorNull(MiembroABB &m){
+    LiberarString(m.nombreProgenitor);
+    m.nombreProgenitor = NULL;
+}
