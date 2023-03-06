@@ -109,6 +109,7 @@ void MostrarAspirante(MiembroLista ml){
         ObtenerNombreProgenitorMiembroABB(ml.m, nomPadre);
         print(nomMiembro);
         printf(" hijo de ");
+        printf(" hijo/a de ");
         print(nomPadre);
         printf("\r\n");
         LiberarString(nomMiembro);
