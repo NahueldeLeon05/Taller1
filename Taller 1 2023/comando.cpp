@@ -25,7 +25,8 @@ void CargarComando(ListaString comandosDisponibles, Comando &cmd) {
 
         cmd.comandoID = IndiceComando(comandosDisponibles, input);
         if (cmd.comandoID == -1) {
-            printf("comando no existe\r\n");
+            printf("[E]: Comando incorrecto.\r\n");
+            printf("[E]: Utiliza ayuda para listar los comandos disponibles.\r\n");
         }
     }
 
