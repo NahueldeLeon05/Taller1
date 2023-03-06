@@ -211,6 +211,8 @@ void CargarFechaAbdicacion(MiembroLista &mL, Fecha f) {
 
     mL.fueMonarca = mL.monarcaActual;
     mL.monarcaActual = FALSE;
+
+    mL.aspirante = FALSE;
 }
 
 //Selectora obtener fecha de Fallecimiento
@@ -224,6 +226,8 @@ void CargarFechaFallecimiento(MiembroLista &mL, Fecha f) {
 
     mL.fueMonarca = mL.monarcaActual;
     mL.monarcaActual = FALSE;
+
+    mL.aspirante = FALSE;
 }
 
 void GuardarMiembroLista(FILE* f, MiembroLista ml){
