@@ -119,9 +119,14 @@ void MostrarAspirante(MiembroLista ml){
 }
 
 void MostrarMiembroListaHis(MiembroLista ml){
-    MostrarMiembroABB(ml.m);
+    MostrarMiembroABBHistorial(ml.m);
+    if(ml.monarcaActual == TRUE){
+        MostrarFecha(ml.ascension);
+        printf(" hasta la actualidad.");
+        printf("\r\n");
+    }
     if(ml.fueMonarca == TRUE){
-        printf("Fue monarca desde: ");
+        printf("fue monarca desde: ");
         MostrarFecha(ml.ascension);
         printf(" hasta");
         if (ml.fallecio){
@@ -138,15 +143,19 @@ void MostrarMiembroListaHis(MiembroLista ml){
         }
     }else{
         if(ml.aspirante == TRUE){
-            printf("Es aspirante al trono.");
+            printf(" es aspirante al trono.");
+            printf("\r\n");
         }
         if (ml.fallecio){
-            printf("Fallecio el ");
+            printf(" fallecio el ");
             MostrarFecha(ml.fallecimiento);
+            printf("\r\n");
         } else
            if(ml.abdico){
-                printf("Abdico el ");
+                printf(" abdico el ");
                 MostrarFecha(ml.abdicacion);
+                printf("\r\n");
+        }
     }
 
 }
