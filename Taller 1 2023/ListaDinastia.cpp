@@ -131,16 +131,17 @@ void MostrarMiembrosAspirantes(ListaDinastia ld){
         }
         ld = ld -> sig;
     }
+    if (cont == 1){
+        printf("No existen aspirantes al trono.\r\n");
+    }
 }
 
 void MostrarLineaDeSucesion(ListaDinastia ld){
     int cont = 1 ;
     while (ld != NULL){
-        if (ObtenerAspirante(ld->info) == TRUE) {
-            printf("%d-",cont);
-            MostrarMiembroListaHis(ld->info);
-            cont++;
-        }
+        printf("%d-",cont);
+        MostrarMiembroListaHis(ld->info);
+        cont++;
         ld = ld -> sig;
     }
 }
