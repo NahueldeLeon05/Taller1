@@ -16,6 +16,8 @@ MiembroABB CrearMiembroNuevo(String nom, String padre, Fecha nacimiento);
 //Despliega por pantalla el miembro del ABB
 void MostrarMiembroABB(MiembroABB m);
 
+void MostrarMiembroABBHistorial(MiembroABB m);
+
 void ObtenerNombreMiembroABB(MiembroABB m, String &nom);
 
 Fecha ObtenerFechaNacimientoMiembroABB(MiembroABB m);
@@ -29,5 +31,7 @@ void GuardarMiembroABB(FILE* f, MiembroABB m);
 void LevantarMiembroABB(FILE* f, MiembroABB &m);
 
 void LiberarMiembroABB(MiembroABB &m);
+
+void SetearNombreProgenitorNull(MiembroABB &m);
 
 #endif // MIEMBROABB_H_INCLUDED
