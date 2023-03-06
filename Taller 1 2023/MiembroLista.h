@@ -18,7 +18,7 @@ typedef struct {
 }   MiembroLista;
 
 //Crea miembro de Lista
-MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante);
+MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual);
 
 //Despliega el miembro de la lista
 void MostrarMiembroLista(MiembroLista ml);
