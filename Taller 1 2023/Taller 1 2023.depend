@@ -92,7 +92,7 @@
 1677185116 c:\users\nicol\documents\repos\ude\taller1\taller 1 2023\listastring.h
 	"String.h"
 
-1678064278 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\abbfamilia.cpp
+1678064614 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\abbfamilia.cpp
 	"ABBFamilia.h"
 
 1677963463 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\boolean.cpp
@@ -126,7 +126,7 @@
 1677964610 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\main.cpp
 	"comando.h"
 
-1678064274 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.cpp
+1678065702 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
 1678064143 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.h
@@ -222,7 +222,7 @@
 1677963463 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\abbfamilia.h
 	"MiembroABB.h"
 
-1678059015 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.h
+1678140085 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.h
 	"ListaString.h"
 	"ListaDinastia.h"
 	"ABBFamilia.h"
@@ -235,7 +235,7 @@
 	<stdio.h>
 	"MiembroABB.h"
 
-1678060135 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
+1678140085 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
 1678058277 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
