@@ -1,7 +1,7 @@
 #include "MiembroLista.h"
 
 //Crea miembro de Lista
-MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspirante){
+MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual){
     MiembroLista mL;
 
     mL.m = m;
@@ -13,7 +13,9 @@ MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual, boolean aspi
     mL.fallecio = FALSE;
     if(monarcaActual == TRUE){
         mL.ascension = ObtenerFechaNacimientoMiembroABB(m);
+        mL.aspirante = FALSE;
     }else{
+        mL.aspirante = TRUE;
         mL.ascension = FechaDefecto();
     }
     mL.abdicacion = FechaDefecto();
@@ -108,7 +110,9 @@ void MostrarAspirante(MiembroLista ml){
         ObtenerNombreMiembroABB(ml.m, nomMiembro);
         ObtenerNombreProgenitorMiembroABB(ml.m, nomPadre);
         print(nomMiembro);
+        printf(" hijo de ");
         print(nomPadre);
+        printf("\r\n");
         LiberarString(nomMiembro);
         LiberarString(nomPadre);
     }
