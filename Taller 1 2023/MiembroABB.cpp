@@ -55,7 +55,15 @@ void ObtenerNombreProgenitorMiembroABB(MiembroABB m, String &nom) {
 void GuardarMiembroABB(FILE* f, MiembroABB m) {
     GuardarString(m.nombre, f);
     GuardarFecha(m.fNac, f);
-    GuardarString(m.nombreProgenitor, f);
+    if (m.nombreProgenitor == NULL){
+        String vacio;
+        strcrear(vacio);
+        GuardarString(vacio, f);
+        LiberarString(vacio);
+    }else{
+        GuardarString(m.nombreProgenitor, f);
+    }
+
 }
 
 void LevantarMiembroABB(FILE* f, MiembroABB &m) {
