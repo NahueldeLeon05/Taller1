@@ -194,6 +194,7 @@ Fecha ObtenerFechaAscencion(MiembroLista mL){
 void CargarFechaAscension(MiembroLista &mL, Fecha f) {
     mL.ascension = f;
     mL.monarcaActual = TRUE;
+    mL.aspirante = FALSE;
 }
 
 //Selectora obtener fecha de abdicacion
