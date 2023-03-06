@@ -1,7 +1,7 @@
 #include "comando.h"
 
 ListaString ObtenerComandosDisponibles() {
-    FILE * f = fopen("misc/comandos.txt", "rb");
+    FILE * f = fopen("misc/comandos.fn", "rb");
     ListaString r = LeerListaString(f);
     fclose(f);
 
