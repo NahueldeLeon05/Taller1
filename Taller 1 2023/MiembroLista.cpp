@@ -118,43 +118,35 @@ void MostrarAspirante(MiembroLista ml){
 
 void MostrarMiembroListaHis(MiembroLista ml){
     MostrarMiembroABBHistorial(ml.m);
-    if(ml.monarcaActual == TRUE){
+
+    if (TieneProgenitor(ml.m) == FALSE) {
+        printf(" primer monarca desde ");
         MostrarFecha(ml.ascension);
-        printf(" hasta la actualidad.");
-        printf("\r\n");
-    }
-    if(ml.fueMonarca == TRUE){
-        printf("fue monarca desde: ");
+    } else if (ml.monarcaActual == TRUE) {
+        printf(" monarca desde ");
         MostrarFecha(ml.ascension);
-        printf(" hasta");
-        if (ml.fallecio){
-            printf(" hasta el ");
-            MostrarFecha(ml.fallecimiento);
-            printf(" fallecio.\r\n");
-    } else
-           if(ml.abdico){
-                printf(" hasta el ");
-                MostrarFecha(ml.abdicacion);
-                printf(" abdico.\r\n");
-           }else {
-        printf(" hasta la actualidad.\r\n");
-        }
-    }else{
-        if(ml.aspirante == TRUE){
-            printf(" es aspirante al trono.");
-            printf("\r\n");
-        }
-        if (ml.fallecio){
-            printf(" fallecio el ");
-            MostrarFecha(ml.fallecimiento);
-            printf("\r\n");
-        } else
-           if(ml.abdico){
-                printf(" abdico el ");
-                MostrarFecha(ml.abdicacion);
-                printf("\r\n");
-        }
+        printf(" hasta la actualidad");
+    } else if(ml.fueMonarca == TRUE) {
+        printf(" fue monarca desde ");
+        MostrarFecha(ml.ascension);
     }
+
+    printf(". ");
+
+    if (ml.fallecio) {
+        printf("Falleció en ");
+        MostrarFecha(ml.fallecimiento);
+        printf(".");
+    } else if (ml.abdico) {
+        printf("Abdicó en ");
+        MostrarFecha(ml.abdicacion);
+        printf(".");
+    } else if (ml.aspirante == TRUE){
+        printf("Es aspirante al trono");
+        printf(".");
+    }
+
+    printf("\r\n");
 }
 
 MiembroABB ObtenerMiembroABB(MiembroLista ml) {

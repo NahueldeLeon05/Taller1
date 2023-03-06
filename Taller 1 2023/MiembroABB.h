@@ -34,4 +34,6 @@ void LiberarMiembroABB(MiembroABB &m);
 
 void SetearNombreProgenitorNull(MiembroABB &m);
 
+boolean TieneProgenitor(MiembroABB m);
+
 #endif // MIEMBROABB_H_INCLUDED

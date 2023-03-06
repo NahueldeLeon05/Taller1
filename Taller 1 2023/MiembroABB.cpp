@@ -28,11 +28,10 @@ void MostrarMiembroABB(MiembroABB m) {
 
     printf("\r\n");
 }
+
 void MostrarMiembroABBHistorial(MiembroABB m) {
     print(m.nombre);
-    if (m.nombreProgenitor == NULL) {
-        printf(" primer monarca desde ");
-    } else {
+    if (TieneProgenitor(m) == TRUE) {
         printf(" hijo/a de ");
         print(m.nombreProgenitor);
     }
@@ -80,4 +79,8 @@ void LiberarMiembroABB(MiembroABB &m) {
 void SetearNombreProgenitorNull(MiembroABB &m){
     LiberarString(m.nombreProgenitor);
     m.nombreProgenitor = NULL;
+}
+
+boolean TieneProgenitor(MiembroABB m) {
+    return m.nombreProgenitor != NULL ? TRUE : FALSE;
 }

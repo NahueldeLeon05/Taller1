@@ -178,14 +178,14 @@
 1677888501 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\listastring.h
 	"String.h"
 
-1678066481 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembroabb.cpp
+1678142376 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
-1678066481 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembroabb.h
+1678142376 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembroabb.h
 	"String.h"
 	"Fecha.h"
 
-1678066481 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembrolista.cpp
+1678142513 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembrolista.cpp
 	"MiembroLista.h"
 
 1678066481 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\miembrolista.h
@@ -201,17 +201,17 @@
 1677888882 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\abbfamilia.h
 	"MiembroABB.h"
 
-1678067459 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\main.cpp
+1678133344 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\main.cpp
 	"comando.h"
 
 1678066481 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\listadinastia.h
 	"ListaString.h"
 	"MiembroLista.h"
 
-1678066481 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\listadinastia.cpp
+1678142376 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\listadinastia.cpp
 	"ListaDinastia.h"
 
-1678078655 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\comando.cpp
+1678142772 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
 1678077782 c:\users\nico\documents\repos\ude\taller1\taller 1 2023\comando.h
