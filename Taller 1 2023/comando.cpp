@@ -20,6 +20,7 @@ Comando CrearComando() {
 void CargarComando(ListaString comandosDisponibles, Comando &cmd) {
     String input;
     while (cmd.comandoID == -1) {
+        printf("Ingrese el comando: ");
         scan(input);
 
         cmd.comandoID = IndiceComando(comandosDisponibles, input);
