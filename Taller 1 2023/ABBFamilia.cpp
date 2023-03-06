@@ -80,6 +80,9 @@ void LeerFamiliaABB(FILE *f, ArbolFamilia &abb){
     LevantarMiembroABB(f, buffer);
 
     while (!feof(f)) {
+        if (abb == NULL){
+            SetearNombreProgenitorNull(buffer);
+        }
         AgregarMiembroAlArbolFamilia(abb, buffer);
         LevantarMiembroABB(f, buffer);
     }
