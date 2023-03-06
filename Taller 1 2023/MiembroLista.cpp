@@ -5,9 +5,7 @@ MiembroLista CrearMiembroLista(MiembroABB m, boolean monarcaActual){
     MiembroLista mL;
 
     mL.m = m;
-
     mL.monarcaActual = monarcaActual;
-    mL.aspirante = aspirante;
     mL.fueMonarca = FALSE;
     mL.abdico = FALSE;
     mL.fallecio = FALSE;
@@ -157,8 +155,6 @@ void MostrarMiembroListaHis(MiembroLista ml){
                 printf("\r\n");
         }
     }
-
-}
 }
 
 MiembroABB ObtenerMiembroABB(MiembroLista ml) {
