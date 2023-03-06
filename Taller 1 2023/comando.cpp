@@ -100,6 +100,10 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
             break;
 
         case 10:
+            Ayuda();
+            break;
+
+        case 11:
             Salir(dinastia, arbol, comando);
             break;
     }
@@ -440,6 +444,14 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
 
 }
 
+void Ayuda() {
+    MostrarBanner();
+    MostrarIntroduccion();
+    MostrarComandos();
+
+    printf("_.~\"~._.~\"~._.~\"~._.~\"~.__.~\"~._.~\"~._.~\"~._.~\"~._\r\n\r\n");
+}
+
 void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
     if (comando.cantidadParametros != 0) {
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
@@ -450,4 +462,65 @@ void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
     LiberarListaDinastia(ld);
     LiberarComando(comando);
     exit(0);
+}
+
+void MostrarBanner() {
+    FILE* f = fopen("misc/banners/banners_list.fn", "rb");
+    ListaString bannersFileNames = LeerListaString(f);
+    fclose(f);
+
+    String randomBannerFileName;
+    AgarrarParam(bannersFileNames,
+                 (rand() % ContarElementosDeLista(bannersFileNames)) - 1,
+                 randomBannerFileName);
+    LiberarListaString(bannersFileNames);
+
+    f = fopen(randomBannerFileName, "rb");
+    ListaString bannerLinesList = LeerListaString(f);
+    fclose(f);
+
+    LiberarString(randomBannerFileName);
+
+    ListaString aux = bannerLinesList;
+    while (aux != NULL) {
+        print(aux->info);
+        printf("\r\n");
+        aux = aux->sig;
+    }
+
+    LiberarListaString(bannerLinesList);
+
+    printf("FAMI-NET\r\n");
+    printf("Desarrollado por Alejandro Barran, Nahuel de Leon y Nicolas Villar.\r\n\r\n");
+    printf("_.~\"~._.~\"~._.~\"~._.~\"~.__.~\"~._.~\"~._.~\"~._.~\"~._\r\n\r\n");
+}
+
+void MostrarIntroduccion() {
+    FILE* f = fopen("misc/introduccion.fn", "rb");
+    ListaString intrLines = LeerListaString(f);
+    fclose(f);
+
+    ListaString aux = intrLines;
+    while (aux != NULL) {
+        print(aux->info);
+        printf("\r\n");
+        aux = aux->sig;
+    }
+
+    LiberarListaString(intrLines);
+}
+
+void MostrarComandos() {
+    FILE* f = fopen("misc/ayuda.fn", "rb");
+    ListaString intrLines = LeerListaString(f);
+    fclose(f);
+
+    ListaString aux = intrLines;
+    while (aux != NULL) {
+        print(aux->info);
+        printf("\r\n");
+        aux = aux->sig;
+    }
+
+    LiberarListaString(intrLines);
 }
