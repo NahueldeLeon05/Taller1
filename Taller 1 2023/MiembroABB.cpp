@@ -28,6 +28,15 @@ void MostrarMiembroABB(MiembroABB m) {
 
     printf("\r\n");
 }
+void MostrarMiembroABBHistorial(MiembroABB m) {
+    print(m.nombre);
+    if (m.nombreProgenitor == NULL) {
+        printf(" primer monarca desde ");
+    } else {
+        printf(" hijo/a de ");
+        print(m.nombreProgenitor);
+    }
+}
 
 void ObtenerNombreMiembroABB(MiembroABB m, String &nom) {
     strcrear(nom);
