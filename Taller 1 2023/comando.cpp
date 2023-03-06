@@ -55,7 +55,7 @@ int IndiceComando(ListaString comandos, String input) {
     return idx;
 }
 
-void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles) {
+int ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles) {
     Comando comando = CrearComando();
     CargarComando(comandosDisponibles, comando);
 
@@ -110,6 +110,7 @@ void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString 
     }
 
     LiberarComando(comando);
+    return comando.comandoID;
 }
 
 void LiberarComando(Comando &cmd) {
@@ -462,7 +463,6 @@ void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
     LiberarABBFamilia(abb);
     LiberarListaDinastia(ld);
     LiberarComando(comando);
-    exit(0);
 }
 
 void MostrarBanner() {
@@ -479,7 +479,6 @@ void MostrarBanner() {
     f = fopen(randomBannerFileName, "rb");
     ListaString bannerLinesList = LeerListaString(f);
     fclose(f);
-
     LiberarString(randomBannerFileName);
 
     ListaString aux = bannerLinesList;

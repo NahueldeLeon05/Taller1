@@ -9,8 +9,9 @@ int main()
     InicializarArbolFamilia(arbol);
 
     ListaString comandosDisponibles = ObtenerComandosDisponibles();
-    while (true) {
-        ProcesarComandos(arbol, dinastia, comandosDisponibles);
+    int ultimoComando = -1;
+    while (ultimoComando != 11) {
+        ultimoComando = ProcesarComandos(arbol, dinastia, comandosDisponibles);
     }
 
       //FILE * f;

@@ -20,7 +20,7 @@ void CargarComando(ListaString comandosDisponibles, Comando &cmd);
 
 int IndiceComando(ListaString comandos, String input);
 
-void ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles);
+int ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString comandosDisponibles);
 
 void LiberarComando(Comando &cmd);
 
