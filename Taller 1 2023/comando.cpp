@@ -363,6 +363,11 @@ void Miembros(ArbolFamilia arbol , Comando comando) {
         return;
     }
 
+    if (arbol == NULL) {
+        printf("[E]: La familia no fue iniciada.");
+        return;
+    }
+
     MostrarABB(arbol);
 }
 
@@ -438,7 +443,7 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
     }
 
     if(ld != NULL || abb != NULL){
-        printf("La familia ya fue iniciada.\r\n");
+        printf("[E]: La familia ya fue iniciada.\r\n");
         return;
     }
 
