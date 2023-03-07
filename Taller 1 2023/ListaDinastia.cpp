@@ -19,6 +19,7 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
         ListaDinastia padre = ObtenerNodoListaDinastia(ls, nombrePadre);
 
         ListaDinastia ultimoHijo = UltimoHijo(padre);
+
         if (ultimoHijo == NULL) {
             n->sig = padre->sig;
             padre->sig = n;
@@ -48,40 +49,39 @@ ListaDinastia ObtenerNodoListaDinastia(ListaDinastia ls, String nombre) {
 }
 
 ListaDinastia UltimoHijo(ListaDinastia ls) {
-    boolean diferente = FALSE;
-
     String nomPadre;
     ObtenerNombreMiembroABB(ObtenerMiembroABB(ls->info), nomPadre);
 
+    ListaDinastia auxHijo = NULL;
+
     String aux;
-    ls = ls->sig;
-    if (ls == NULL) {
-        return NULL;
-    }
-
-    while (ls->sig != NULL && diferente == FALSE) {
-        MiembroLista sig = ls->sig->info;
-        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(sig), aux);
-
-        if (streq(aux, nomPadre, TRUE) == TRUE) {
+    while (ls != NULL) {
+        MiembroLista mList = ls->info;
+        if (ObtenerMiembroABB(mList).nombreProgenitor == NULL) {
             ls = ls->sig;
-        } else {
-            diferente = TRUE;
+            continue;
         }
 
+        ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(mList), aux);
+
+        if (streq(aux, nomPadre, TRUE) == TRUE) {
+            auxHijo = ls;
+        }
+
+        ls = ls->sig;
         LiberarString(aux);
     }
 
     LiberarString(nomPadre);
 
-    if (ls != NULL) {
-        ListaDinastia hijos = UltimoHijo(ls);
-        if (hijos != NULL) {
-            ls = hijos;
+    if (auxHijo != NULL) {
+        ListaDinastia t = UltimoHijo(auxHijo);
+        if (t != NULL) {
+            auxHijo = t;
         }
     }
 
-    return ls;
+    return auxHijo;
 }
 
 boolean FechaMayorATodas(ListaDinastia ls, Fecha f) {
