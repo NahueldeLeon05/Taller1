@@ -131,8 +131,9 @@ void MostrarMiembrosAspirantes(ListaDinastia ld){
         }
         ld = ld -> sig;
     }
+
     if (cont == 1){
-        printf("No existen aspirantes al trono.\r\n");
+        printf("[E]: No existen aspirantes al trono.\r\n");
     }
 }
 

@@ -373,7 +373,7 @@ void Monarcas(ListaDinastia ld , Comando comando) {
     }
 
     if(ld == NULL){
-        printf("La familia no fue iniciada.\r\n");
+        printf("[E]: La familia no fue iniciada.\r\n");
         return;
     }
 
@@ -385,12 +385,23 @@ void Aspirantes(ListaDinastia ld, Comando comando){
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
         return;
     }
+
+    if (ld == NULL) {
+        printf("[E]: La familia no fue iniciada.");
+        return;
+    }
+
     MostrarMiembrosAspirantes(ld);
 }
 
 void Historial(ListaDinastia ld, Comando comando){
     if (comando.cantidadParametros != 0) {
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
+        return;
+    }
+
+    if (ld == NULL) {
+        printf("[E]: La familia no fue iniciada.");
         return;
     }
 
@@ -470,9 +481,10 @@ void MostrarBanner() {
     ListaString bannersFileNames = LeerListaString(f);
     fclose(f);
 
+    int randomNum = rand() % (ContarElementosDeLista(bannersFileNames) - 1);
     String randomBannerFileName;
     AgarrarParam(bannersFileNames,
-                 (rand() % ContarElementosDeLista(bannersFileNames)) - 1,
+                 randomNum,
                  randomBannerFileName);
     LiberarListaString(bannersFileNames);
 
