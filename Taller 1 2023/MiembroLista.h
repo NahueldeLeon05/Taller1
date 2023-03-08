@@ -71,6 +71,7 @@ boolean ObtenerAspirante(MiembroLista mL);
 //Selectora obtener fecha de ascencion
 Fecha ObtenerFechaAscencion(MiembroLista mL);
 
+//Setea la fecha de ascension en el miembro lista
 void CargarFechaAscension(MiembroLista &mL, Fecha f);
 
 //Selectora obtener fecha de abdicacion
