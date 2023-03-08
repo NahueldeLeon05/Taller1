@@ -13,6 +13,7 @@ typedef snode* ListaString;
 //Guarda lo ingresado por el usuario en lista de string
 ListaString CmdEnLista(String s);
 
+//Agrega a la lista un string
 void AgregarAListaString(ListaString &root, String s);
 
 //Agarra un parametro de la lista de string
@@ -32,8 +33,10 @@ void GuardarListaString(ListaString L, FILE * f);
 //PRECONDICION: Archivo abierto en modo lectura
 ListaString LeerListaString(FILE * f);
 
+//Devuelve en que indice de la lista esta el string
 int IndiceEnLista(ListaString root, String s);
 
+//Despliega la lista string
 void ImprimirLista(ListaString r);
 
 #endif // LISTASTRING_H_INCLUDED
