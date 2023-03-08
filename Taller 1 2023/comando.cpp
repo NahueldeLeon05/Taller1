@@ -275,6 +275,11 @@ void Fallecimiento(ListaDinastia dinastia, Comando comando) {
         return;
     }
 
+    if (FechaMayorATodas(dinastia, fecha) == FALSE) {
+        printf("[E]: La fecha ingresada debe ser mayor a todas las anteriores.\r\n");
+        return;
+    }
+
     String nombre;
     AgarrarParam(comando.parametros, 1, nombre);
     if (NombreAlfabetico(nombre) == FALSE) {
@@ -330,6 +335,11 @@ void Abdicacion(ListaDinastia dinastia, Comando comando) {
     Fecha fecha = TransformarFecha(fechaStr);
     if (ValidarFecha(fecha) == FALSE) {
         printf("[E]: Fecha incorrecta.\r\n");
+        return;
+    }
+
+    if (FechaMayorATodas(dinastia, fecha) == FALSE) {
+        printf("[E]: La fecha ingresada debe ser mayor a todas las anteriores.\r\n");
         return;
     }
 
