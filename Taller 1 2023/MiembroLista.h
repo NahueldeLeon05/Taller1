@@ -44,10 +44,13 @@ boolean fechaVacia(MiembroLista m);
 //Muestra fecha de inicio y fin del reinado del miembro
 void MostrarInicioFin(MiembroLista mL);
 
+//Muestra al miembroLista Aspirante al trono
 void MostrarAspirante(MiembroLista ml);
 
+//Muestra al miembroLista
 void MostrarMiembroListaHis(MiembroLista ml);
 
+//Devuelve el miembroABB
 MiembroABB ObtenerMiembroABB(MiembroLista ml);
 
 //Selectora obtiene si es monarca actual
@@ -73,11 +76,13 @@ void CargarFechaAscension(MiembroLista &mL, Fecha f);
 //Selectora obtener fecha de abdicacion
 Fecha ObtenerFechaAbdicacion(MiembroLista mL);
 
+//Carga a un miembroLista una fecha de abdicacion
 void CargarFechaAbdicacion(MiembroLista &mL, Fecha f);
 
 //Selectora obtener fecha de Fallecimiento
 Fecha ObtenerFechaFallecimiento(MiembroLista mL);
 
+//Carga a un miembroLista una fecha de fallecimiento
 void CargarFechaFallecimiento(MiembroLista &mL, Fecha f);
 
 //Devuelve si el miembro de la lista esta vivo o no
@@ -89,6 +94,7 @@ void GuardarMiembroLista(FILE* f, MiembroLista ml);
 //Precondicion: el archivo debe venir abierto para lectura.
 void CargarMiembroLista(FILE* f, MiembroLista &ml);
 
+//Libera de memoria el miembroLista
 void LiberarMiembroLista(MiembroLista &ml);
 
 #endif // MIEMBROLISTA_H_INCLUDED

@@ -114,7 +114,7 @@
 	<stdio.h>
 	"Boolean.h"
 
-1678062948 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listadinastia.cpp
+1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listadinastia.cpp
 	"ListaDinastia.h"
 
 1677963463 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.cpp
@@ -123,17 +123,17 @@
 1677963463 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\listastring.h
 	"String.h"
 
-1677964610 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\main.cpp
+1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\main.cpp
 	"comando.h"
 
-1678065702 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.cpp
+1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
-1678064143 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.h
+1678155051 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembroabb.h
 	"String.h"
 	"Fecha.h"
 
-1678062475 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembrolista.cpp
+1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\miembrolista.cpp
 	"MiembroLista.h"
 
 1677963463 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\string.cpp
@@ -222,7 +222,7 @@
 1677963463 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\abbfamilia.h
 	"MiembroABB.h"
 
-1678140085 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.h
+1678155051 c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.h
 	"ListaString.h"
 	"ListaDinastia.h"
 	"ABBFamilia.h"
@@ -235,7 +235,7 @@
 	<stdio.h>
 	"MiembroABB.h"
 
-1678140085 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
+1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
 1678058277 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
