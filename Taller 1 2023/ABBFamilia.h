@@ -29,8 +29,11 @@ boolean ExisteEnArbol(ArbolFamilia arbol, String nombre);
 //Devuelve el ABB de familia
 void MostrarABB(ArbolFamilia a);
 
+//Precondicion: Archivo debe venir abierto para escritura.
+//Guarda el arbol en un archivo
 void GuardarABB(FILE* f, ArbolFamilia abb);
 
+////Precondicion: Archivo debe venir abierto para lectura.
 //Levanta ABB desde archivo
 void LeerFamiliaABB(FILE* f, ArbolFamilia &abb);
 
