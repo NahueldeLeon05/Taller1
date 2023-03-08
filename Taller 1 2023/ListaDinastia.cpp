@@ -229,9 +229,11 @@ boolean TodosAbdicaronOFallecieron(ListaDinastia ls) {
     boolean found = FALSE;
     while (ls != NULL && found == FALSE) {
         MiembroLista miembro = ls->info;
-        if (ObtenerAbdico(miembro) == FALSE || ObtenerFallecio(miembro) == FALSE) {
+        if (ObtenerAbdico(miembro) == FALSE && ObtenerFallecio(miembro) == FALSE) {
             found = TRUE;
         }
+
+        ls = ls->sig;
     }
 
     return found;
