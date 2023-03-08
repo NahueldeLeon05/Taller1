@@ -228,7 +228,7 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     if (ObtenerFallecio(ObtenerNodoListaDinastia(dinastia, progenitor)->info) == TRUE) {
         printf("[E]: ");
         print(progenitor);
-        printf(" ya no esta entre nosotros.\r\n");
+        printf(" ya no esta entre nosotros :(\r\n");
         return;
     }
 
@@ -288,19 +288,21 @@ void Fallecimiento(ListaDinastia dinastia, Comando comando) {
         return;
     }
 
-    if (ObtenerFallecio(ls->info) == FALSE) {
-        boolean esRey = EsRey(ls->info);
-        CargarFechaFallecimiento(ls->info, fecha);
-
-        if (esRey) {
-            ListaDinastia sigRey = SiguienteMonarca(ls);
-            if (sigRey != NULL) {
-                CargarFechaAscension(sigRey->info, fecha);
-            }
-        }
-    } else {
-        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
+    if (ObtenerFallecio(ls->info) == TRUE) {
+        printf("[E]: ");
+        print(nombre);
+        printf(" ya no esta entre nosotros :(\r\n");
         return;
+    }
+
+    boolean esRey = EsRey(ls->info);
+    CargarFechaFallecimiento(ls->info, fecha);
+
+    if (esRey) {
+        ListaDinastia sigRey = SiguienteMonarca(dinastia);
+        if (sigRey != NULL) {
+            CargarFechaAscension(sigRey->info, fecha);
+        }
     }
 
     printf("[I]: Fallecimiento registrado correctamente.\r\n");
@@ -350,13 +352,15 @@ void Abdicacion(ListaDinastia dinastia, Comando comando) {
     }
 
     if (ObtenerFallecio(ls->info) == TRUE) {
-        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
+        printf("[E]: ");
+        print(nombre);
+        printf(" ya no esta entre nosotros :(\r\n");
         return;
     }
 
     CargarFechaAbdicacion(ls->info, fecha);
 
-    ListaDinastia sigRey = SiguienteMonarca(ls);
+    ListaDinastia sigRey = SiguienteMonarca(dinastia);
     if (sigRey != NULL) {
         CargarFechaAscension(sigRey->info, fecha);
     }
