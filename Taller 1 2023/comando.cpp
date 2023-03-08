@@ -105,6 +105,7 @@ int ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString c
             break;
 
         case 11:
+        case 12:
             Salir(dinastia, arbol, comando);
             break;
     }
@@ -487,9 +488,21 @@ void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
         return;
     }
 
+    if (abb == NULL) {
+        printf("[I]: La dinastia no fue iniciada por lo que no hay memoria que liberar.\r\n");
+        return;
+    }
+
     LiberarABBFamilia(abb);
-    LiberarListaDinastia(ld);
     LiberarComando(comando);
+
+    abb = NULL;
+    ld = NULL;
+
+    if (comando.comandoID == 11) {
+        printf("[I]: La memoria fue liberada correctamente, y la dinastia ahora esta vacia.\r\n");
+        return;
+    }
 }
 
 void MostrarBanner() {

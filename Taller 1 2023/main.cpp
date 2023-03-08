@@ -10,7 +10,7 @@ int main()
 
     ListaString comandosDisponibles = ObtenerComandosDisponibles();
     int ultimoComando = -1;
-    while (ultimoComando != 11) {
+    while (ultimoComando != 12) {
         ultimoComando = ProcesarComandos(arbol, dinastia, comandosDisponibles);
     }
 
