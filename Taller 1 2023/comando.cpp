@@ -418,7 +418,7 @@ void Historial(ListaDinastia ld, Comando comando){
     }
 
     if (ld == NULL) {
-        printf("[E]: La familia no fue iniciada.");
+        printf("[E]: La familia no fue iniciada.\r\n");
         return;
     }
 
@@ -432,7 +432,7 @@ void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando){
     }
 
     if(ld == NULL || abb == NULL){
-        printf("La familia no fue iniciada.\r\n");
+        printf("[E]: La familia no fue iniciada.\r\n");
         return;
     }
 
