@@ -250,7 +250,7 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     printf("[I]: Nacimiento registrado correctamente.\r\n");
 }
 
-void Fallecimiento(ListaDinastia dinastia, Comando comando) {
+void Fallecimiento(ListaDinastia &dinastia, Comando comando) {
     if (dinastia == NULL) {
         printf("[E]: La familia no fue iniciada.\r\n");
         return;
@@ -314,7 +314,7 @@ void Fallecimiento(ListaDinastia dinastia, Comando comando) {
     printf("[I]: Fallecimiento registrado correctamente.\r\n");
 }
 
-void Abdicacion(ListaDinastia dinastia, Comando comando) {
+void Abdicacion(ListaDinastia &dinastia, Comando comando) {
     if (dinastia == NULL) {
         printf("[E]: La familia no fue iniciada.\r\n");
         return;
