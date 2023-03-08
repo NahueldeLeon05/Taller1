@@ -225,6 +225,13 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
         return;
     }
 
+    if (ObtenerFallecio(ObtenerNodoListaDinastia(dinastia, progenitor)->info) == TRUE) {
+        printf("[E]: ");
+        print(progenitor);
+        printf(" ya no esta entre nosotros.\r\n");
+        return;
+    }
+
     MiembroABB mAbb = CrearMiembroNuevo(nombre, progenitor, fecha);
     AgregarMiembroAlArbolFamilia(arbol, mAbb);
 
