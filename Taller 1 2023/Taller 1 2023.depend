@@ -14,11 +14,11 @@
 1678147710 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
-1678147710 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
+1678318880 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
 	"String.h"
 	"Fecha.h"
 
-1677955583 c:\users\usuario\documents\github\taller1\taller 1 2023\string.h
+1678318689 c:\users\usuario\documents\github\taller1\taller 1 2023\string.h
 	<stdio.h>
 	"Boolean.h"
 
@@ -139,18 +139,18 @@
 1677963463 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\string.cpp
 	"String.h"
 
-1678055626 c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.h
+1678319818 c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.h
 	"ListaString.h"
 	"MiembroLista.h"
 
-1678138996 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
+1678319406 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
 	<stdio.h>
 	"MiembroABB.h"
 
-1677955583 c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.h
+1678319207 c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.h
 	"String.h"
 
-1677975486 c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.h
+1678318391 c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.h
 	"MiembroABB.h"
 
 1677888090 source:c:\users\nico\documents\repos\ude\taller1\taller 1 2023\boolean.cpp
@@ -238,10 +238,10 @@
 1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
-1678312088 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
+1678320327 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
-1678317115 c:\users\usuario\documents\github\taller1\taller 1 2023\comando.h
+1678319875 c:\users\usuario\documents\github\taller1\taller 1 2023\comando.h
 	"ListaString.h"
 	"ListaDinastia.h"
 	"ABBFamilia.h"
