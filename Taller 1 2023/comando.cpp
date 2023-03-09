@@ -105,7 +105,6 @@ int ProcesarComandos(ArbolFamilia &arbol, ListaDinastia &dinastia, ListaString c
             break;
 
         case 11:
-        case 12:
             Salir(dinastia, arbol, comando);
             break;
     }
@@ -226,13 +225,6 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
         return;
     }
 
-    if (ObtenerFallecio(ObtenerNodoListaDinastia(dinastia, progenitor)->info) == TRUE) {
-        printf("[E]: ");
-        print(progenitor);
-        printf(" ya no esta entre nosotros :(\r\n");
-        return;
-    }
-
     MiembroABB mAbb = CrearMiembroNuevo(nombre, progenitor, fecha);
     AgregarMiembroAlArbolFamilia(arbol, mAbb);
 
@@ -250,7 +242,7 @@ void Nacimiento(ArbolFamilia &arbol, ListaDinastia &dinastia, Comando comando){
     printf("[I]: Nacimiento registrado correctamente.\r\n");
 }
 
-void Fallecimiento(ListaDinastia &dinastia, Comando comando) {
+void Fallecimiento(ListaDinastia dinastia, Comando comando) {
     if (dinastia == NULL) {
         printf("[E]: La familia no fue iniciada.\r\n");
         return;
@@ -272,11 +264,6 @@ void Fallecimiento(ListaDinastia &dinastia, Comando comando) {
     Fecha fecha = TransformarFecha(fechaStr);
     if (ValidarFecha(fecha) == FALSE) {
         printf("[E]: Fecha incorrecta.\r\n");
-        return;
-    }
-
-    if (FechaMayorATodas(dinastia, fecha) == FALSE) {
-        printf("[E]: La fecha ingresada debe ser mayor a todas las anteriores.\r\n");
         return;
     }
 
@@ -294,27 +281,25 @@ void Fallecimiento(ListaDinastia &dinastia, Comando comando) {
         return;
     }
 
-    if (ObtenerFallecio(ls->info) == TRUE) {
-        printf("[E]: ");
-        print(nombre);
-        printf(" ya no esta entre nosotros :(\r\n");
-        return;
-    }
+    if (ObtenerFallecio(ls->info) == FALSE) {
+        boolean esRey = EsRey(ls->info);
+        CargarFechaFallecimiento(ls->info, fecha);
 
-    boolean esRey = EsRey(ls->info);
-    CargarFechaFallecimiento(ls->info, fecha);
-
-    if (esRey) {
-        ListaDinastia sigRey = SiguienteMonarca(dinastia);
-        if (sigRey != NULL) {
-            CargarFechaAscension(sigRey->info, fecha);
+        if (esRey) {
+            ListaDinastia sigRey = SiguienteMonarca(ls);
+            if (sigRey != NULL) {
+                CargarFechaAscension(sigRey->info, fecha);
+            }
         }
+    } else {
+        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
+        return;
     }
 
     printf("[I]: Fallecimiento registrado correctamente.\r\n");
 }
 
-void Abdicacion(ListaDinastia &dinastia, Comando comando) {
+void Abdicacion(ListaDinastia dinastia, Comando comando) {
     if (dinastia == NULL) {
         printf("[E]: La familia no fue iniciada.\r\n");
         return;
@@ -335,11 +320,6 @@ void Abdicacion(ListaDinastia &dinastia, Comando comando) {
     Fecha fecha = TransformarFecha(fechaStr);
     if (ValidarFecha(fecha) == FALSE) {
         printf("[E]: Fecha incorrecta.\r\n");
-        return;
-    }
-
-    if (FechaMayorATodas(dinastia, fecha) == FALSE) {
-        printf("[E]: La fecha ingresada debe ser mayor a todas las anteriores.\r\n");
         return;
     }
 
@@ -363,15 +343,13 @@ void Abdicacion(ListaDinastia &dinastia, Comando comando) {
     }
 
     if (ObtenerFallecio(ls->info) == TRUE) {
-        printf("[E]: ");
-        print(nombre);
-        printf(" ya no esta entre nosotros :(\r\n");
+        printf("[E]: El miembro ingresado no esta entre nosotros :(\r\n");
         return;
     }
 
     CargarFechaAbdicacion(ls->info, fecha);
 
-    ListaDinastia sigRey = SiguienteMonarca(dinastia);
+    ListaDinastia sigRey = SiguienteMonarca(ls);
     if (sigRey != NULL) {
         CargarFechaAscension(sigRey->info, fecha);
     }
@@ -385,11 +363,6 @@ void Miembros(ArbolFamilia arbol , Comando comando) {
         return;
     }
 
-    if (arbol == NULL) {
-        printf("[E]: La familia no fue iniciada.");
-        return;
-    }
-
     MostrarABB(arbol);
 }
 
@@ -400,7 +373,7 @@ void Monarcas(ListaDinastia ld , Comando comando) {
     }
 
     if(ld == NULL){
-        printf("[E]: La familia no fue iniciada.\r\n");
+        printf("La familia no fue iniciada.\r\n");
         return;
     }
 
@@ -412,23 +385,12 @@ void Aspirantes(ListaDinastia ld, Comando comando){
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
         return;
     }
-
-    if (ld == NULL) {
-        printf("[E]: La familia no fue iniciada.");
-        return;
-    }
-
     MostrarMiembrosAspirantes(ld);
 }
 
 void Historial(ListaDinastia ld, Comando comando){
     if (comando.cantidadParametros != 0) {
         printf("[E]: Cantidad de parametros incorrecta.\r\n");
-        return;
-    }
-
-    if (ld == NULL) {
-        printf("[E]: La familia no fue iniciada.\r\n");
         return;
     }
 
@@ -442,7 +404,7 @@ void Respaldar(ListaDinastia ld, ArbolFamilia abb, Comando comando){
     }
 
     if(ld == NULL || abb == NULL){
-        printf("[E]: La familia no fue iniciada.\r\n");
+        printf("La familia no fue iniciada.\r\n");
         return;
     }
 
@@ -465,7 +427,7 @@ void Recuperar(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
     }
 
     if(ld != NULL || abb != NULL){
-        printf("[E]: La familia ya fue iniciada.\r\n");
+        printf("La familia ya fue iniciada.\r\n");
         return;
     }
 
@@ -498,21 +460,9 @@ void Salir(ListaDinastia &ld, ArbolFamilia &abb, Comando comando){
         return;
     }
 
-    if (abb == NULL) {
-        printf("[I]: La dinastia no fue iniciada por lo que no hay memoria que liberar.\r\n");
-        return;
-    }
-
     LiberarABBFamilia(abb);
+    LiberarListaDinastia(ld);
     LiberarComando(comando);
-
-    abb = NULL;
-    ld = NULL;
-
-    if (comando.comandoID == 11) {
-        printf("[I]: La memoria fue liberada correctamente, y la dinastia ahora esta vacia.\r\n");
-        return;
-    }
 }
 
 void MostrarBanner() {
@@ -520,10 +470,9 @@ void MostrarBanner() {
     ListaString bannersFileNames = LeerListaString(f);
     fclose(f);
 
-    int randomNum = rand() % (ContarElementosDeLista(bannersFileNames) - 1);
     String randomBannerFileName;
     AgarrarParam(bannersFileNames,
-                 randomNum,
+                 (rand() % ContarElementosDeLista(bannersFileNames)) - 1,
                  randomBannerFileName);
     LiberarListaString(bannersFileNames);
 

@@ -131,9 +131,8 @@ void MostrarMiembrosAspirantes(ListaDinastia ld){
         }
         ld = ld -> sig;
     }
-
     if (cont == 1){
-        printf("[E]: No existen aspirantes al trono.\r\n");
+        printf("No existen aspirantes al trono.\r\n");
     }
 }
 
@@ -229,11 +228,9 @@ boolean TodosAbdicaronOFallecieron(ListaDinastia ls) {
     boolean found = FALSE;
     while (ls != NULL && found == FALSE) {
         MiembroLista miembro = ls->info;
-        if (ObtenerAbdico(miembro) == FALSE && ObtenerFallecio(miembro) == FALSE) {
+        if (ObtenerAbdico(miembro) == FALSE || ObtenerFallecio(miembro) == FALSE) {
             found = TRUE;
         }
-
-        ls = ls->sig;
     }
 
     return found;
