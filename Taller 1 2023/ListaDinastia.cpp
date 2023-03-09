@@ -12,8 +12,6 @@ void AgregarMiembroALista(ListaDinastia &ls, MiembroLista ml) {
     if (ls == NULL) {
         ls = n;
     } else {
-        boolean found = FALSE;
-
         String nombrePadre;
         ObtenerNombreProgenitorMiembroABB(ObtenerMiembroABB(ml), nombrePadre);
         ListaDinastia padre = ObtenerNodoListaDinastia(ls, nombrePadre);
@@ -114,7 +112,6 @@ void GuardarListaDinastia(FILE* f, ListaDinastia ls) {
 }
 
 void MostrarElementosLista(ListaDinastia ls){
-    int cont=1;
     while (ls != NULL){
         MostrarMiembroLista(ls->info);
         ls = ls -> sig;
