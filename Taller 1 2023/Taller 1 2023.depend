@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1677975486 source:c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.cpp
+1678138996 source:c:\users\usuario\documents\github\taller1\taller 1 2023\abbfamilia.cpp
 	"ABBFamilia.h"
 
 1677955583 source:c:\users\usuario\documents\github\taller1\taller 1 2023\boolean.cpp
@@ -8,13 +8,13 @@
 1677955583 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listastring.cpp
 	"ListaString.h"
 
-1677967070 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
+1678311309 source:c:\users\usuario\documents\github\taller1\taller 1 2023\main.cpp
 	"comando.h"
 
-1677962992 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
+1678147710 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.cpp
 	"MiembroABB.h"
 
-1677545838 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
+1678147710 c:\users\usuario\documents\github\taller1\taller 1 2023\miembroabb.h
 	"String.h"
 	"Fecha.h"
 
@@ -31,13 +31,13 @@
 	"String.h"
 	"boolean.h"
 
-1678055703 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
+1678147710 source:c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.cpp
 	"MiembroLista.h"
 
-1677955583 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
+1678058570 source:c:\users\usuario\documents\github\taller1\taller 1 2023\fecha.cpp
 	"Fecha.h"
 
-1678055595 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.cpp
+1678303287 source:c:\users\usuario\documents\github\taller1\taller 1 2023\listadinastia.cpp
 	"ListaDinastia.h"
 
 1677955583 source:c:\users\usuario\documents\github\taller1\taller 1 2023\string.cpp
@@ -143,7 +143,7 @@
 	"ListaString.h"
 	"MiembroLista.h"
 
-1678055595 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
+1678138996 c:\users\usuario\documents\github\taller1\taller 1 2023\miembrolista.h
 	<stdio.h>
 	"MiembroABB.h"
 
@@ -238,10 +238,10 @@
 1678155051 source:c:\users\usuario\desktop\desarrollo\talleres\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
-1678058277 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
+1678312088 source:c:\users\usuario\documents\github\taller1\taller 1 2023\comando.cpp
 	"comando.h"
 
-1678053845 c:\users\usuario\documents\github\taller1\taller 1 2023\comando.h
+1678317115 c:\users\usuario\documents\github\taller1\taller 1 2023\comando.h
 	"ListaString.h"
 	"ListaDinastia.h"
 	"ABBFamilia.h"
