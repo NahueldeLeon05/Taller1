@@ -22,8 +22,9 @@ void CargarComando(ListaString comandosDisponibles, Comando &cmd) {
     while (cmd.comandoID == -1) {
         printf("Ingrese el comando: ");
         scan(input);
+        Recortar(input);
 
-        cmd.comandoID = IndiceComando(comandosDisponibles, input);
+        cmd.comandoID = strlar(input) > 0 ? IndiceComando(comandosDisponibles, input) : -1;
         if (cmd.comandoID == -1) {
             printf("[E]: Comando incorrecto.\r\n");
             printf("[E]: Utiliza ayuda para listar los comandos disponibles.\r\n");
